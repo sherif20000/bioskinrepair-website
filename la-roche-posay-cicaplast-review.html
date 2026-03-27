@@ -151,6 +151,28 @@
       margin-bottom: 20px;
       display: block;
     }
+    /* CSS product tile — replaces broken Unsplash img in score card */
+    .score-card-tile {
+      width: 100%; height: 200px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(150deg, #edf4ef 0%, #ddeae1 100%);
+      border-radius: 10px; margin-bottom: 20px;
+      text-align: center; padding: 16px;
+    }
+    .score-card-tile .tile-brand { font-size:0.62rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent,#2D5A3D); }
+    .score-card-tile .tile-name { font-family:'Playfair Display',serif; font-size:1rem; font-weight:600; color:var(--text-primary,#1a1a1a); line-height:1.3; }
+    .score-card-tile .tile-cat { font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold,#C9A96E); background:rgba(201,169,110,0.12); border-radius:100px; padding:3px 10px; }
+    /* CSS tiles for related cards */
+    .related-card-tile {
+      width: 100%; height: 140px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 6px;
+      background: linear-gradient(150deg, #f7f3ee 0%, #ede8e1 100%);
+      text-align: center; padding: 12px 16px;
+    }
+    .related-card-tile .tile-brand { font-size:0.58rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent,#2D5A3D); }
+    .related-card-tile .tile-name { font-family:'Playfair Display',serif; font-size:0.85rem; font-weight:600; color:var(--text-primary,#1a1a1a); line-height:1.3; }
     .score-card-overall {
       display: flex;
       align-items: baseline;
@@ -679,7 +701,10 @@
       <h2 style="border-top:none; padding-top:0; margin-top:8px;">Related Reviews</h2>
       <div class="related-grid">
         <a href="/cerave-moisturizing-cream-review" class="related-card">
-          <img src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=140&fit=crop&q=80&auto=format" alt="CeraVe Moisturizing Cream" loading="lazy" />
+          <div class="related-card-tile">
+            <div class="tile-brand">CeraVe</div>
+            <div class="tile-name">Moisturizing Cream</div>
+          </div>
           <div class="related-card-body">
             <div class="related-card-cat">Moisturizer</div>
             <h4>CeraVe Moisturizing Cream</h4>
@@ -687,7 +712,10 @@
           </div>
         </a>
         <a href="/paulas-choice-barrier-repair-review" class="related-card">
-          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=140&fit=crop&q=80&auto=format" alt="Paula's Choice Barrier Repair" loading="lazy" />
+          <div class="related-card-tile">
+            <div class="tile-brand">Paula's Choice</div>
+            <div class="tile-name">Barrier Repair Moisturizer</div>
+          </div>
           <div class="related-card-body">
             <div class="related-card-cat">Moisturizer</div>
             <h4>Paula's Choice Barrier Repair Moisturizer</h4>
@@ -695,7 +723,10 @@
           </div>
         </a>
         <a href="/vanicream-gentle-cleanser-review" class="related-card">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=140&fit=crop&q=80&auto=format" alt="Vanicream Gentle Cleanser" loading="lazy" />
+          <div class="related-card-tile">
+            <div class="tile-brand">Vanicream</div>
+            <div class="tile-name">Gentle Facial Cleanser</div>
+          </div>
           <div class="related-card-body">
             <div class="related-card-cat">Cleanser</div>
             <h4>Vanicream Gentle Facial Cleanser</h4>
@@ -711,12 +742,11 @@
       <div class="score-card">
         <div class="score-card-label">Editor's Pick · Treatment</div>
         <h2>La Roche-Posay Cicaplast Baume B5</h2>
-        <img
-          class="score-card-img"
-          src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=440&h=200&fit=crop&q=80&auto=format"
-          alt="La Roche-Posay Cicaplast Baume B5"
-          loading="eager"
-        />
+        <div class="score-card-tile">
+          <div class="tile-brand">La Roche-Posay</div>
+          <div class="tile-name">Cicaplast Baume B5</div>
+          <div class="tile-cat">Barrier Treatment</div>
+        </div>
         <div class="score-card-overall" aria-label="Overall score: 9.2 out of 10">
           <span class="score-card-overall-num">9.2</span>
           <span class="score-card-overall-denom">/10</span>
