@@ -137,7 +137,68 @@
     @media (max-width: 768px) { .select-points { grid-template-columns: 1fr; } }
 
     .page-hero { padding: 80px 0 64px; text-align: center; border-bottom: 1px solid var(--border); }
-    .select-point { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }
+
+    /* ── How We Select: full redesign ───────────────────────── */
+    .how-we-select {
+      margin-top: 64px;
+      padding: 56px 0 0;
+      border-top: 1px solid var(--border);
+    }
+    .how-we-select .section-header {
+      display: block !important;
+      text-align: left;
+      max-width: none;
+      margin-bottom: 40px;
+    }
+    .how-we-select .section-header .eyebrow {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .how-we-select .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--text-primary);
+      margin: 0 0 12px;
+    }
+    .how-we-select .section-header p {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0;
+    }
+    .select-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    @media (max-width: 768px) { .select-points { grid-template-columns: 1fr; } }
+    .select-point {
+      display: block !important;
+      padding: 32px 28px;
+      border-right: 1px solid var(--border);
+      background: #fff;
+    }
+    .select-point:last-child { border-right: none; }
+    .select-point h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+    .select-point p {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .select-point { border-right: none; border-bottom: 1px solid var(--border); }
+      .select-point:last-child { border-bottom: none; }
+    }
 
     /* ── Fix shop grid: 3 columns, left-aligned cards ────── */
     .shop-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 28px !important; }
