@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BioSkinRepair — Full Cluster Architecture & SEO Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green:   #2D5A3D;
+    --green-l: #3d7a55;
+    --gold:    #C9A96E;
+    --red:     #c0392b;
+    --orange:  #d35400;
+    --blue:    #2471a3;
+    --bg:      #f8f5f0;
+    --surface: #ffffff;
+    --border:  rgba(0,0,0,0.08);
+    --text:    #1a1a1a;
+    --muted:   #666;
+    --mono:    'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .doc-header {
+    background: var(--green);
+    color: #fff;
+    padding: 48px 40px 40px;
+  }
+  .doc-header-inner { max-width: 1200px; margin: 0 auto; }
+  .doc-eyebrow {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .doc-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700; line-height: 1.2; margin-bottom: 16px;
+  }
+  .doc-header p { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 640px; line-height: 1.7; }
+
+  .doc-stats {
+    display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap;
+  }
+  .doc-stat { text-align: center; }
+  .doc-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1;
+  }
+  .doc-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  .page-body { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── Section headings ────────────────────────────────────── */
+  .section-label {
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;
+  }
+  .section-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 28px; }
+
+  /* ── Ranking factors bar ─────────────────────────────────── */
+  .ranking-panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px; margin-bottom: 48px;
+  }
+  .ranking-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px;
+  }
+  @media (max-width: 860px) { .ranking-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .ranking-grid { grid-template-columns: 1fr; } }
+
+  .rank-factor {
+    background: var(--bg); border-radius: 12px; padding: 20px;
+  }
+  .rank-factor-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .rank-factor-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+  .rank-factor-weight {
+    font-size: 0.72rem; font-weight: 700; color: var(--green);
+    background: rgba(45,90,61,0.1); border-radius: 100px; padding: 2px 8px;
+  }
+  .rank-bar-wrap { height: 6px; background: rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; }
+  .rank-bar { height: 100%; border-radius: 10px; background: var(--green); }
+  .rank-factor-desc { font-size: 0.78rem; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+
+  /* ── AIO factors ─────────────────────────────────────────── */
+  .aio-panel {
+    background: #0f1923; border-radius: 16px; padding: 32px; margin-bottom: 48px;
+  }
+  .aio-panel .section-label { color: #60a5fa; }
+  .aio-panel .section-title { color: #fff; }
+  .aio-panel .section-sub { color: rgba(255,255,255,0.55); }
+  .aio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+  @media (max-width: 860px) { .aio-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .aio-grid { grid-template-columns: 1fr; } }
+
+  .aio-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 20px;
+  }
+  .aio-card-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .aio-card-title { font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .aio-card-desc { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.55; }
+
+  /* ── Cluster cards ───────────────────────────────────────── */
+  .cluster-section { margin-bottom: 56px; }
+
+  .cluster-header {
+    display: flex; align-items: flex-start; gap: 20px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px 16px 0 0; padding: 24px 28px;
+    border-bottom: 3px solid var(--green);
+  }
+  .cluster-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--green);
+    line-height: 1; min-width: 40px;
+  }
+  .cluster-header-body { flex: 1; }
+  .cluster-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+  .cluster-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .cluster-meta { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .cluster-badge {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px; border: 1px solid;
+  }
+  .badge-exists { color: var(--green); border-color: var(--green); background: rgba(45,90,61,0.07); }
+  .badge-needed { color: var(--orange); border-color: var(--orange); background: rgba(211,84,0,0.07); }
+  .badge-aio    { color: var(--blue);   border-color: var(--blue);   background: rgba(36,113,163,0.07); }
+
+  /* Article table */
+  .article-table-wrap {
+    background: var(--surface); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 16px 16px; overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #f0ede8; }
+  thead th {
+    text-align: left; font-size: 0.67rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+    padding: 12px 16px;
+  }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:hover { background: #fafaf8; }
+  td { padding: 12px 16px; vertical-align: top; }
+
+  .td-title { font-size: 0.85rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+  .td-title-sub { font-size: 0.76rem; font-weight: 400; color: var(--muted); margin-top: 2px; }
+  .td-keyword {
+    font-family: var(--mono); font-size: 0.75rem;
+    color: var(--green-l); background: rgba(45,90,61,0.07);
+    padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .td-word { font-size: 0.82rem; color: var(--muted); }
+  .td-schema { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+
+  /* Priority badges */
+  .priority {
+    display: inline-block; font-size: 0.63rem; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 100px;
+  }
+  .p-critical { background: #fdedec; color: var(--red); }
+  .p-high     { background: #fef9e7; color: #b7770d; }
+  .p-medium   { background: #eaf4fb; color: var(--blue); }
+  .p-low      { background: #f4f6f7; color: #717d7e; }
+  .p-exists   { background: rgba(45,90,61,0.1); color: var(--green); }
+
+  /* Image spec column */
+  .img-spec {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .img-type {
+    font-size: 0.7rem; font-weight: 600; color: var(--text);
+  }
+  .img-note { font-size: 0.68rem; color: var(--muted); }
+
+  /* ── Content template specs ──────────────────────────────── */
+  .template-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 860px) { .template-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .template-grid { grid-template-columns: 1fr; } }
+
+  .template-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px; overflow: hidden;
+    position: relative;
+  }
+  .template-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--green);
+  }
+  .template-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+  .template-slug { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-bottom: 14px; }
+  .template-spec { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+  .template-spec strong { color: var(--text); font-weight: 600; }
+
+  /* ── Interlinking map ────────────────────────────────────── */
+  .interlink-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 680px) { .interlink-grid { grid-template-columns: 1fr; } }
+
+  .interlink-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+  }
+  .interlink-from { font-weight: 700; font-size: 0.88rem; margin-bottom: 12px; }
+  .interlink-arrow { color: var(--green); margin: 0 6px; }
+  .interlink-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .interlink-list li { font-size: 0.8rem; color: var(--muted); padding-left: 14px; position: relative; }
+  .interlink-list li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-size: 0.75rem; }
+
+  /* ── Publish calendar ────────────────────────────────────── */
+  .calendar-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 900px) { .calendar-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .cal-month {
+    padding: 20px 18px; border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .cal-month:nth-child(6n) { border-right: none; }
+  .cal-month-name {
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+  }
+  .cal-articles { display: flex; flex-direction: column; gap: 6px; }
+  .cal-article { font-size: 0.75rem; color: var(--text); line-height: 1.4; }
+  .cal-article-cat {
+    font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted);
+  }
+  .cal-vol {
+    font-family: var(--mono); font-size: 0.65rem; color: var(--green);
+    margin-top: 8px; font-weight: 600;
+  }
+
+  /* ── Footer note ─────────────────────────────────────────── */
+  .doc-footer {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px 32px;
+    display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .doc-footer-col { flex: 1; min-width: 200px; }
+  .doc-footer-col h4 { font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; }
+  .doc-footer-col p { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
+
+  @media print {
+    body { background: #fff; }
+    .doc-header { background: #2D5A3D !important; -webkit-print-color-adjust: exact; }
+    .aio-panel { background: #0f1923 !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Document header ─────────────────────────────────────── -->
+<div class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-eyebrow">BioSkinRepair · Internal Strategy Document</div>
+    <h1>Full Cluster Architecture<br>&amp; SEO / AIO Blueprint</h1>
+    <p>Complete content plan mapping all 79 target pages across 8 topic clusters, with article specs, image requirements, schema types, interlinking rules, and ranking factor weights for organic search and AI Overview visibility.</p>
+    <div class="doc-stats">
+      <div class="doc-stat"><div class="doc-stat-num">8</div><div class="doc-stat-label">Topic Clusters</div></div>
+      <div class="doc-stat"><div class="doc-stat-num">79</div><div class="doc-stat-label">Target Pages</div></div>
+      <div class="doc-stat"><div class="doc-stat-num">15</div><div class="doc-stat-label">Live Now</div></div>
+      <div class="doc-stat"><div class="doc-stat-num">64</div><div class="doc-stat-label">To Build</div></div>
+      <div class="doc-stat"><div class="doc-stat-num">6</div><div class="doc-stat-label">Months to 80 Pages</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- ── Section 1: SEO Ranking Factors ───────────────────── -->
+  <div style="margin-bottom:16px; margin-top:8px;">
+    <div class="section-label">Section 01</div>
+    <div class="section-title">Google SEO Ranking Factors</div>
+    <div class="section-sub">Weighted by impact for a health/skincare niche content site. Based on Google's Quality Rater Guidelines, Search Central documentation, and third-party correlation studies (Ahrefs, Semrush, Backlinko).</div>
+  </div>
+
+  <div class="ranking-panel">
+    <div class="ranking-grid">
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Topical Authority / Cluster Depth</div>
+          <div class="rank-factor-weight">Critical</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:97%"></div></div>
+        <div class="rank-factor-desc">Sites that cover a topic comprehensively outrank single-page specialists. Hub + spoke architecture is the primary lever for authority building. Target: 10+ pages per cluster before expecting competitive rankings.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">E-E-A-T (Experience, Expertise, Authority, Trust)</div>
+          <div class="rank-factor-weight">Critical</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:95%"></div></div>
+        <div class="rank-factor-desc">Health content is classified as "Your Money or Your Life" (YMYL). Google applies heightened E-E-A-T scrutiny. Requires: author bio with credentials, About page, editorial policy, and cited sources on every article.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Content Quality &amp; Depth</div>
+          <div class="rank-factor-weight">Critical</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:93%"></div></div>
+        <div class="rank-factor-desc">Word count matters only insofar as it correlates with completeness. Competitor gap analysis: cover every subtopic a top-10 result covers, plus at least one angle they don't. Target 1,200–2,500 words for spoke articles.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Core Web Vitals (LCP, CLS, FID)</div>
+          <div class="rank-factor-weight">High</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:78%"></div></div>
+        <div class="rank-factor-desc">Page experience is a confirmed ranking signal. LCP &lt; 2.5s, CLS &lt; 0.1, FID &lt; 100ms. Static HTML site has inherent advantage — avoid lazy-loading hero images and ensure fonts are preloaded.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Internal Linking Structure</div>
+          <div class="rank-factor-weight">High</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:82%"></div></div>
+        <div class="rank-factor-desc">PageRank flows through internal links. Hub pages must link to all spokes. Spokes must link back to hub and cross-link to related spokes. Target 3–5 contextual internal links per article, using keyword-rich anchor text.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Schema Markup (Structured Data)</div>
+          <div class="rank-factor-weight">High</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:75%"></div></div>
+        <div class="rank-factor-desc">Rich snippets (FAQs, breadcrumbs, review stars) improve CTR by 15–30%. Article schema signals recency. FAQPage schema directly feeds AI Overviews. Review/Product schema enables star ratings in SERPs.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Backlink Authority</div>
+          <div class="rank-factor-weight">High</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:80%"></div></div>
+        <div class="rank-factor-desc">Domain Rating (DR) is the primary correlation with top-10 rankings. Start link building at Month 3 when content library is sufficient. Target: skincare blogs, Reddit wiki citations, Quora answers linking to articles.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Search Intent Match</div>
+          <div class="rank-factor-weight">High</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:88%"></div></div>
+        <div class="rank-factor-desc">Every page must satisfy the dominant intent: informational (what/how/why), commercial (best/review/vs), or navigational. Wrong format for the intent = bounce rate spike = ranking drop. Verify intent before writing.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Keyword Optimization (On-Page)</div>
+          <div class="rank-factor-weight">Medium</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:65%"></div></div>
+        <div class="rank-factor-desc">Primary keyword in: title tag, H1, first 100 words, one H2, meta description, URL slug. Secondary keywords in H2s and naturally in body. Avoid keyword stuffing — TF-IDF, not density.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">URL Structure &amp; Sitemap</div>
+          <div class="rank-factor-weight">Medium</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:55%"></div></div>
+        <div class="rank-factor-desc">Clean URLs (clean URLs already configured via Vercel). Sitemap submitted to Google Search Console. All new pages must be added to sitemap.xml within 24h of publication. Request indexing via GSC for each new URL.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Image Optimisation &amp; Alt Text</div>
+          <div class="rank-factor-weight">Medium</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:50%"></div></div>
+        <div class="rank-factor-desc">CSS product tiles eliminate broken image risk. For any future real photography: WebP format, descriptive alt text with keyword, max 150KB per image. Google Image Search is a secondary traffic source for skincare.</div>
+      </div>
+      <div class="rank-factor">
+        <div class="rank-factor-head">
+          <div class="rank-factor-name">Content Freshness</div>
+          <div class="rank-factor-weight">Medium</div>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:58%"></div></div>
+        <div class="rank-factor-desc">Update &lt;lastmod&gt; in sitemap.xml when articles are revised. For product reviews, add a "Last updated" dateline. High-competition queries ("best ceramide moisturizer") favor recently updated content.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Section 2: AIO Ranking Factors ───────────────────── -->
+  <div style="margin-bottom:16px;">
+    <div class="section-label">Section 02</div>
+    <div class="section-title">AI Overview (AIO) Ranking Factors</div>
+    <div class="section-sub">Google's AI Overviews pull from pages that demonstrate these specific patterns. Different from traditional SEO — prioritises direct answers and structured formatting over keyword density.</div>
+  </div>
+
+  <div class="aio-panel">
+    <div class="aio-grid">
+      <div class="aio-card">
+        <div class="aio-card-icon">⚡</div>
+        <div class="aio-card-title">Direct Answer in First 100 Words</div>
+        <div class="aio-card-desc">Every article must answer the primary question in the opening paragraph — before any preamble, context, or backstory. AI Overviews extract this opening answer verbatim.</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">📋</div>
+        <div class="aio-card-title">Structured Formatting (Lists, Tables, H2s)</div>
+        <div class="aio-card-desc">AI models prefer structured content. Use numbered lists for steps, bullet points for symptoms, tables for comparisons, and H2s that mirror question phrasing ("How long does X take?").</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">🔬</div>
+        <div class="aio-card-title">Definitional Clarity</div>
+        <div class="aio-card-desc">Define technical terms on first use. "Transepidermal water loss (TEWL) is the rate at which water evaporates through the skin." This entity anchoring is a primary AIO selection signal.</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">❓</div>
+        <div class="aio-card-title">FAQPage Schema</div>
+        <div class="aio-card-desc">Add 3–5 Q&amp;A pairs in FAQPage JSON-LD to every article. These feed directly into AI Overview sourcing. Questions must match "People Also Ask" patterns for the primary keyword.</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">🔗</div>
+        <div class="aio-card-title">Entity Co-occurrence</div>
+        <div class="aio-card-desc">Mention related entities naturally: brand names (CeraVe, La Roche-Posay), ingredients (ceramides, niacinamide), conditions (eczema, rosacea). Entity density signals topical expertise to AI crawlers.</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">📚</div>
+        <div class="aio-card-title">Citation of Primary Sources</div>
+        <div class="aio-card-desc">Reference journal studies, dermatological guidelines, or clinical data. AI models treat cited sources as authority signals. Format: "A 2023 study published in the Journal of Investigative Dermatology found..."</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">🔄</div>
+        <div class="aio-card-title">Consistent E-E-A-T Signals</div>
+        <div class="aio-card-desc">Author byline with credentials on every article. About page with editorial team. Editorial policy linked from footer. AI models weight sourced, attributed content higher than anonymous editorial.</div>
+      </div>
+      <div class="aio-card">
+        <div class="aio-card-icon">📊</div>
+        <div class="aio-card-title">Specific Numbers &amp; Data</div>
+        <div class="aio-card-desc">AI Overviews prefer content with specific claims: "Ceramides make up 50% of the lipid matrix" over "ceramides are an important part of skin." Data specificity is a strong AIO selection signal.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Section 3: Image Strategy ────────────────────────── -->
+  <div style="margin-bottom:16px;">
+    <div class="section-label">Section 03</div>
+    <div class="section-title">Image Strategy Per Content Type</div>
+    <div class="section-sub">Consistent approach across all 79 pages — no Unsplash stock photos. All visuals serve the editorial credibility of the site.</div>
+  </div>
+
+  <div class="template-grid" style="margin-bottom:48px;">
+    <div class="template-card">
+      <div class="template-name">Product Reviews</div>
+      <div class="template-slug">Score card + Related cards</div>
+      <div class="template-spec">
+        <strong>Score card:</strong> CSS brand tile (gradient bg, brand name, product name, category pill) — 200px height<br><br>
+        <strong>Related cards:</strong> CSS brand tile — 140px height, warm gradient<br><br>
+        <strong>In-article:</strong> No product images. Instead: ingredient analysis tables, score bar charts (CSS), comparison tables<br><br>
+        <strong>Why:</strong> CSS tiles are always "live," never 404, load in &lt;1ms, and look more editorial than stock photos
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Hub / Cluster Pages</div>
+      <div class="template-slug">Category landing pages</div>
+      <div class="template-spec">
+        <strong>Hero:</strong> No image. Large typographic hero with eyebrow + H1 + subtitle (current approach — keep)<br><br>
+        <strong>Card grid:</strong> CSS category icon tiles (icon + category name on brand gradient bg)<br><br>
+        <strong>In-content:</strong> Diagrams and charts generated in CSS or SVG — no external image dependencies<br><br>
+        <strong>Why:</strong> Hub pages should load instantly. Images add latency without adding trust.
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Educational Articles</div>
+      <div class="template-slug">Condition guides, ingredient pages</div>
+      <div class="template-spec">
+        <strong>Hero:</strong> No image. Article hero with breadcrumb + H1 + byline (current approach — keep)<br><br>
+        <strong>Diagrams:</strong> Simple SVG or CSS illustrations for anatomical concepts (skin layers, barrier function)<br><br>
+        <strong>Tables:</strong> Ingredient comparison tables styled in HTML — these rank in image search too<br><br>
+        <strong>Why:</strong> Health content earns trust through clarity, not photography
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Comparison / Versus Articles</div>
+      <div class="template-slug">CeraVe vs Cetaphil, etc.</div>
+      <div class="template-spec">
+        <strong>Hero:</strong> Side-by-side CSS product tile — two brand tiles with "VS" divider in center<br><br>
+        <strong>Comparison table:</strong> Full-width HTML table with score bars per criterion<br><br>
+        <strong>Winner callout:</strong> Green-highlighted verdict box at top (below the fold for SEO, above for UX)<br><br>
+        <strong>Why:</strong> Comparison intent is commercial — the winner callout converts to affiliate clicks
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Buying Guide / Best Of</div>
+      <div class="template-slug">Best ceramide moisturizer, etc.</div>
+      <div class="template-spec">
+        <strong>Hero:</strong> Category-branded CSS tile with "Editor's Picks" badge<br><br>
+        <strong>Product cards:</strong> CSS brand tiles (consistent with review pages) + score + 1-sentence verdict<br><br>
+        <strong>Quick-pick table:</strong> Condensed table at top ("Best Overall," "Best Budget," "Best for Eczema")<br><br>
+        <strong>Why:</strong> Buying guides have highest affiliate click-through — product visual must render reliably
+      </div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Glossary Pages</div>
+      <div class="template-slug">What is TEWL, humectant, etc.</div>
+      <div class="template-spec">
+        <strong>Hero:</strong> Minimal. Term + pronunciation guide + one-sentence definition<br><br>
+        <strong>Visual:</strong> Simple CSS definition card (term in Playfair Display, etymology, related terms)<br><br>
+        <strong>No images needed</strong> — these pages are AIO-optimised for definitional queries<br><br>
+        <strong>Why:</strong> AI Overviews pull from the definition, not the images. Clarity beats aesthetics here.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Section 4: Cluster Architecture ──────────────────── -->
+  <div style="margin-bottom:24px;">
+    <div class="section-label">Section 04</div>
+    <div class="section-title">Full Cluster Architecture — All 79 Pages</div>
+    <div class="section-sub">Each row includes target keyword, priority, word count target, required schema types, and image spec. Pages marked EXISTS are live. All others are to be built.</div>
+  </div>
+
+  <!-- CLUSTER 1 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">01</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Skin Barrier — Core Hub</div>
+        <div class="cluster-desc">The primary authority cluster. Owns the "skin barrier" head term and all repair-related queries. Highest E-E-A-T requirements due to health classification.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">Hub: /skin-barrier-101 EXISTS</span>
+          <span class="cluster-badge badge-needed">7 Spokes Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: Very High</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:28%">Article / URL Slug</th>
+            <th style="width:22%">Target Keyword</th>
+            <th>Priority</th>
+            <th>Words</th>
+            <th>Schema</th>
+            <th>Image Spec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/skin-barrier-101</div><div class="td-title-sub">Hub page — comprehensive guide</div></td>
+            <td><code class="td-keyword">skin barrier repair</code></td>
+            <td><span class="priority p-exists">EXISTS</span></td>
+            <td class="td-word">3,500+</td>
+            <td class="td-schema">Article<br>FAQPage<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">No images</div><div class="img-note">Article hero + text tables</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/how-long-skin-barrier-repair</div><div class="td-title-sub">Timeline: week-by-week breakdown</div></td>
+            <td><code class="td-keyword">how long does skin barrier take to heal</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS timeline graphic</div><div class="img-note">Week 1–8 visual ladder</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/signs-skin-barrier-is-healing</div><div class="td-title-sub">Checklist of positive recovery signals</div></td>
+            <td><code class="td-keyword">signs skin barrier is healing</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div><div class="img-note">Checklist formatting</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/permanently-damaged-skin-barrier</div><div class="td-title-sub">Can you irreversibly damage your barrier?</div></td>
+            <td><code class="td-keyword">permanently damaged skin barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,300</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skin-barrier-vs-moisture-barrier</div><div class="td-title-sub">Definitional + functional comparison</div></td>
+            <td><code class="td-keyword">skin barrier vs moisture barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,000</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS comparison diagram</div><div class="img-note">Two-column visual diff</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skin-purging-vs-reaction</div><div class="td-title-sub">Why skin gets worse before better</div></td>
+            <td><code class="td-keyword">skin purging vs reaction</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skin-barrier-cold-weather</div><div class="td-title-sub">Seasonal barrier management</div></td>
+            <td><code class="td-keyword">skin barrier cold weather</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,000</td>
+            <td class="td-schema">Article</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/stress-skin-barrier</div><div class="td-title-sub">Psychodermatology angle</div></td>
+            <td><code class="td-keyword">stress skin barrier damage</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,100</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 2 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">02</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Ingredients — Core Hub</div>
+        <div class="cluster-desc">Ingredient deep-dives establish formulation expertise and rank for high-intent ingredient research queries. Each spoke drives traffic to product review pages via contextual links.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">Hub: /ingredients EXISTS</span>
+          <span class="cluster-badge badge-exists">Sub-hub: /ceramides EXISTS</span>
+          <span class="cluster-badge badge-needed">9 Spokes Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: Very High</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/ingredients</div><div class="td-title-sub">Hub — all barrier-repair ingredients</div></td>
+            <td><code class="td-keyword">skin barrier ingredients</code></td>
+            <td><span class="priority p-exists">EXISTS</span></td>
+            <td class="td-word">2,500+</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/ceramides</div><div class="td-title-sub">Sub-hub — ceramide deep-dive</div></td>
+            <td><code class="td-keyword">ceramides skin barrier</code></td>
+            <td><span class="priority p-exists">EXISTS</span></td>
+            <td class="td-word">2,800+</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/niacinamide-skin-barrier</div><div class="td-title-sub">Mechanism, dosing, product recs</div></td>
+            <td><code class="td-keyword">niacinamide skin barrier</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,500</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div><div class="img-note">Ingredient comparison table</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/hyaluronic-acid-dry-skin</div><div class="td-title-sub">Why HA can make dry skin worse + how to use correctly</div></td>
+            <td><code class="td-keyword">hyaluronic acid dry skin worse</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/peptides-skin-barrier</div><div class="td-title-sub">Peptide types, mechanism, evidence</div></td>
+            <td><code class="td-keyword">peptides skin barrier repair</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,300</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/colloidal-oatmeal-eczema</div><div class="td-title-sub">FDA-approved skin protectant for eczema</div></td>
+            <td><code class="td-keyword">colloidal oatmeal eczema</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/cica-centella-asiatica-skin</div><div class="td-title-sub">TECA complex, madecassoside, clinical data</div></td>
+            <td><code class="td-keyword">cica skin barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,300</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/linoleic-acid-skin-barrier</div><div class="td-title-sub">Essential fatty acids and ceramide synthesis</div></td>
+            <td><code class="td-keyword">linoleic acid skin barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/panthenol-vitamin-b5-skin</div><div class="td-title-sub">Humectant + wound-healing dual role</div></td>
+            <td><code class="td-keyword">panthenol skin barrier</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,000</td>
+            <td class="td-schema">Article</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/glycerin-skincare</div><div class="td-title-sub">Humectant mechanism, concentration guide</div></td>
+            <td><code class="td-keyword">glycerin skin benefits</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,000</td>
+            <td class="td-schema">Article</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/allantoin-sensitive-skin</div><div class="td-title-sub">Keratolytic + anti-irritant properties</div></td>
+            <td><code class="td-keyword">allantoin sensitive skin</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">900</td>
+            <td class="td-schema">Article</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 3 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">03</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Skin Conditions — Cluster</div>
+        <div class="cluster-desc">Condition guides drive the highest organic traffic in skincare (search volume: 10K–100K+/mo per condition). Highest YMYL risk — all articles must cite sources and include a dermatologist disclaimer.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">4 Sub-hubs EXIST (/eczema, /rosacea, /over-exfoliation, /sensitive-skin)</span>
+          <span class="cluster-badge badge-needed">8 Spokes Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: High</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-title">/perioral-dermatitis</div><div class="td-title-sub">Causes, triggers, skincare protocol</div></td>
+            <td><code class="td-keyword">perioral dermatitis skincare</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>FAQPage<br>MedicalCondition</td>
+            <td><div class="img-spec"><div class="img-type">No images</div><div class="img-note">Symptom checklist table</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/fungal-acne</div><div class="td-title-sub">Malassezia folliculitis — diagnosis + safe routine</div></td>
+            <td><code class="td-keyword">fungal acne skincare routine</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>FAQPage<br>MedicalCondition</td>
+            <td><div class="img-spec"><div class="img-type">No images</div><div class="img-note">Ingredient safety table (fungal acne safe/unsafe)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/contact-dermatitis-vs-eczema</div><div class="td-title-sub">Differential diagnosis + skincare approach</div></td>
+            <td><code class="td-keyword">contact dermatitis vs eczema</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,500</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS comparison table</div><div class="img-note">Side-by-side symptom grid</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/dry-skin-vs-dehydrated-skin</div><div class="td-title-sub">Different conditions, different fixes</div></td>
+            <td><code class="td-keyword">dry skin vs dehydrated skin</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS comparison table</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/acne-sensitive-skin-routine</div><div class="td-title-sub">Acne-prone without stripping the barrier</div></td>
+            <td><code class="td-keyword">acne sensitive skin routine</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS routine step cards</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/seborrheic-dermatitis-face</div><div class="td-title-sub">Yeast-related dandruff condition on face</div></td>
+            <td><code class="td-keyword">seborrheic dermatitis face</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,500</td>
+            <td class="td-schema">Article<br>FAQPage<br>MedicalCondition</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/milia-skincare</div><div class="td-title-sub">Keratin cysts — causes, prevention, treatment</div></td>
+            <td><code class="td-keyword">milia removal skincare</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,000</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skin-cycling-sensitive-skin</div><div class="td-title-sub">Adaptation of trending protocol for barrier-compromised skin</div></td>
+            <td><code class="td-keyword">skin cycling sensitive skin</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS 4-night cycle diagram</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 4 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">04</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Routines — Hub</div>
+        <div class="cluster-desc">Routine content converts readers into affiliate clicks. These articles bridge educational content (ingredients, conditions) with commercial content (product reviews, shop). High commercial intent.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">Hub: /routines EXISTS</span>
+          <span class="cluster-badge badge-needed">7 Spokes Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: Medium–High</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-title">/morning-vs-night-skincare-routine</div><div class="td-title-sub">AM/PM split with product placement</div></td>
+            <td><code class="td-keyword">morning vs night skincare routine</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,500</td>
+            <td class="td-schema">Article<br>FAQPage<br>HowTo</td>
+            <td><div class="img-spec"><div class="img-type">CSS AM/PM split card</div><div class="img-note">Two-column routine visual</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/minimalist-skincare-routine</div><div class="td-title-sub">3-product approach for barrier recovery</div></td>
+            <td><code class="td-keyword">minimalist skincare routine</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage<br>HowTo</td>
+            <td><div class="img-spec"><div class="img-type">CSS 3-step visual</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/retinol-barrier-damage</div><div class="td-title-sub">Safe reintroduction protocol post-compromise</div></td>
+            <td><code class="td-keyword">retinol barrier damage</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage<br>HowTo</td>
+            <td><div class="img-spec"><div class="img-type">CSS reintroduction timeline</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/how-to-layer-skincare-products</div><div class="td-title-sub">Correct product order by texture/pH</div></td>
+            <td><code class="td-keyword">how to layer skincare products</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,300</td>
+            <td class="td-schema">Article<br>FAQPage<br>HowTo</td>
+            <td><div class="img-spec"><div class="img-type">CSS layering order diagram</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/double-cleansing-sensitive-skin</div><div class="td-title-sub">When it helps vs when it strips</div></td>
+            <td><code class="td-keyword">double cleansing sensitive skin</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,100</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/menopause-skin-barrier</div><div class="td-title-sub">Hormonal impact on ceramide production</div></td>
+            <td><code class="td-keyword">menopause skin barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/teen-skincare-routine-sensitive</div><div class="td-title-sub">Barrier-first approach for young skin</div></td>
+            <td><code class="td-keyword">teen skincare routine sensitive</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>HowTo</td>
+            <td><div class="img-spec"><div class="img-type">CSS routine step cards</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 5 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">05</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Product Reviews — Hub</div>
+        <div class="cluster-desc">Primary revenue cluster. Every review page carries affiliate links. Reviews must be thorough (formulation analysis, ingredient breakdown, real verdict) to justify editorial authority and earn affiliate commissions.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">Hub: /reviews EXISTS</span>
+          <span class="cluster-badge badge-exists">6 Review Pages LIVE (confirmed by Playwright test)</span>
+          <span class="cluster-badge badge-needed">6 More Reviews Planned</span>
+          <span class="cluster-badge badge-aio">Revenue Priority: Critical</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/cerave-moisturizing-cream-review</div><div class="td-title-sub">Score: 9.4/10</div></td>
+            <td><code class="td-keyword">cerave moisturizing cream review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">857 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div><div class="img-note">Green gradient + brand name</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/eltamd-uv-clear-review</div><div class="td-title-sub">Score: 9.1/10</div></td>
+            <td><code class="td-keyword">eltamd uv clear review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">539 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/la-roche-posay-cicaplast-review</div><div class="td-title-sub">Score: 9.2/10 — images fixed today</div></td>
+            <td><code class="td-keyword">la roche-posay cicaplast review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">853 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile ✓ Fixed</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/paulas-choice-barrier-repair-review</div><div class="td-title-sub">Score: 9.0/10</div></td>
+            <td><code class="td-keyword">paulas choice barrier repair review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">574 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/the-ordinary-natural-moisturizing-review</div><div class="td-title-sub">Score: 8.8/10</div></td>
+            <td><code class="td-keyword">the ordinary nmf review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">622 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr style="background:#f0f8f0;">
+            <td><div class="td-title">/vanicream-gentle-cleanser-review</div><div class="td-title-sub">Score: 9.0/10</div></td>
+            <td><code class="td-keyword">vanicream cleanser review</code></td>
+            <td><span class="priority p-exists">LIVE</span></td>
+            <td class="td-word">531 lines</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/bioderma-sensibio-review</div><div class="td-title-sub">Micellar water for reactive skin</div></td>
+            <td><code class="td-keyword">bioderma sensibio review</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,600</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div><div class="img-note">Blue gradient (brand colour)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/avene-cicalfate-review</div><div class="td-title-sub">Post-procedure repair cream</div></td>
+            <td><code class="td-keyword">avene cicalfate review</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,600</td>
+            <td class="td-schema">Review<br>Product<br>BreadcrumbList</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/cerave-vs-neutrogena-hydro-boost</div><div class="td-title-sub">Comparison review — moisture delivery systems</div></td>
+            <td><code class="td-keyword">cerave vs neutrogena hydro boost</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Review<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS VS comparison tile</div><div class="img-note">Two brand tiles + divider</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/la-roche-posay-toleriane-cleanser</div><div class="td-title-sub">Hydrating cleanser for reactive skin</div></td>
+            <td><code class="td-keyword">la roche posay toleriane cleanser</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Review<br>Product</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/vaseline-occlusive-skincare</div><div class="td-title-sub">Petrolatum as slugging / barrier occlusive</div></td>
+            <td><code class="td-keyword">vaseline skincare occlusive</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/kiehls-ultra-facial-cream-review</div><div class="td-title-sub">Premium moisturizer formulation analysis</div></td>
+            <td><code class="td-keyword">kiehls ultra facial cream review</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Review<br>Product</td>
+            <td><div class="img-spec"><div class="img-type">CSS score card tile</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 6 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">06</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Comparison / Versus Articles — AIO Goldmine</div>
+        <div class="cluster-desc">Versus queries are the single highest AIO citation rate in skincare. Google consistently pulls comparison verdicts into AI Overviews. No hub needed — these rank independently and feed into reviews and ingredients clusters.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-needed">7 Articles Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: Highest</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-title">/cerave-vs-cetaphil</div><div class="td-title-sub">Head-to-head: formulation, price, use-case</div></td>
+            <td><code class="td-keyword">cerave vs cetaphil</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">2,000</td>
+            <td class="td-schema">Article<br>FAQPage<br>Review</td>
+            <td><div class="img-spec"><div class="img-type">CSS VS hero tile</div><div class="img-note">Two brand tiles + verdict box</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/aveeno-vs-cerave-eczema</div><div class="td-title-sub">Oat-based vs ceramide-based for eczema</div></td>
+            <td><code class="td-keyword">aveeno vs cerave eczema</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS VS hero tile</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/mineral-vs-chemical-sunscreen-sensitive</div><div class="td-title-sub">Mechanism, irritancy, barrier compatibility</div></td>
+            <td><code class="td-keyword">mineral vs chemical sunscreen sensitive skin</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS comparison table</div><div class="img-note">UV filter type grid</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/retinol-vs-retinoid-vs-tretinoin</div><div class="td-title-sub">Potency ladder, conversion rates, barrier risk</div></td>
+            <td><code class="td-keyword">retinol vs retinoid difference</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,600</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS potency ladder diagram</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/aha-vs-bha-sensitive-skin</div><div class="td-title-sub">Exfoliants for compromised barriers</div></td>
+            <td><code class="td-keyword">aha vs bha sensitive skin</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,400</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS comparison table</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/toner-vs-essence-vs-serum</div><div class="td-title-sub">Definitional clarity for confused buyers</div></td>
+            <td><code class="td-keyword">toner vs essence difference</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS 3-column comparison</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/niacinamide-vs-hyaluronic-acid</div><div class="td-title-sub">Functional comparison — which barrier issue does each fix?</div></td>
+            <td><code class="td-keyword">niacinamide vs hyaluronic acid</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,200</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS VS comparison tile</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 7 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">07</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Buying Guides / Best Of — Commercial Cluster</div>
+        <div class="cluster-desc">Highest affiliate conversion rate of all content types. "Best X for Y" queries have strong commercial intent — readers are ready to buy. Format: quick-pick table at top, scored product cards, clear winner callout.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-exists">Hub: /shop EXISTS</span>
+          <span class="cluster-badge badge-needed">7 Guides Needed</span>
+          <span class="cluster-badge badge-aio">Revenue Priority: Very High</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-title">/best-ceramide-moisturizer</div><div class="td-title-sub">Top 5 picks with formulation analysis</div></td>
+            <td><code class="td-keyword">best ceramide moisturizer</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">2,000</td>
+            <td class="td-schema">Article<br>ItemList<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (5)</div><div class="img-note">Brand tiles per product</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/best-cleanser-damaged-skin-barrier</div><div class="td-title-sub">Cleanser selection for compromised skin</div></td>
+            <td><code class="td-keyword">best cleanser damaged skin barrier</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>ItemList<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (4)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/best-sunscreen-sensitive-skin</div><div class="td-title-sub">SPF guide for reactive, rosacea-prone skin</div></td>
+            <td><code class="td-keyword">best sunscreen sensitive skin</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">2,000</td>
+            <td class="td-schema">Article<br>ItemList<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (5)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/best-moisturizer-eczema</div><div class="td-title-sub">Emollient and occlusive picks for atopic skin</div></td>
+            <td><code class="td-keyword">best moisturizer eczema</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,800</td>
+            <td class="td-schema">Article<br>ItemList<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (4)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/affordable-barrier-repair-skincare</div><div class="td-title-sub">Under $20 picks — drugstore focus</div></td>
+            <td><code class="td-keyword">affordable barrier repair skincare</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,600</td>
+            <td class="td-schema">Article<br>ItemList</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (5)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/korean-skincare-skin-barrier</div><div class="td-title-sub">K-beauty products with clinical barrier credentials</div></td>
+            <td><code class="td-keyword">korean skincare skin barrier</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">1,600</td>
+            <td class="td-schema">Article<br>ItemList</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (4)</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/best-serum-rosacea</div><div class="td-title-sub">Anti-inflammatory serums with evidence base</div></td>
+            <td><code class="td-keyword">best serum rosacea</code></td>
+            <td><span class="priority p-low">Low</span></td>
+            <td class="td-word">1,500</td>
+            <td class="td-schema">Article<br>ItemList<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS product cards (4)</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLUSTER 8 -->
+  <div class="cluster-section">
+    <div class="cluster-header">
+      <div class="cluster-number">08</div>
+      <div class="cluster-header-body">
+        <div class="cluster-name">Glossary — AIO Definition Pages</div>
+        <div class="cluster-desc">Short (400–600 words), highly structured definitional pages. The fastest pages to write and the most consistently cited in AI Overviews. Entity-rich content that trains AI models to associate BioSkinRepair with dermatological authority.</div>
+        <div class="cluster-meta">
+          <span class="cluster-badge badge-needed">7 Pages Needed</span>
+          <span class="cluster-badge badge-aio">AIO Priority: Very High (fastest ROI per hour)</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:28%">Article / URL Slug</th><th style="width:22%">Target Keyword</th><th>Priority</th><th>Words</th><th>Schema</th><th>Image Spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-title">/tewl</div><div class="td-title-sub">Transepidermal water loss — the core barrier metric</div></td>
+            <td><code class="td-keyword">tewl skin</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">500</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS definition card</div><div class="img-note">Term + etymology + related links</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skin-microbiome</div><div class="td-title-sub">Bacterial ecosystem of the skin surface</div></td>
+            <td><code class="td-keyword">skin microbiome</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">600</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">No images</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/humectant</div><div class="td-title-sub">Water-binding ingredient class definition</div></td>
+            <td><code class="td-keyword">humectant skincare</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">450</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS definition card</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/emollient</div><div class="td-title-sub">Skin-smoothing ingredient class — vs humectant vs occlusive</div></td>
+            <td><code class="td-keyword">emollient vs moisturizer</code></td>
+            <td><span class="priority p-high">High</span></td>
+            <td class="td-word">500</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS 3-class comparison</div><div class="img-note">Humectant / Emollient / Occlusive</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/occlusive</div><div class="td-title-sub">Barrier-sealing ingredient class</div></td>
+            <td><code class="td-keyword">occlusive skincare</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">450</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS definition card</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/skincare-ph</div><div class="td-title-sub">Why pH matters for barrier function and product efficacy</div></td>
+            <td><code class="td-keyword">skincare ph importance</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">500</td>
+            <td class="td-schema">Article<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS pH scale graphic</div></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-title">/sensitized-skin</div><div class="td-title-sub">Acquired vs inherent sensitivity — key distinction</div></td>
+            <td><code class="td-keyword">sensitized skin vs sensitive skin</code></td>
+            <td><span class="priority p-medium">Medium</span></td>
+            <td class="td-word">500</td>
+            <td class="td-schema">Article<br>DefinedTerm<br>FAQPage</td>
+            <td><div class="img-spec"><div class="img-type">CSS VS comparison tile</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Section 5: Interlinking Map ──────────────────────── -->
+  <div style="margin-bottom:16px;">
+    <div class="section-label">Section 05</div>
+    <div class="section-title">Internal Linking Rules</div>
+    <div class="section-sub">Every page must follow these linking rules. Anchor text should be keyword-rich and descriptive — never "click here" or "read more."</div>
+  </div>
+
+  <div class="interlink-grid">
+    <div class="interlink-card">
+      <div class="interlink-from">Condition Pages (eczema, rosacea…) <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>Relevant product review pages ("CeraVe for eczema — see our review")</li>
+        <li>Routine hub for that condition</li>
+        <li>Ingredient pages for condition-specific actives</li>
+        <li>Skin Barrier 101 hub ("understand the underlying mechanism")</li>
+      </ul>
+    </div>
+    <div class="interlink-card">
+      <div class="interlink-from">Ingredient Pages <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>Products containing that ingredient (review pages)</li>
+        <li>Buying guides featuring that ingredient class</li>
+        <li>Condition pages where that ingredient helps</li>
+        <li>Comparison articles (niacinamide vs HA)</li>
+      </ul>
+    </div>
+    <div class="interlink-card">
+      <div class="interlink-from">Review Pages <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>2–3 related product reviews (at bottom "Related Reviews")</li>
+        <li>Buying guide that features this product</li>
+        <li>Ingredient pages for key actives in the formula</li>
+        <li>Condition page most relevant to the product's use case</li>
+      </ul>
+    </div>
+    <div class="interlink-card">
+      <div class="interlink-from">Buying Guides <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>Individual full review for every product listed</li>
+        <li>Relevant condition pages ("best moisturiser for eczema" → /eczema)</li>
+        <li>Ingredient hub for the key ingredient class covered</li>
+        <li>Routine pages for use-case context</li>
+      </ul>
+    </div>
+    <div class="interlink-card">
+      <div class="interlink-from">Comparison Articles <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>Full individual review for each product compared</li>
+        <li>Ingredient pages for the primary active in each product</li>
+        <li>Buying guide for the category</li>
+      </ul>
+    </div>
+    <div class="interlink-card">
+      <div class="interlink-from">Glossary Pages <span class="interlink-arrow">→</span> link to</div>
+      <ul class="interlink-list">
+        <li>Ingredient pages using that ingredient class</li>
+        <li>Skin Barrier 101 hub for mechanism context</li>
+        <li>Related glossary terms (humectant → occlusive → emollient)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Section 6: Publish Calendar ─────────────────────── -->
+  <div style="margin-bottom:16px;">
+    <div class="section-label">Section 06</div>
+    <div class="section-title">6-Month Publish Calendar</div>
+    <div class="section-sub">2–3 articles per week, sequenced by priority and cluster completeness. Publish high-priority items first — partial clusters rank weakly; complete clusters rank strongly.</div>
+  </div>
+
+  <div class="calendar-grid">
+    <div class="cal-month">
+      <div class="cal-month-name">Month 1 — April</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Barrier</div>How long does skin barrier repair take?</div>
+        <div class="cal-article"><div class="cal-article-cat">Barrier</div>Signs skin barrier is healing</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>CeraVe vs Cetaphil</div>
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Niacinamide for barrier repair</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>What is TEWL?</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>What is a humectant?</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>Emollient vs moisturizer</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+    <div class="cal-month">
+      <div class="cal-month-name">Month 2 — May</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Hyaluronic acid: right/wrong way</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Perioral dermatitis guide</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Fungal acne routine</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>Mineral vs chemical sunscreen</div>
+        <div class="cal-article"><div class="cal-article-cat">Routine</div>Minimalist skincare routine</div>
+        <div class="cal-article"><div class="cal-article-cat">Buying</div>Best ceramide moisturizer</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>What is an occlusive?</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+    <div class="cal-month">
+      <div class="cal-month-name">Month 3 — June</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Routine</div>AM vs PM skincare routine</div>
+        <div class="cal-article"><div class="cal-article-cat">Routine</div>How to reintroduce retinol</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Contact dermatitis vs eczema</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>Retinol vs retinoid vs tretinoin</div>
+        <div class="cal-article"><div class="cal-article-cat">Buying</div>Best cleanser damaged barrier</div>
+        <div class="cal-article"><div class="cal-article-cat">Review</div>Bioderma Sensibio review</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>What is sensitized skin?</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+    <div class="cal-month">
+      <div class="cal-month-name">Month 4 — July</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Peptides for skin barrier</div>
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Cica / centella asiatica</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Dry skin vs dehydrated skin</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>Aveeno vs CeraVe eczema</div>
+        <div class="cal-article"><div class="cal-article-cat">Buying</div>Best sunscreen sensitive skin</div>
+        <div class="cal-article"><div class="cal-article-cat">Review</div>Avène Cicalfate+ review</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>Skin microbiome</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+    <div class="cal-month">
+      <div class="cal-month-name">Month 5 — August</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Barrier</div>Skin barrier vs moisture barrier</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Acne + sensitive skin routine</div>
+        <div class="cal-article"><div class="cal-article-cat">Condition</div>Seborrheic dermatitis face</div>
+        <div class="cal-article"><div class="cal-article-cat">Routine</div>How to layer skincare</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>AHA vs BHA sensitive skin</div>
+        <div class="cal-article"><div class="cal-article-cat">Buying</div>Best moisturizer eczema</div>
+        <div class="cal-article"><div class="cal-article-cat">Glossary</div>Skincare pH</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+    <div class="cal-month">
+      <div class="cal-month-name">Month 6 — September</div>
+      <div class="cal-articles">
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Colloidal oatmeal eczema</div>
+        <div class="cal-article"><div class="cal-article-cat">Ingredient</div>Linoleic acid + fatty acids</div>
+        <div class="cal-article"><div class="cal-article-cat">Routine</div>Menopause skin barrier</div>
+        <div class="cal-article"><div class="cal-article-cat">Comparison</div>Niacinamide vs hyaluronic acid</div>
+        <div class="cal-article"><div class="cal-article-cat">Buying</div>Best budget barrier skincare</div>
+        <div class="cal-article"><div class="cal-article-cat">Review</div>CeraVe vs Neutrogena Hydro Boost</div>
+        <div class="cal-article"><div class="cal-article-cat">Barrier</div>Skin purging vs reaction</div>
+      </div>
+      <div class="cal-vol">7 articles</div>
+    </div>
+  </div>
+
+  <!-- ── Footer notes ──────────────────────────────────────── -->
+  <div class="doc-footer">
+    <div class="doc-footer-col">
+      <h4>Schema Priority Order</h4>
+      <p>Every page: <strong>Article + BreadcrumbList</strong>. Add FAQPage to any page with Q&amp;A sections. Reviews get Review + Product schema. Buying guides get ItemList schema. Glossary pages get DefinedTerm schema. Condition guides add MedicalCondition where clinically appropriate.</p>
+    </div>
+    <div class="doc-footer-col">
+      <h4>Sitemap Update Rule</h4>
+      <p>Add every new page to <strong>sitemap.xml</strong> within 24h of publishing. Update &lt;lastmod&gt; when revising existing articles. Submit updated sitemap URL in Google Search Console after every batch of 5+ new pages. Request manual indexing for high-priority pages.</p>
+    </div>
+    <div class="doc-footer-col">
+      <h4>E-E-A-T Checklist (per article)</h4>
+      <p>Author byline present · At least 1 citation to a study or clinical source · Dermatologist disclaimer on condition pages · "Last updated" date visible · About page linked from footer · Editorial policy page (build Month 2)</p>
+    </div>
+    <div class="doc-footer-col">
+      <h4>AIO Checklist (per article)</h4>
+      <p>Direct answer in first 100 words · H2s phrased as questions · FAQPage schema with 3–5 PAA-aligned Q&amp;As · Technical terms defined on first use · Specific numbers/percentages/timeframes cited · No AI-sounding preamble</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
