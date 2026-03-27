@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eczema and the Skin Barrier: A Complete Guide — BioSkinRepair</title>
+  <meta name="description" content="Why eczema is fundamentally a skin barrier disease, how barrier dysfunction drives the itch-scratch cycle, and the evidence-backed treatment approach that actually works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Hero article meta ───────────────────────────────────── */
+    .article-category-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .article-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 20px;
+    }
+
+    /* ── Hero image ──────────────────────────────────────────── */
+    .article-hero-img-wrap {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+    }
+    .article-hero-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Stat boxes ──────────────────────────────────────────── */
+    .stat-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .stat-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-box-number {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-box-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    @media (max-width: 600px) { .stat-boxes { grid-template-columns: 1fr; } }
+
+    /* ── Article callout ─────────────────────────────────────── */
+    .article-callout {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 28px 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── Product picks ───────────────────────────────────────── */
+    .article-product-picks {
+      margin: 32px 0;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+    .article-product-picks h3 {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    .article-product-pick {
+      display: block;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+    .article-product-pick:hover { border-color: var(--accent-mid); background: var(--bg-alt); }
+    .pick-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .pick-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .pick-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .pick-cta {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── Sidebar: TOC + email form ───────────────────────────── */
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; line-height: 1.4; }
+    .toc-list ul li a:hover { color: var(--accent); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input {
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+    .sidebar-email-form button {
+      padding: 10px 12px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* ── Related articles ────────────────────────────────────── */
+    .related-articles {
+      padding: 64px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .related-articles h2 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-grid .article-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .related-grid .article-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .article-card-body h3 { font-size: 0.95rem; color: var(--text-primary); line-height: 1.35; }
+    .article-card-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+
+    /* ── Footer logo + links ─────────────────────────────────── */
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/eczema" class="active">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/skin-conditions">Skin Conditions</a> <span>→</span> <span>Eczema Guide</span>
+      </div>
+      <div class="article-category-tag">Skin Condition</div>
+      <h1>Eczema and the Skin Barrier: A Complete Guide</h1>
+      <p class="article-hero-sub">Eczema is not primarily an allergic condition — it is a barrier disease. Understanding what drives the itch-scratch cycle changes how you treat it, and what results you can realistically expect.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>14 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?w=1200&h=420&fit=crop&q=80&auto=format" alt="Close-up of skin showing eczema texture and dryness" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="stat-box-number">10–20%</div>
+        <div class="stat-box-label">of children affected globally</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">1–3%</div>
+        <div class="stat-box-label">of adults with active eczema</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">50%</div>
+        <div class="stat-box-label">of eczema patients show filaggrin gene mutations</div>
+      </div>
+    </div>
+
+    <h2 id="what-is">What Is Eczema?</h2>
+    <p>Atopic dermatitis — the full clinical name for what most people call eczema — is a chronic, relapsing inflammatory skin condition characterized by intense itch, dryness, and compromised barrier function. The word "atopic" refers to a genetic tendency toward allergic conditions, which is why eczema, asthma, allergic rhinitis, and food allergies so often travel together in the same individuals. This cluster is called the "atopic march."</p>
+    <p>But the mechanism that drives eczema flares is not primarily an immune overreaction to allergens. The primary defect is structural: a barrier that cannot hold water in or keep irritants out. Once you understand that distinction, the logic of every evidence-backed treatment intervention becomes much clearer.</p>
+    <p>Eczema presents differently across skin tones and life stages. In infants, it typically appears on the cheeks, scalp, and extensor surfaces of the arms and legs. In older children and adults, the flexural creases — the inner elbows, behind the knees, the wrists, ankles — are the most common sites. On darker skin tones, eczema often presents as hyperpigmentation or lichenification (skin thickening) rather than the classic red, weeping rash more commonly depicted in medical literature.</p>
+
+    <h2 id="barrier-role">The Role of the Skin Barrier in Eczema</h2>
+    <p>The most important genetic discovery in eczema research was the identification, in 2006, of loss-of-function mutations in the filaggrin gene. Filaggrin is a protein essential for forming the protein scaffold inside corneocytes — the dead, flattened cells that make up the outermost skin layer. When filaggrin is deficient or absent, the skin cells cannot bind together properly, the lipid matrix is disorganized, and the barrier becomes permeable.</p>
+    <p>A permeable barrier means two things happen simultaneously. Water evaporates through the skin more rapidly — transepidermal water loss (TEWL) rises significantly — and environmental antigens including house dust mite proteins, pet dander, and bacterial toxins from Staphylococcus aureus can penetrate the compromised surface and trigger immune activation. In eczematous skin, colonization by S. aureus is found in over 90% of patients during flares, compared to roughly 30% of healthy skin. The bacteria release proteases and toxins that further degrade barrier lipids, amplifying the inflammatory response.</p>
+    <p>This is the barrier-immune-barrier feedback loop: compromised barrier allows allergen penetration, which triggers Th2-dominant immune activation, which drives inflammation and itch, which causes scratching, which mechanically destroys more barrier, which allows more allergen penetration. Treating only the itch — without rebuilding the barrier — addresses a symptom while the root cause continues to cycle.</p>
+
+    <div class="article-callout">
+      <strong>Key insight:</strong> Filaggrin mutations are present in roughly 50% of moderate-to-severe eczema patients, but barrier dysfunction exists across the entire eczema population regardless of genetic status. This means barrier repair is a valid treatment priority for every person with eczema, not just those with confirmed genetic mutations.
+    </div>
+
+    <h2 id="triggers">Eczema Triggers: What They Actually Do</h2>
+    <p>Triggers do not cause eczema — they stress a barrier that is already structurally compromised and tip it into a flare. Understanding this reframes how to approach trigger management.</p>
+    <p>The most consistently documented triggers across clinical studies include:</p>
+    <ul>
+      <li><strong>Harsh cleansers and soaps.</strong> Surfactants — particularly sodium lauryl sulfate (SLS) — strip ceramides from the skin surface, elevate skin pH above its optimal 4.5–5.5 range, and activate serine proteases that degrade barrier proteins. Switching to a lipid-replenishing, pH-balanced cleanser is one of the highest-impact changes for eczema patients.</li>
+      <li><strong>Temperature extremes and sweat.</strong> Heat increases histamine release and amplifies itch. Cold, dry air accelerates TEWL by thinning the protective lipid film. Sweating exposes the skin to salt and proteins that irritate already-inflamed tissue.</li>
+      <li><strong>Fragrances and preservatives.</strong> Fragrance is the most common contact allergen in the eczema population. Products labeled "natural" or "botanical" are not automatically safer — essential oils including linalool, limonene, and citral are among the most frequent sensitizers. Preservatives such as methylisothiazolinone (MI) are also well-documented triggers.</li>
+      <li><strong>Psychological stress.</strong> Stress elevates cortisol and activates the hypothalamic-pituitary-adrenal axis, which increases mast cell degranulation and histamine release. Clinically, patients consistently report flares in the days following high-stress events, not during them — the immune response lags.</li>
+      <li><strong>Sleep deprivation.</strong> Skin barrier repair peaks between 11 p.m. and 4 a.m. as growth hormone levels rise. Shortened or disrupted sleep measurably increases TEWL and impairs overnight barrier recovery.</li>
+    </ul>
+
+    <h2 id="treatment">The Evidence-Backed Treatment Approach</h2>
+    <p>Modern eczema management rests on three concurrent pillars: barrier repair, anti-inflammatory intervention, and trigger reduction. These are not sequential steps — they work best when applied together.</p>
+    <p><strong>Barrier repair as a treatment, not just maintenance.</strong> Multiple randomized controlled trials have demonstrated that proactive, consistent use of emollients — applied twice daily or more — reduces flare frequency, decreases corticosteroid use, and lowers the risk of secondary infection. The most effective emollient formulations contain ceramides, cholesterol, and free fatty acids in the ratios found in healthy skin (approximately 3:1:1). Formulations that contain only humectants or only occlusive agents show weaker results.</p>
+    <p><strong>Topical corticosteroids (TCS) for active flares.</strong> TCS remain the first-line anti-inflammatory treatment and have a strong safety record when used at the correct potency and frequency. The appropriate approach is: use TCS to clear active inflammation, then step down to an emollient-only maintenance regimen as quickly as possible. Corticosteroid phobia — driven by misunderstanding of skin atrophy risk — is a documented cause of undertreated eczema. Used correctly, low-to-mid potency TCS do not cause clinically significant atrophy.</p>
+    <p><strong>Topical calcineurin inhibitors (TCI) for sensitive areas.</strong> Tacrolimus (Protopic) and pimecrolimus (Elidel) are non-steroidal anti-inflammatory options suitable for the face, neck, and skin folds where corticosteroid use is more constrained. They inhibit T-cell activation without affecting skin thickness and are now recommended for long-term maintenance use in sensitive sites.</p>
+    <p><strong>Dupilumab for moderate-to-severe disease.</strong> Dupilumab is a biologic therapy that blocks both IL-4 and IL-13 signaling — the primary cytokines driving Th2-dominant inflammation in eczema. Phase III trial data shows 50–70% reductions in disease severity scores and dramatic improvements in itch and sleep quality. It does not suppress the immune system broadly and has a well-characterized safety profile. For patients with moderate-to-severe disease inadequately controlled by topicals, it represents a significant treatment advance.</p>
+    <p><strong>Proactive therapy.</strong> Rather than waiting for a flare and reacting, proactive therapy applies a low-potency topical anti-inflammatory 2–3 times per week to areas that historically flare, even when the skin appears clear. This approach reduces flare frequency by approximately 50% in patients who follow it consistently. The underlying rationale is that subclinical inflammation persists in these areas even between visible flares.</p>
+
+    <h2 id="products">Product Approach for Eczema-Prone Skin</h2>
+    <p>The product selection framework for eczema is built around a short, intentional ingredient list rather than a long routine. More products means more potential irritants, more fragrance exposure, and more opportunities to disrupt a compromised barrier.</p>
+    <p>The non-negotiables for an eczema-appropriate routine are: a pH-balanced cleanser free of SLS, SLES, and fragrance; a ceramide-dominant emollient applied within three minutes of cleansing (the "soak and seal" method); and sun protection with a mineral-based sunscreen (zinc oxide or titanium dioxide) that avoids chemical UV filters, which can be irritating on sensitive skin.</p>
+
+    <div class="article-product-picks">
+      <h3>Recommended Products for Eczema-Prone Skin</h3>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Barrier Repair</div>
+        <div class="pick-name">CeraVe Moisturising Cream</div>
+        <div class="pick-desc">Contains all three essential barrier lipids — ceramides 1, 3, and 6-II — plus MVE technology for sustained 24-hour delivery. Fragrance-free and clinically tested on eczema-prone skin.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Gentle Cleansing</div>
+        <div class="pick-name">La Roche-Posay Lipikar Syndet AP+</div>
+        <div class="pick-desc">Syndet (synthetic detergent) bar formulated without soap, SLS, or fragrance. Slightly acidic pH preserves the skin's natural acid mantle and does not disrupt ceramide synthesis.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Intensive Flare Cream</div>
+        <div class="pick-name">Eucerin Eczema Relief Body Cream</div>
+        <div class="pick-desc">Colloidal oat (1%) provides clinically documented anti-inflammatory activity, ceramide NP supports barrier repair, and licorice root extract offers mild anti-pruritic effects.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#what-is">What Is Eczema?</a></li>
+          <li><a href="#barrier-role">The Barrier's Role</a></li>
+          <li><a href="#triggers">Eczema Triggers</a></li>
+          <li><a href="#treatment">Treatment Approach</a></li>
+          <li><a href="#products">Product Approach</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Related Conditions</strong>
+      <ul style="margin-top: 12px; padding-left: 18px; line-height: 2;">
+        <li><a href="/rosacea">Rosacea Guide</a></li>
+        <li><a href="/sensitive-skin">Sensitive Skin vs. Damaged Barrier</a></li>
+        <li><a href="/over-exfoliation">Over-Exfoliation Recovery</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">This guide is for educational purposes only and does not constitute medical advice. If you have moderate-to-severe eczema, consult a board-certified dermatologist for a personalised treatment plan.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A structured 7-day protocol for rebuilding a compromised barrier — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: Everything You Need to Know</h3>
+        <p>The anatomy of the stratum corneum, TEWL explained, and the ingredients that rebuild it.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/ceramides" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=400&h=220&fit=crop&q=80&auto=format" alt="Ceramide skincare" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Ingredients</span>
+        <h3>Ceramides vs. Cholesterol: Which Does Your Barrier Need?</h3>
+        <p>The three essential lipids are not interchangeable. Here is when each one matters most.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/sensitive-skin" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=220&fit=crop&q=80&auto=format" alt="Sensitive skin" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Skin Conditions</span>
+        <h3>Sensitive Skin vs. Damaged Barrier: Know the Difference</h3>
+        <p>One is a skin type. The other is a temporary state. Treating them the same is a mistake.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Email form
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+
+  // Intercept placeholder links
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>

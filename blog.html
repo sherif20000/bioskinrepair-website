@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — BioSkinRepair</title>
+  <meta name="description" content="Science-backed articles on skin barrier repair, ingredients, conditions, and recovery routines. Written by dermatology experts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Footer grid ─────────────────────────────────────── */
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* ── Article cards ───────────────────────────────────── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .article-img { width: 100%; height: 200px; object-fit: cover; background: var(--bg-alt); display: block; }
+    .article-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .article-body h3 { font-size: 1rem; color: var(--text-primary); line-height: 1.35; margin-bottom: 10px; }
+    .article-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .article-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .article-read-time { font-size: 0.78rem; color: var(--text-muted); }
+    .article-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .article-link:hover { text-decoration: underline; }
+
+    /* ── Featured card ───────────────────────────────────── */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .featured-text { padding: 40px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .featured-text h2 { font-size: clamp(1.35rem, 2.5vw, 1.85rem); line-height: 1.25; margin-bottom: 16px; color: var(--text-primary); }
+    .featured-text p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px; }
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .featured-visual { overflow: hidden; }
+    .featured-visual img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 300px; }
+
+    /* ── Section header left ─────────────────────────────── */
+    .section-header-left { margin-bottom: 32px; }
+    .section-header-left .eyebrow { margin-bottom: 8px; }
+    .section-header-left h2 { margin-bottom: 8px; }
+
+    /* ── Email capture extras ────────────────────────────── */
+    .email-capture-form-wrap { display: flex; flex-direction: column; min-width: 320px; }
+    .btn-white {
+      background: white;
+      color: var(--accent-dark, #1a3d28);
+      border: none;
+      padding: 12px 20px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      white-space: nowrap;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+    }
+    .btn-white:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+    /* ── Footer bottom & column links ────────────────────── */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .affiliate-disc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+    }
+    .footer-copy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-visual { display: none; }
+      .email-capture-form-wrap { min-width: 0; width: 100%; }
+    }
+    @media (max-width: 480px) { .articles-grid { grid-template-columns: 1fr; } }
+  
+    .email-capture-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 20px; }
+    .email-capture-form-wrap { max-width: 480px; margin: 0 auto; }
+    .form-success { display: none; text-align: center; padding: 24px; background: var(--accent-light); border-radius: var(--radius-md); color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <span>Blog</span>
+      </div>
+      <h1>The Blog</h1>
+      <p class="article-hero-sub">Evidence-based articles on skin barrier science — from ingredient deep-dives to condition-specific repair protocols.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED ARTICLE
+     ============================================================ -->
+<section class="section" style="padding-top:48px; padding-bottom:40px;">
+  <div class="container">
+    <div class="section-header-left">
+      <span class="eyebrow">Editor's Pick</span>
+      <h2>Start Here</h2>
+    </div>
+
+    <article class="featured-card">
+      <div class="featured-text">
+        <div class="featured-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+          </svg>
+          Most Read
+        </div>
+        <h2>How to Tell If Your Skin Barrier Is Damaged (And What to Do Next)</h2>
+        <p>Your skin barrier — the outermost layer of the epidermis — is your first defense against moisture loss and environmental stressors. When it breaks down, the signs are often misread as sensitivity or dryness, masking the underlying dysfunction.</p>
+        <p>Understanding the specific markers of barrier compromise — from elevated TEWL to altered skin pH — is the critical first step before any repair protocol can work.</p>
+        <div class="featured-meta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>8 min read</span>
+          <span>•</span>
+          <span>Updated March 2026</span>
+        </div>
+        <a href="/skin-barrier-101" class="btn btn-primary">Read the Guide →</a>
+      </div>
+      <div class="featured-visual" role="img" aria-label="Close-up of skin showing barrier texture">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=420&fit=crop&q=80&auto=format" alt="" loading="lazy" />
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORY FILTER TABS
+     ============================================================ -->
+<div style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--surface);">
+  <div class="container">
+    <div class="filter-tabs" id="filter-tabs" role="tablist" aria-label="Filter articles by category">
+      <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Articles</button>
+      <button class="filter-tab" data-filter="barrier" role="tab" aria-selected="false">Skin Barrier</button>
+      <button class="filter-tab" data-filter="ingredients" role="tab" aria-selected="false">Ingredients</button>
+      <button class="filter-tab" data-filter="conditions" role="tab" aria-selected="false">Conditions</button>
+      <button class="filter-tab" data-filter="routines" role="tab" aria-selected="false">Routines</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ARTICLE GRID
+     ============================================================ -->
+<section class="section" style="padding-top:48px;" aria-label="All articles">
+  <div class="container">
+
+    <div class="articles-grid" id="articles-grid">
+
+      <!-- Skin Barrier -->
+      <article class="article-card" data-category="barrier">
+        <img class="article-img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier science illustration" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Skin Barrier</div>
+          <h3>What Is Trans-Epidermal Water Loss (TEWL) and Why Does It Matter?</h3>
+          <p>TEWL is the rate at which water passively evaporates through your skin. Elevated TEWL is the primary clinical marker of barrier compromise — here's what drives it and how to reverse it.</p>
+          <div class="article-meta">
+            <span class="article-read-time">6 min read</span>
+            <a href="/skin-barrier-101" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ingredients -->
+      <article class="article-card" data-category="ingredients">
+        <img class="article-img" src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=220&fit=crop&q=80&auto=format" alt="Skincare ingredient bottles and serums" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Ingredients</div>
+          <h3>Ceramides vs. Cholesterol: Which Does Your Skin Barrier Actually Need?</h3>
+          <p>Both are critical lipids in the skin barrier — but the ratio between them matters more than simply adding either. Here's what the clinical data actually shows.</p>
+          <div class="article-meta">
+            <span class="article-read-time">6 min read</span>
+            <a href="/ceramides" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Conditions -->
+      <article class="article-card" data-category="conditions">
+        <img class="article-img" src="https://images.unsplash.com/photo-1617778368431-f97343a411ac?w=400&h=220&fit=crop&q=80&auto=format" alt="Close-up of facial skin showing rosacea" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Conditions</div>
+          <h3>Rosacea and the Skin Barrier: Why It's Not Just a Flushing Problem</h3>
+          <p>Emerging research shows rosacea involves a fundamentally compromised skin barrier — understanding this changes how the condition should be managed.</p>
+          <div class="article-meta">
+            <span class="article-read-time">7 min read</span>
+            <a href="/rosacea" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Routines -->
+      <article class="article-card" data-category="routines">
+        <img class="article-img" src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=220&fit=crop&q=80&auto=format" alt="Skincare routine products laid out" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Routines</div>
+          <h3>The Over-Exfoliation Recovery Protocol: How to Rebuild After Acid Overuse</h3>
+          <p>Over-exfoliation is one of the most common causes of barrier damage — and it often goes unrecognized until the damage is significant. Here's the phased recovery approach.</p>
+          <div class="article-meta">
+            <span class="article-read-time">10 min read</span>
+            <a href="/over-exfoliation" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Conditions -->
+      <article class="article-card" data-category="conditions">
+        <img class="article-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&h=220&fit=crop&q=80&auto=format" alt="Person with eczema patch on arm" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Conditions</div>
+          <h3>Eczema and the Barrier: The Role of S. aureus and Filaggrin Mutations</h3>
+          <p>Atopic dermatitis is fundamentally a barrier disease. Here's what the mechanism of filaggrin deficiency tells us about treatment strategy — and which products actually work.</p>
+          <div class="article-meta">
+            <span class="article-read-time">12 min read</span>
+            <a href="/eczema" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ingredients -->
+      <article class="article-card" data-category="ingredients">
+        <img class="article-img" src="https://images.unsplash.com/photo-1599847987657-881f11b92a75?w=400&h=220&fit=crop&q=80&auto=format" alt="Niacinamide serum bottle" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Ingredients</div>
+          <h3>Niacinamide at 10% vs. 5%: What the Research Says About Effective Dosing</h3>
+          <p>Niacinamide is one of the most well-studied actives in skincare — but the concentration debate is often handled with marketing copy, not clinical evidence. Here's the data.</p>
+          <div class="article-meta">
+            <span class="article-read-time">8 min read</span>
+            <a href="/ingredients" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Skin Barrier -->
+      <article class="article-card" data-category="barrier">
+        <img class="article-img" src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=400&h=220&fit=crop&q=80&auto=format" alt="Microscopic view of skin layers" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Skin Barrier</div>
+          <h3>The Brick and Mortar Model: How the Stratum Corneum Actually Works</h3>
+          <p>The stratum corneum — your outermost skin layer — is often described using the "brick and mortar" model. Here's what that means for how you build your repair routine.</p>
+          <div class="article-meta">
+            <span class="article-read-time">9 min read</span>
+            <a href="/skin-barrier-101" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Conditions -->
+      <article class="article-card" data-category="conditions">
+        <img class="article-img" src="https://images.unsplash.com/photo-1559181567-c3190ca9d5db?w=400&h=220&fit=crop&q=80&auto=format" alt="Person touching sensitive skin on face" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Conditions</div>
+          <h3>True Sensitive Skin vs. Barrier Damage: How to Tell the Difference</h3>
+          <p>Most people who describe themselves as having "sensitive skin" actually have an acquired barrier dysfunction — and the distinction completely changes the treatment approach.</p>
+          <div class="article-meta">
+            <span class="article-read-time">7 min read</span>
+            <a href="/sensitive-skin" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Routines -->
+      <article class="article-card" data-category="routines">
+        <img class="article-img" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=220&fit=crop&q=80&auto=format" alt="Minimal skincare routine products" loading="lazy" />
+        <div class="article-body">
+          <div class="category-tag">Routines</div>
+          <h3>The Minimum Effective Routine: 3 Products That Repair the Barrier</h3>
+          <p>More products is not better when your barrier is compromised. Here's the case for stripping back to three evidence-backed products during the repair phase.</p>
+          <div class="article-meta">
+            <span class="article-read-time">5 min read</span>
+            <a href="/routines" class="article-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- No results message (hidden by default) -->
+    <div id="no-results" style="display:none; text-align:center; padding:60px 0; color:var(--text-secondary);">
+      <p>No articles in this category yet — check back soon.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MID-PAGE EMAIL CAPTURE
+     ============================================================ -->
+<section class="email-capture-section" aria-labelledby="blog-lead-heading">
+  <div class="container">
+    <div class="email-capture-inner">
+      <div class="email-capture-text">
+        <span class="eyebrow" style="color:var(--gold);">Free Resource</span>
+        <h2 id="blog-lead-heading">Get the 7-Day Skin Barrier Reset Guide</h2>
+        <p>A step-by-step protocol used by 12,000+ readers — covering morning and evening routines, ingredients to avoid, and the exact products that work at each recovery stage.</p>
+        <ul style="list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:8px;">
+          <li style="display:flex; align-items:center; gap:8px; color:rgba(255,255,255,0.9); font-size:0.9rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            7 days of daily instructions
+          </li>
+          <li style="display:flex; align-items:center; gap:8px; color:rgba(255,255,255,0.9); font-size:0.9rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Ingredient cheat sheet: what to avoid
+          </li>
+          <li style="display:flex; align-items:center; gap:8px; color:rgba(255,255,255,0.9); font-size:0.9rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Budget-tiered product picks
+          </li>
+        </ul>
+      </div>
+      <div class="email-capture-form-wrap">
+        <p style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; margin-bottom:10px;">Enter your email for instant access:</p>
+        <form class="email-capture-form email-form" action="#" method="POST" aria-label="Free guide signup">
+          <label for="blog-capture-email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="blog-capture-email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="btn-white">Send Me the Guide →</button>
+        </form>
+        <p class="email-capture-note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Free Guide</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="affiliate-disc">
+        <strong style="color:rgba(255,255,255,0.6);">Affiliate Disclosure:</strong> BioSkinRepair participates in affiliate programs including Amazon Associates, Paula's Choice, iHerb, and Dermstore. We may earn a commission when you buy through our links at no additional cost to you. All product recommendations are based on independent research and genuine editorial assessment.
+      </p>
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+  /* ---- Mobile menu ---- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  /* ---- Category filter tabs ---- */
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.article-card[data-category]');
+  const noResults = document.getElementById('no-results');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Update active tab
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const filter = tab.dataset.filter;
+      let visible = 0;
+
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  /* ---- Toast ---- */
+  let toastTimer;
+  function showToast(msg) {
+    let toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.remove('visible');
+    clearTimeout(toastTimer);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      toast.classList.add('visible');
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), 3200);
+    }));
+  }
+
+  /* ---- Email form handler ---- */
+  document.querySelectorAll('form.email-form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      if (!input || !input.value) { input && input.focus(); return; }
+      form.innerHTML = `<div class="form-success"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>You're in! Check your inbox for the guide.</span></div>`;
+    });
+  });
+
+  /* ---- Placeholder link interception ---- */
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      showToast('Coming soon.');
+    });
+  });
+</script>
+</body>
+</html>

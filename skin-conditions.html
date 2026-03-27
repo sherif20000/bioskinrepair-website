@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Conditions — BioSkinRepair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Footer grid ─────────────────────────────────────── */
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* ── Article cards ───────────────────────────────────── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .article-img { width: 100%; height: 200px; object-fit: cover; background: var(--bg-alt); display: block; }
+    .article-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .article-body h3 { font-size: 1rem; color: var(--text-primary); line-height: 1.35; margin-bottom: 10px; }
+    .article-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .article-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .article-read-time { font-size: 0.78rem; color: var(--text-muted); }
+    .article-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .article-link:hover { text-decoration: underline; }
+
+    /* ── Footer bottom & column links ────────────────────── */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .footer-copy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .articles-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <span>Skin Conditions</span>
+      </div>
+      <h1>Skin Conditions</h1>
+      <p class="article-hero-sub">Condition-specific repair guides based on clinical research — because eczema and rosacea are not solved with the same protocol.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="padding: 48px 24px 80px;">
+
+  <div class="articles-grid" style="max-width:960px; margin:0 auto;">
+
+    <article class="article-card">
+      <img class="article-img" src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?w=400&h=220&fit=crop&q=80&auto=format" alt="Close-up of skin affected by eczema" loading="lazy" />
+      <div class="article-body">
+        <div class="category-tag">Condition Guide</div>
+        <h3>Eczema (Atopic Dermatitis)</h3>
+        <p>A chronic inflammatory condition rooted in a defective skin barrier. Understand the flare cycle, trigger identification, and evidence-based repair protocols used by dermatologists.</p>
+        <div class="article-meta">
+          <span class="article-read-time">12 min read</span>
+          <a href="/eczema" class="article-link">Read Guide <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <img class="article-img" src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=400&h=220&fit=crop&q=80&auto=format" alt="Skincare routine for rosacea" loading="lazy" />
+      <div class="article-body">
+        <div class="category-tag">Condition Guide</div>
+        <h3>Rosacea</h3>
+        <p>A vascular and inflammatory skin disorder that mimics other conditions. Learn the four subtypes, what triggers flushing and papules, and how to build a rosacea-safe barrier routine.</p>
+        <div class="article-meta">
+          <span class="article-read-time">10 min read</span>
+          <a href="/rosacea" class="article-link">Read Guide <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <img class="article-img" src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=220&fit=crop&q=80&auto=format" alt="Gentle skincare products for sensitive skin" loading="lazy" />
+      <div class="article-body">
+        <div class="category-tag">Condition Guide</div>
+        <h3>Sensitive Skin</h3>
+        <p>Sensitivity is a symptom, not a skin type. Understand the difference between intrinsically sensitive skin and reactivity caused by barrier dysfunction — and how to address each.</p>
+        <div class="article-meta">
+          <span class="article-read-time">8 min read</span>
+          <a href="/sensitive-skin" class="article-link">Read Guide <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <img class="article-img" src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=220&fit=crop&q=80&auto=format" alt="Exfoliating acids and skincare products" loading="lazy" />
+      <div class="article-body">
+        <div class="category-tag">Condition Guide</div>
+        <h3>Over-Exfoliation</h3>
+        <p>One of the most common — and most misidentified — causes of barrier damage. Learn to recognize the signs, stop the damage cycle, and follow the recovery protocol.</p>
+        <div class="article-meta">
+          <span class="article-read-time">10 min read</span>
+          <a href="/over-exfoliation" class="article-link">Read Guide <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+</script>
+</body>
+</html>

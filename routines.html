@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barrier Repair Routines — BioSkinRepair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+  
+    /* ── Footer ─────────────────────────────────────────────── */
+    .footer-copy { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 12px; }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <span>Routines</span>
+      </div>
+      <h1>Barrier Repair Routines</h1>
+      <p class="article-hero-sub">Step-by-step protocols designed to restore barrier function — from a minimal two-step reset to a comprehensive recovery plan.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="max-width:740px; padding: 48px 24px 80px;">
+  <div class="article-content">
+
+    <p>A barrier repair routine is not the same as a regular skincare routine. The goal is not to treat, brighten, or anti-age — it is to stop irritation, restore the skin's protective layer, and maintain it. Every product decision should be evaluated against that single objective.</p>
+
+    <h2>The Core Principle</h2>
+    <p>Barrier repair follows a three-phase logic: <strong>stop the damage</strong>, <strong>support repair</strong>, <strong>maintain and protect</strong>. Most people jump to the support phase without completing the first — stripping actives, harsh cleansers, and over-exfoliation must be removed before repair products can work.</p>
+
+    <h2>The Minimal Routine (2–3 steps)</h2>
+    <p>For acutely compromised skin, the evidence strongly supports doing less. A minimal routine removes the variables that may be causing or perpetuating damage.</p>
+    <ul>
+      <li><strong>Step 1 — Cleanse:</strong> A fragrance-free, low-pH gentle cleanser. No foaming agents with sulfates. Lukewarm water only.</li>
+      <li><strong>Step 2 — Moisturize:</strong> A ceramide-based occlusive moisturizer, applied to damp skin. Look for ceramide NP, AP, and EOP alongside cholesterol and fatty acids.</li>
+      <li><strong>Step 3 — Protect (AM only):</strong> A mineral or hybrid SPF 30+. UV exposure prolongs barrier damage. This step is non-negotiable.</li>
+    </ul>
+    <p>Hold this routine for at least 2–4 weeks before reintroducing any actives.</p>
+
+    <h2>The Standard Routine (4–5 steps)</h2>
+    <p>Once baseline barrier integrity is restored, a standard routine adds targeted support without reintroducing risk.</p>
+    <ul>
+      <li><strong>AM: Gentle cleanse → Niacinamide serum → Ceramide moisturizer → SPF</strong></li>
+      <li><strong>PM: Gentle cleanse → Barrier serum (peptides or centella) → Rich ceramide moisturizer</strong></li>
+    </ul>
+    <p>Niacinamide at 5–10% stimulates ceramide synthesis and reduces barrier permeability. Peptides support the extracellular matrix. Neither is irritating at therapeutic doses.</p>
+
+    <h2>Reintroducing Actives</h2>
+    <p>After 4–6 weeks of barrier rebuilding, actives can be reintroduced one at a time, with a 2-week observation window between each. Start with the lowest effective concentration and frequency (once weekly, then increase). Do not layer multiple actives in the same routine during reintroduction.</p>
+    <p>The order of reintroduction: retinoids last, exfoliating acids second to last, vitamin C earlier.</p>
+
+    <h2>Condition-Specific Routines</h2>
+    <p>If your barrier damage is connected to a diagnosed condition, the routine logic differs:</p>
+    <ul>
+      <li><a href="/eczema">Eczema repair protocol →</a></li>
+      <li><a href="/rosacea">Rosacea-safe routine →</a></li>
+      <li><a href="/over-exfoliation">Over-exfoliation recovery protocol →</a></li>
+      <li><a href="/sensitive-skin">Sensitive skin routine →</a></li>
+    </ul>
+
+    <h2>The Full Repair Guide</h2>
+    <p>For the complete science behind these protocols — including repair timelines, ingredient deep-dives, and what to expect week by week — read the full <a href="/skin-barrier-101">Skin Barrier 101 guide</a>.</p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+</script>
+</body>
+</html>

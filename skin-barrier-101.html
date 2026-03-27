@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Barrier 101: Everything You Need to Know — BioSkinRepair</title>
+  <meta name="description" content="A complete guide to understanding the skin barrier: anatomy, signs of damage, TEWL, recovery timelines, and the core ingredients that actually work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+    /* ── Article page components ─────────────────────────────── */
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .article-body { max-width: 100%; }
+    .article-callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 28px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+    .article-product-pick { display: block; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 12px; transition: var(--transition); }
+    .article-product-pick:hover { border-color: var(--accent); }
+    /* ── Sidebar ─────────────────────────────────────────────── */
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; }
+    .toc-list ul li a:hover { color: var(--accent); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    /* ── Related articles ────────────────────────────────────── */
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    /* ── Footer bottom ───────────────────────────────────────── */
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .affiliate-disc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
+    .footer-copy { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 12px; }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+  
+    .article-img { width: 100%; border-radius: var(--radius-md); display: block; margin: 24px 0; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101" class="active">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/skin-barrier-101">Skin Barrier 101</a> <span>→</span> <span>The Complete Guide</span>
+      </div>
+      <div class="article-category-tag">Foundation Guide</div>
+      <h1>Skin Barrier 101: Everything You Need to Know</h1>
+      <p class="article-hero-sub">A science-grounded explanation of how your skin barrier works, what breaks it down, what TEWL actually means, and the most evidence-backed path to recovery.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>12 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=420&fit=crop&q=80&auto=format" alt="Close-up of healthy skin showing barrier texture" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <h2 id="what-is">What Is the Skin Barrier?</h2>
+    <p>The skin barrier — formally called the stratum corneum — is the outermost layer of the epidermis. It is roughly 10–20 cells thick and composed of dead, flattened keratinocytes embedded in a lipid matrix made up primarily of ceramides (50%), cholesterol (25%), and free fatty acids (15%). This architecture is frequently described as a "brick and mortar" structure: the corneocytes are the bricks, the lipids are the mortar.</p>
+    <p>The barrier serves two directional functions simultaneously. First, it keeps external threats out — pathogens, allergens, pollutants, and irritants. Second, it keeps water in. When either function is compromised, the downstream consequences include inflammation, sensitization, dryness, and in chronic cases, conditions like eczema or rosacea.</p>
+    <p>What matters practically is that the barrier is not a wall. It is a dynamic, semi-permeable membrane that is continuously being renewed. The average skin cell turns over every 28–40 days, and the barrier can partially self-repair within 6–72 hours of mild damage — though full restoration after significant disruption can take 4–8 weeks.</p>
+
+    <h2 id="anatomy">The Lipid Matrix in Detail</h2>
+    <p>The lipids between corneocytes are not generic fat. They are organized into highly ordered lamellar bilayers — stacked sheets that are both hydrophobic and structurally precise. Ceramides are the dominant component and have the most influence over barrier integrity. There are at least 12 known ceramide subtypes (CER 1 through 12) found in human skin, and their relative concentrations shift with age, UV exposure, and inflammation.</p>
+    <p>Cholesterol plays a different but equally essential role: it regulates membrane fluidity. Without adequate cholesterol, the bilayer becomes too rigid and cracks under mechanical or thermal stress. Free fatty acids, particularly linoleic acid, are critical for maintaining the acidic surface pH that prevents microbial overgrowth.</p>
+
+    <div class="article-callout">
+      <p>Key ratio: healthy skin maintains approximately a 1:1:1 molar ratio of ceramides to cholesterol to free fatty acids. Disrupting this ratio — through over-cleansing, harsh actives, or lipid-depleting products — degrades barrier function measurably.</p>
+    </div>
+
+    <h2 id="signs" style="scroll-margin-top:90px;">Signs of Barrier Damage</h2>
+    <p>The challenge with barrier damage is that its symptoms overlap significantly with other skin concerns. Many people cycling through expensive products are simply managing the symptoms of barrier compromise rather than resolving the underlying dysfunction.</p>
+    <p>The most consistent signs of a compromised barrier include:</p>
+    <ul>
+      <li><strong>Tightness and dehydration</strong> — a sensation of tightness especially after cleansing, distinct from dryness caused by low oil production</li>
+      <li><strong>Increased sensitivity and stinging</strong> — products that previously caused no reaction now sting or burn; this indicates altered barrier permeability</li>
+      <li><strong>Redness without clear cause</strong> — diffuse flushing or persistent mild redness, often mistaken for rosacea in early stages</li>
+      <li><strong>Breakouts after introducing actives</strong> — purging-like responses when using products with no comedogenic ingredients; often a sign the barrier is sensitized</li>
+      <li><strong>Texture changes</strong> — rough, uneven texture despite adequate hydration; caused by abnormal desquamation (skin shedding)</li>
+      <li><strong>Slow wound healing</strong> — minor cuts or blemishes taking significantly longer to resolve than they used to</li>
+    </ul>
+
+    <h2 id="tewl">TEWL: The Most Important Number You've Never Measured</h2>
+    <p>Trans-epidermal water loss (TEWL) is the rate at which water passively diffuses through the skin and evaporates into the environment. In intact, healthy skin, TEWL is minimal because the lipid matrix creates an effective seal. In compromised skin, this seal is broken and TEWL increases dramatically.</p>
+    <p>A healthy TEWL value on the face is approximately 5–10 g/m²/h. In moderate barrier disruption, values can reach 20–30 g/m²/h. In severe eczema, TEWL can exceed 40 g/m²/h — at which point the skin is effectively unable to maintain adequate hydration regardless of how much moisturizer is applied on top.</p>
+    <p>This is why moisturizer alone cannot fix a damaged barrier. If the underlying lipid matrix is depleted or disorganized, water will continue to evaporate through it. You need to restore the lipid structure, not just add water.</p>
+
+    <h2 id="recovery">Recovery Timeline</h2>
+    <p>Understanding the timeline is critical for managing expectations — and for avoiding the common mistake of abandoning a protocol too early because results aren't immediate.</p>
+    <ul>
+      <li><strong>Days 1–3:</strong> Acute repair response begins. Keratinocytes increase ceramide synthesis. Stinging and sensitivity may temporarily increase as the barrier re-seals.</li>
+      <li><strong>Days 4–10:</strong> TEWL begins to normalize. Tightness decreases. Products that previously stung should begin to feel more tolerable.</li>
+      <li><strong>Weeks 2–4:</strong> Structural repair progresses. Redness begins to subside. The microbiome starts to restabilize as surface pH normalizes.</li>
+      <li><strong>Weeks 4–8:</strong> Lipid bilayers approach normal composition and organization. Full recovery of severely damaged skin often takes the full 8 weeks.</li>
+    </ul>
+
+    <div class="article-callout">
+      <p>Rule of thumb: if you have been disrupting your barrier for years through over-exfoliation or harsh actives, expect recovery to take at least as long as the duration of disruption divided by 4. Patience is not optional — it is pharmacologically required.</p>
+    </div>
+
+    <h2 id="core-ingredients">Core Ingredients for Barrier Repair</h2>
+    <p>The ingredients with the most robust evidence base for barrier repair fall into three categories: lipid replenishment, water retention, and inflammation control.</p>
+    <h3>Lipid Replenishers</h3>
+    <p><strong>Ceramides</strong> are the single most important ingredient class for barrier repair. Look for formulations containing multiple ceramide subtypes (CER-1, CER-3, CER-6-II are most common in topical products). Ceramides alone are not sufficient; the formulation must also include cholesterol and fatty acids to mimic the natural lamellar structure.</p>
+    <p><strong>Cholesterol</strong> in topical products is underutilized. Most ceramide moisturizers include some cholesterol, but often at insufficient concentrations. Products that explicitly call out a "ceramide:cholesterol:fatty acid" ratio are more likely to have been formulated with barrier physiology in mind.</p>
+
+    <h3>Humectants</h3>
+    <p><strong>Hyaluronic acid</strong> draws water into the corneocyte layer. Its effectiveness is molecular-weight-dependent: low molecular weight HA (under 50 kDa) penetrates more deeply but can paradoxically increase TEWL in very dry environments by drawing water out rather than in. Use HA under an occlusive layer, not as a standalone.</p>
+    <p><strong>Glycerin</strong> is underrated. At concentrations of 5–10%, glycerin is as effective as hyaluronic acid for improving skin hydration, and it has decades of clinical evidence behind it. It is also far less expensive.</p>
+    <p><strong>Panthenol (Pro-Vitamin B5)</strong> has humectant properties and additionally supports keratinocyte proliferation — meaning it actively helps the barrier rebuild, not just stay hydrated during repair.</p>
+
+    <h3>Anti-Inflammatory Support</h3>
+    <p><strong>Niacinamide</strong> at 4–5% concentration has been shown in clinical studies to upregulate ceramide synthesis, reduce TEWL, and decrease skin surface glycosaminoglycans. It also has anti-inflammatory properties relevant to rosacea and sensitive skin.</p>
+
+    <h2 id="routines" style="scroll-margin-top:90px;">A Starter Routine for Barrier Recovery</h2>
+    <p>The principle of barrier repair is strategic subtraction: remove everything that disrupts, add only what restores. Most people in recovery need fewer products, not more.</p>
+    <p><strong>Morning:</strong> Gentle rinse or low-pH cleanser (pH 4.5–5.5) → ceramide moisturizer with SPF 30+ or ceramide moisturizer + mineral sunscreen. No actives.</p>
+    <p><strong>Evening:</strong> Low-pH cleanser → ceramide moisturizer (can be richer than AM). Optional: add panthenol serum before moisturizer.</p>
+    <p>Avoid for the duration of repair: physical and chemical exfoliants, retinoids, high-percentage vitamin C, benzoyl peroxide, fragrance, alcohol-based toners, and foaming cleansers with sulfates. This is not permanent — it is a recovery window of 4–8 weeks before you can reintroduce actives strategically.</p>
+
+    <div class="related-articles">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/ceramides" class="article-card" style="text-decoration:none;">
+          <img class="article-img" src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=400&h=220&fit=crop&q=80&auto=format" alt="Ceramides guide" loading="lazy" />
+          <div class="article-body">
+            <div class="category-tag">Ingredients</div>
+            <h3>Ceramides vs. Cholesterol: Which Does Your Barrier Need?</h3>
+          </div>
+        </a>
+        <a href="/ingredients" class="article-card" style="text-decoration:none;">
+          <img class="article-img" src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=220&fit=crop&q=80&auto=format" alt="Ingredient guide" loading="lazy" />
+          <div class="article-body">
+            <div class="category-tag">Ingredients</div>
+            <h3>The Ingredient Guide: What Your Barrier Actually Needs</h3>
+          </div>
+        </a>
+        <a href="/over-exfoliation" class="article-card" style="text-decoration:none;">
+          <img class="article-img" src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=220&fit=crop&q=80&auto=format" alt="Over-exfoliation recovery" loading="lazy" />
+          <div class="article-body">
+            <div class="category-tag">Routines</div>
+            <h3>The Over-Exfoliation Recovery Protocol</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <h4>In This Guide</h4>
+      <ul class="toc-list">
+        <li><a href="#what-is">What is the skin barrier?</a></li>
+        <li><a href="#anatomy">The lipid matrix</a></li>
+        <li><a href="#signs">Signs of damage</a></li>
+        <li><a href="#tewl">TEWL explained</a></li>
+        <li><a href="#recovery">Recovery timeline</a></li>
+        <li><a href="#core-ingredients">Core ingredients</a></li>
+        <li><a href="#routines">Starter routine</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Free 7-Day Guide</h4>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px;">Get a step-by-step barrier reset protocol, ingredient cheat sheet, and product picks by budget — free.</p>
+      <form class="sidebar-email-form email-form" action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm btn-full">Send Me the Guide</button>
+      </form>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Top Picks</h4>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="article-product-pick">
+          <h4>CeraVe Moisturizing Cream</h4>
+          <p>3 ceramide types, hyaluronic acid, fragrance-free. The most clinically validated drugstore barrier repair option.</p>
+          <a href="/shop" class="btn btn-gold btn-sm">View on Shop</a>
+        </div>
+        <div class="article-product-pick">
+          <h4>La Roche-Posay Cicaplast B5</h4>
+          <p>Panthenol + madecassoside for accelerated recovery. Dermatologist's first choice for severe barrier disruption.</p>
+          <a href="/shop" class="btn btn-gold btn-sm">View on Shop</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101">What Is TEWL?</a></li>
+          <li><a href="/skin-barrier-101#signs">Barrier Damage Signs</a></li>
+          <li><a href="/skin-barrier-101">Recovery Timeline</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides Guide</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">Peptides</a></li>
+          <li><a href="/ingredients">Hyaluronic Acid</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Free Guide</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="affiliate-disc">
+        <strong style="color:rgba(255,255,255,0.6);">Affiliate Disclosure:</strong> BioSkinRepair participates in affiliate programs including Amazon Associates, Paula's Choice, iHerb, and Dermstore. We may earn a commission when you buy through our links at no additional cost to you. All product recommendations are based on independent research and genuine editorial assessment.
+      </p>
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="#">Affiliate Disclosure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', function () {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      const spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+  let toastTimer;
+  function showToast(msg) {
+    let toast = document.querySelector('.toast');
+    if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; document.body.appendChild(toast); }
+    toast.textContent = msg;
+    toast.classList.remove('visible');
+    clearTimeout(toastTimer);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      toast.classList.add('visible');
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), 3200);
+    }));
+  }
+  document.querySelectorAll('form.email-form').forEach(form => {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const input = this.querySelector('input[type="email"]');
+      if (!input || !input.value) { input && input.focus(); return; }
+      this.innerHTML = '<div style="color:var(--accent);font-size:0.85rem;font-weight:500;">You\'re in! Check your inbox.</div>';
+    });
+  });
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      showToast('Page coming soon.');
+    });
+  });
+</script>
+</body>
+</html>

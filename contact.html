@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — BioSkinRepair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+    /* ── Footer bottom ───────────────────────────────────────── */
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-copy { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 12px; }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    /* ── Form ────────────────────────────────────────────────── */
+    .form-success { display: none; text-align: center; padding: 24px; background: var(--accent-light); border-radius: var(--radius-md); color: var(--accent); font-weight: 600; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <span>Contact</span>
+      </div>
+      <h1>Get in Touch</h1>
+      <p class="article-hero-sub">Questions about the content, a product recommendation, or a collaboration inquiry — we read every message.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="max-width:680px; padding: 48px 24px 80px;">
+
+  <div style="display:grid; gap:40px;">
+
+    <div style="display:grid; gap:12px;">
+      <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.7;">We typically respond within 2–3 business days. For medical skin concerns, please consult a board-certified dermatologist — we are an editorial team, not medical practitioners.</p>
+    </div>
+
+    <form id="contact-form" style="display:grid; gap:20px;">
+      <div style="display:grid; gap:6px;">
+        <label for="contact-name" style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Name</label>
+        <input
+          type="text"
+          id="contact-name"
+          name="name"
+          placeholder="Your name"
+          required
+          style="padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-sans); font-size:0.9rem; background:var(--surface); color:var(--text-primary); outline:none; transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='var(--accent)'"
+          onblur="this.style.borderColor='var(--border)'"
+        />
+      </div>
+      <div style="display:grid; gap:6px;">
+        <label for="contact-email" style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Email</label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          style="padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-sans); font-size:0.9rem; background:var(--surface); color:var(--text-primary); outline:none; transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='var(--accent)'"
+          onblur="this.style.borderColor='var(--border)'"
+        />
+      </div>
+      <div style="display:grid; gap:6px;">
+        <label for="contact-subject" style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Subject</label>
+        <select
+          id="contact-subject"
+          name="subject"
+          style="padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-sans); font-size:0.9rem; background:var(--surface); color:var(--text-primary); outline:none; appearance:none; cursor:pointer;"
+        >
+          <option value="">Select a topic</option>
+          <option value="content">Content question</option>
+          <option value="product">Product recommendation</option>
+          <option value="correction">Factual correction</option>
+          <option value="collaboration">Collaboration / partnership</option>
+          <option value="privacy">Privacy / data request</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div style="display:grid; gap:6px;">
+        <label for="contact-message" style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="6"
+          placeholder="Write your message here..."
+          required
+          style="padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-sans); font-size:0.9rem; background:var(--surface); color:var(--text-primary); outline:none; resize:vertical; line-height:1.6; transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='var(--accent)'"
+          onblur="this.style.borderColor='var(--border)'"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="justify-self:start;">Send Message</button>
+    </form>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    contactForm.innerHTML = '<div class="form-success"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><h3>Message sent</h3><p>Thanks for reaching out. We\'ll get back to you within 2–3 business days.</p></div>';
+  });
+</script>
+</body>
+</html>

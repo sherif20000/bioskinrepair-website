@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Over-Exfoliation Recovery Protocol — BioSkinRepair</title>
+  <meta name="description" content="How to recognize over-exfoliation damage, what happens to your barrier when you over-exfoliate, and the step-by-step recovery protocol that actually works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .stat-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .stat-box-number { font-family: "Playfair Display", serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-box-label { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
+    @media (max-width: 600px) { .stat-boxes { grid-template-columns: 1fr; } }
+    .article-callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 28px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+    .article-product-picks { margin: 32px 0; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+    .article-product-picks h3 { margin-bottom: 20px; font-size: 1rem; color: var(--text-primary); }
+    .article-product-pick { display: block; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 12px; transition: var(--transition); }
+    .article-product-pick:hover { border-color: var(--accent-mid); background: var(--bg-alt); }
+    .pick-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .pick-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .pick-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+    .pick-cta { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; line-height: 1.4; }
+    .toc-list ul li a:hover { color: var(--accent); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-articles h2 { font-size: 1.5rem; color: var(--text-primary); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .related-grid .article-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
+    .article-card-body h3 { font-size: 0.95rem; color: var(--text-primary); line-height: 1.35; }
+    .article-card-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/eczema" class="active">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/skin-conditions">Skin Conditions</a> <span>→</span> <span>Over-Exfoliation</span>
+      </div>
+      <div class="article-category-tag">Recovery Protocol</div>
+      <h1>The Over-Exfoliation Recovery Protocol</h1>
+      <p class="article-hero-sub">Over-exfoliation is the most common self-inflicted barrier damage in modern skincare routines. Here is exactly what is happening to your skin, how to know if you are doing it, and a structured recovery protocol to get your barrier back.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>11 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=1200&h=420&fit=crop&q=80&auto=format" alt="Skincare products including exfoliating acids" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="stat-box-number">72 hrs</div>
+        <div class="stat-box-label">minimum time for mild barrier self-repair</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">4–8 wks</div>
+        <div class="stat-box-label">for full ceramide recovery after significant damage</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">28–40</div>
+        <div class="stat-box-label">days in a natural skin cell turnover cycle</div>
+      </div>
+    </div>
+
+    <h2 id="what-is">What Is Over-Exfoliation?</h2>
+    <p>Over-exfoliation is the state of using exfoliating agents — chemical acids, physical scrubs, or enzyme treatments — at a frequency or concentration that exceeds the skin's ability to self-repair between sessions. The result is a net loss of the stratum corneum's structural integrity over time, even as the skin may temporarily appear smoother after each session.</p>
+    <p>The paradox of over-exfoliation is that the early stages feel productive. Skin appears brighter, pores look smaller, and makeup sits more smoothly. This creates a positive feedback loop that encourages users to exfoliate more, or to add additional acid products, before the underlying damage becomes apparent. By the time visible symptoms appear — stinging, persistent redness, shiny tightness, or breakouts that resemble purging — the barrier has often been significantly compromised for weeks.</p>
+    <p>The condition is more common than it has ever been, largely because modern skincare culture has normalized daily use of exfoliating acids. Glycolic acid toners used morning and night, combined with a retinol in the evening and a vitamin C serum in the morning, represent an exfoliant load that the majority of skin types cannot tolerate chronically without barrier consequences.</p>
+
+    <h2 id="mechanism">What Over-Exfoliation Actually Does to Your Barrier</h2>
+    <p>The stratum corneum, despite being composed of dead cells, is a precisely engineered structure. The cells — corneocytes — are held together by protein bridges called desmosomes and embedded in a lipid matrix organized into lamellar bilayers. The acid mantle, a thin film of sweat and sebum, maintains the skin's surface pH between 4.5 and 5.5, which is critical for the activity of the enzymes (serine proteases) that control natural desquamation — the orderly shedding of dead skin cells.</p>
+    <p>Exfoliating acids work by interrupting the desmosomes and accelerating desquamation. At appropriate frequency and concentration, this is beneficial: it removes the buildup of dead cells that can cause uneven texture and dull appearance. The problem arises when exfoliation is applied before the barrier has rebuilt the cells it shed from the previous session.</p>
+    <p>At the chemical level, over-exfoliation produces several simultaneous problems. Alpha hydroxy acids (glycolic, lactic, mandelic) lower skin surface pH below 4.0, which over-activates serine proteases, causing them to degrade the desmosomes holding together the cells that should not yet be shed. Ceramide synthesis is disrupted, as the keratinocytes are being cycled too rapidly to complete normal lipid lamellar body secretion. TEWL rises as the compromised lipid matrix becomes permeable. The skin's surface becomes thin enough that capillaries are visible, which is why over-exfoliated skin has a characteristic "shiny" or "glassy" appearance under certain light conditions.</p>
+
+    <div class="article-callout">
+      <strong>The paradox of "purging" vs. damage:</strong> True purging from an acid exfoliant lasts no longer than one full skin cell cycle — approximately 4–6 weeks. If breakouts, sensitivity, or irritation extend beyond 6 weeks after introducing an acid, or if they appear during a routine you have used before without issue, the cause is most likely barrier damage, not purging. Purging only occurs with actives that accelerate cell turnover; not all acids cause it, and it does not cause stinging, burning, or persistent redness.
+    </div>
+
+    <h2 id="signs">Recognizing Over-Exfoliation Damage</h2>
+    <p>The symptoms of over-exfoliation exist on a spectrum from mild to severe, and they do not always appear immediately after the damage occurs.</p>
+    <p><strong>Early signs</strong> include increased sensitivity to products that were previously well tolerated, a feeling of tightness that is not relieved by moisturizer, mild stinging during cleansing, and skin that feels "thin" or slightly uncomfortable.</p>
+    <p><strong>Moderate signs</strong> include persistent redness or a flushed appearance, breakouts in areas not normally prone to acne (particularly on the cheeks and temples, where barrier damage is most apparent), visible peeling that is different from normal flaking, and a sensation of warmth or burning after applying any product including plain water.</p>
+    <p><strong>Severe signs</strong> include the "glass skin" sheen — not the desirable radiance but an actual translucency caused by thinned stratum corneum — extreme reactivity to virtually all products including basic moisturisers, secondary infection (S. aureus colonization), and in some cases, the development of perioral dermatitis or rosacea-like symptoms in those with a predisposition.</p>
+    <p>A useful diagnostic question: does your skin sting when you apply products that contain no potential irritants? A moisturizer with only water, glycerin, ceramides, and petrolatum should not sting. If it does, your barrier is compromised.</p>
+
+    <h2 id="protocol">The Recovery Protocol</h2>
+    <p>Recovery from over-exfoliation requires stopping the damage first, then providing the materials the skin needs to rebuild. The timeline is not fast, and the temptation to restart exfoliation too early is the most common reason recovery stalls.</p>
+
+    <p><strong>Phase 1: Complete cessation (Days 1–14).</strong> Stop all exfoliating agents — acids (AHA, BHA, PHA), retinoids in all forms, enzyme exfoliants, and physical scrubs. This includes toners with AHA percentages above 1%, vitamin C serums at low pH (below 3.0), and any product described as "resurfacing." You should also temporarily stop actives that are not primarily barrier-repairing: vitamin C serums (lower barrier pH tolerance), high-strength niacinamide (above 5%), and benzoyl peroxide. If you are using prescription retinoids, discuss with your prescribing dermatologist before stopping.</p>
+    <p><strong>Phase 2: Barrier-first routine (Days 1 through full recovery).</strong> Simplify to three products: a gentle pH-balanced cleanser, a ceramide-dominant moisturiser, and mineral SPF during the day. The moisturiser should contain ceramides, cholesterol, and free fatty acids — the three essential barrier lipids — plus a humectant (glycerin or hyaluronic acid) to support water retention in the epidermis. Apply the moisturiser while skin is still slightly damp from cleansing to maximise hydration uptake. Occlusive agents — petrolatum, squalane, dimethicone — applied over the moisturiser help create a temporary seal that reduces TEWL while the barrier rebuilds.</p>
+    <p><strong>Phase 3: Reintroduction (Week 3 onward, if symptoms resolve).</strong> Reintroduce one product at a time, no more frequently than one new product per two weeks. Start with the least potent version of any active and apply it once per week before increasing to twice, then three times. If stinging, redness, or sensitivity returns, pause for another two weeks before trying again. Acids should be the last category reintroduced, and only when the skin is completely comfortable with a full moisturiser-only routine.</p>
+    <p><strong>What to add during recovery.</strong> Centella asiatica (CICA) formulations and niacinamide at 2–4% are the most evidence-supported additions during barrier recovery. Centella's triterpenoids — asiaticoside, madecassoside — promote collagen synthesis and have well-documented anti-inflammatory activity. Panthenol (provitamin B5) at concentrations of 1–5% has demonstrated improvements in TEWL and skin hydration in clinical studies. Both can be introduced gently in Phase 2 if well tolerated.</p>
+
+    <h2 id="reintroduction">How to Rebuild a Smarter Exfoliation Routine</h2>
+    <p>Once recovery is complete, the goal is not to return to the previous routine. The previous routine caused the damage. A smarter approach uses exfoliation strategically — as an intermittent tool, not a daily maintenance step.</p>
+    <p>The maximum frequency that most skin types can sustain without barrier compromise is 2–3 times per week for mild AHAs (5% glycolic or lactic), or once per week for stronger formulations (10%+). Retinoids should be used on separate evenings from acids. Vitamin C serum in the morning and a BHA in the evening of the same day represents the daily maximum acid load for even resilient skin types. If in doubt, use fewer acids, not more.</p>
+
+    <div class="article-product-picks">
+      <h3>Recovery Routine Essentials</h3>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Phase 1 Moisturiser</div>
+        <div class="pick-name">CeraVe Moisturising Cream</div>
+        <div class="pick-desc">All three essential barrier lipids (ceramides 1, 3, 6-II), hyaluronic acid, and MVE technology for continuous 24-hour release. Fragrance-free, ophthalmologist-tested, suitable even for the most reactive post-exfoliation skin.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Barrier-Repair Booster</div>
+        <div class="pick-name">COSRX Centella Blemish Cream</div>
+        <div class="pick-desc">80% Centella asiatica extract combined with panthenol and madecassoside. Reduces inflammation, promotes barrier reconstruction, and is light enough to layer under a ceramide moisturiser during recovery phases.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Gentle Reintroduction Acid</div>
+        <div class="pick-name">The Ordinary Lactic Acid 5% + HA</div>
+        <div class="pick-desc">At 5%, lactic acid provides gentle resurfacing with a larger molecular size than glycolic acid — meaning shallower penetration and lower irritation risk. Hyaluronic acid in the formulation mitigates temporary dryness. Use once weekly when reintroducing acids.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#what-is">What Is Over-Exfoliation?</a></li>
+          <li><a href="#mechanism">What It Does to Your Barrier</a></li>
+          <li><a href="#signs">Recognizing the Damage</a></li>
+          <li><a href="#protocol">The Recovery Protocol</a></li>
+          <li><a href="#reintroduction">Rebuilding Smarter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Recovery Timeline</strong>
+      <ul style="margin-top: 12px; padding-left: 0; list-style: none; line-height: 1;">
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;"><strong>Days 1–3:</strong> TEWL begins decreasing</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;"><strong>Week 1–2:</strong> Stinging and redness reduce</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;"><strong>Week 3–4:</strong> Ceramide levels normalizing</li>
+        <li style="padding: 8px 0; font-size: 0.9rem;"><strong>Week 6–8:</strong> Full barrier function restored</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A 7-day structured protocol for rebuilding after barrier damage — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: Everything You Need to Know</h3>
+        <p>The anatomy of the stratum corneum, TEWL explained, and the ingredients that rebuild it.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/ceramides" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=400&h=220&fit=crop&q=80&auto=format" alt="Ceramides in skincare" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Ingredients</span>
+        <h3>Ceramides vs. Cholesterol: Which Does Your Barrier Need?</h3>
+        <p>The three essential lipids are not interchangeable. Here is when each one matters most.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/sensitive-skin" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=400&h=220&fit=crop&q=80&auto=format" alt="Sensitive skin" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Skin Conditions</span>
+        <h3>Sensitive Skin vs. Damaged Barrier: Know the Difference</h3>
+        <p>One is a skin type. The other is a temporary state. Treating them the same is a mistake.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Email form
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+
+  // Intercept placeholder links
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceramides vs. Cholesterol: Which Does Your Skin Barrier Actually Need? — BioSkinRepair</title>
+  <meta name="description" content="Ceramides, cholesterol, and free fatty acids are the three essential skin barrier lipids. They are not interchangeable. Here is what the research shows about when each one matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Article page components ─────────────────────────────── */
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-meta-bar span { display: flex; align-items: center; gap: 4px; }
+    .article-meta-bar .sep { color: var(--border); }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    /* ── Stat boxes ──────────────────────────────────────────── */
+    .stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .stat-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .stat-box-number { font-family: "Playfair Display", serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-box-label { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
+    /* ── Callout / product picks ─────────────────────────────── */
+    .article-callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 28px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+    .article-product-picks { margin: 32px 0; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+    .article-product-picks h3 { margin-bottom: 18px; }
+    .article-product-pick { display: block; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 12px; transition: var(--transition); }
+    .article-product-pick:hover { border-color: var(--accent); }
+    .pick-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .pick-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .pick-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+    .pick-cta { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+    /* ── Sidebar ─────────────────────────────────────────────── */
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; }
+    .toc-list ul li a:hover { color: var(--accent); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    /* ── Related articles ────────────────────────────────────── */
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .affiliate-disc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
+    .footer-copy { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 12px; }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients" class="active">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/ingredients">Ingredients</a> <span>→</span> <span>Ceramides</span>
+      </div>
+      <div class="article-category-tag">Ingredient Science</div>
+      <h1>Ceramides vs. Cholesterol: Which Does Your Skin Barrier Actually Need?</h1>
+      <p class="article-hero-sub">The three essential barrier lipids — ceramides, cholesterol, and free fatty acids — are not interchangeable and do not serve identical functions. Knowing what each one does changes which product formulations you should prioritise.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>12 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=1200&h=420&fit=crop&q=80&auto=format" alt="Ceramide skincare cream texture close-up" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="stat-box-number">50%</div>
+        <div class="stat-box-label">of barrier lipids are ceramides</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">25%</div>
+        <div class="stat-box-label">of barrier lipids are cholesterol</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">12+</div>
+        <div class="stat-box-label">distinct ceramide subtypes identified in human skin</div>
+      </div>
+    </div>
+
+    <h2 id="architecture">The Architecture of the Lipid Matrix</h2>
+    <p>The space between corneocytes in the stratum corneum is not empty. It is filled with a highly organized lipid matrix arranged into lamellar bilayers — alternating hydrophilic and hydrophobic layers stacked like geological strata. This structure is what creates the barrier's semi-permeability: water cannot pass through easily, and most external molecules cannot pass in easily either.</p>
+    <p>The three lipid classes that compose this matrix are ceramides (approximately 50% by molar composition), cholesterol (approximately 25%), and free fatty acids (approximately 15%), with minor contributions from other lipid species. These three do not simply coexist — they require each other to form the correct lamellar architecture. Apply only ceramides without cholesterol and you get lipid structures that are disorganized and functionally ineffective. Apply only cholesterol without ceramides and the barrier is similarly compromised. The precise ratio of all three, maintained in a roughly equimolar proportion, is what determines whether the lamellar bilayers form properly.</p>
+    <p>This is the central insight that most ceramide-only skincare products miss. Adding ceramides to a product does not automatically repair the barrier if the cholesterol and fatty acid components are not also present. The skin cannot use ceramides alone to rebuild lamellar structures, any more than you can build a three-component material from only one of its parts.</p>
+
+    <h2 id="ceramides">What Ceramides Specifically Do</h2>
+    <p>Ceramides are sphingolipids — a class of lipid built on a sphingosine backbone. At least 12 distinct ceramide subtypes (designated CER 1 through CER 12, or by their molecular designations such as EOS, NP, AP, NS, and others) are present in human stratum corneum in varying concentrations. They are synthesized inside the keratinocytes and secreted into the intercellular space via lamellar bodies — small membrane-bound vesicles that release their lipid contents as cells differentiate toward the skin surface.</p>
+    <p>Among the ceramide subtypes, CER 1 (EOS) is structurally unique and functionally critical. It has an unusually long fatty acid chain — up to 34 carbons — and contains a linoleic acid esterification at the end. This extended structure serves as a "rivet" that holds the lamellar bilayers together across their full thickness, providing the scaffold around which other lipids organize. CER 1 deficiency, which is consistently observed in both eczema and aged skin, correlates more strongly with barrier dysfunction than deficiency in any other single ceramide subtype.</p>
+    <p>CER 3 (NP) is the most abundant ceramide in healthy skin and plays a primary role in maintaining the lamellar phase — keeping the lipids organized rather than disordered. CER 6 (AP) has been associated specifically with the permeability barrier and its recovery after disruption.</p>
+    <p>Ceramide levels decrease with age, with UV exposure, with inflammatory conditions (eczema, psoriasis, rosacea), and with harsh surfactant exposure. This makes topical ceramide replenishment scientifically rational rather than merely cosmetic — there is a clear documented deficit, and the mechanism by which topically applied ceramides can partially restore lamellar structure has been characterized in clinical studies.</p>
+
+    <h2 id="cholesterol">What Cholesterol Specifically Does</h2>
+    <p>Cholesterol in the skin barrier is not the same concern as serum cholesterol in cardiovascular medicine. Skin surface cholesterol is an essential structural lipid, not a biomarker of metabolic disease. Its role in the lamellar bilayers is distinct from ceramides: where ceramides provide the structural framework, cholesterol regulates the fluidity and phase behavior of the entire lipid matrix.</p>
+    <p>At body temperature, without cholesterol, skin lipids would exist in a highly ordered, rigid "gel phase" that is impermeable but also too inflexible to function as a dynamic barrier. Cholesterol inserts between the ceramide and fatty acid molecules and prevents the lipid matrix from becoming overly rigid, maintaining it in a functional "liquid-crystalline" state that is both impermeable and appropriately fluid for normal skin movement and cell turnover.</p>
+    <p>This is why cholesterol becomes progressively more important in aged skin. As we age, ceramide synthesis decreases and the ceramide profile shifts toward shorter-chain species. Cholesterol supplementation in topical products becomes disproportionately important in post-menopausal skin and in individuals over 60, where the reduced ceramide content makes the cholesterol contribution to lamellar fluidity more critical. Multiple studies comparing barrier repair speeds in aged skin have shown that formulations with a higher cholesterol ratio — 1:1:1 ceramide:cholesterol:fatty acid by molar content — outperform ceramide-dominant formulations in the 65+ population.</p>
+    <p>For younger skin, the reverse is true: ceramide-dominant formulations (3:1:1 or 2:1:1 ceramide:cholesterol:fatty acid) show superior TEWL reduction. The optimal ratio is age-dependent.</p>
+
+    <div class="article-callout">
+      <strong>The ratio matters more than the quantity:</strong> Research by Elias and colleagues demonstrated that applying any one of the three essential lipids alone to disrupted barrier actually slowed repair compared to no treatment at all — because the imbalanced lipid ratio interfered with the skin's endogenous repair signaling. Formulations that provide all three lipids in approximately equimolar ratios show the fastest and most complete barrier recovery.
+    </div>
+
+    <h2 id="fatty-acids">What Free Fatty Acids Do</h2>
+    <p>The free fatty acid component of the lamellar matrix is dominated by long-chain saturated and monounsaturated fatty acids, with linoleic acid (an omega-6 polyunsaturated fatty acid) playing a specialized structural role. Linoleic acid is the essential fatty acid required for CER 1 synthesis — without adequate linoleic acid, the skin cannot produce this critical ceramide subtype, regardless of how much ceramide precursor is available.</p>
+    <p>Free fatty acids also contribute to the acid mantle — the skin's surface pH of 4.5–5.5 — through their contribution to the overall acidic milieu of the stratum corneum. Alkaline detergents and high-pH cleansers neutralize free fatty acids at the skin surface, disrupting both the acid mantle and the local lipid environment simultaneously.</p>
+    <p>In topical formulations, fatty acids commonly appear as capric/caprylic triglycerides, linoleic acid, palmitic acid, stearic acid, or in the form of plant-derived oils rich in the appropriate fatty acid profile. Sunflower seed oil (high in linoleic acid), for example, has been used as a barrier supplement in neonatal care for this reason.</p>
+
+    <h2 id="formulations">Reading Formulations Intelligently</h2>
+    <p>When evaluating a ceramide-containing product, the most important question is whether it also contains cholesterol and fatty acids in a meaningful concentration — not just ceramides as a marketing claim. Look for:</p>
+    <ul>
+      <li><strong>Ceramide subtypes by INCI name:</strong> ceramide NP, ceramide AP, ceramide EOP, ceramide NG, ceramide NS, ceramide EOS. Products listing only "ceramides" without specifying type may contain isolated fractions that are less effective than a complete ceramide complex.</li>
+      <li><strong>Cholesterol</strong> listed as an ingredient — actual cholesterol, not plant sterols, which do not perform identically. Some formulations use phytosterols as a partial substitute, which may be adequate but is not equivalent.</li>
+      <li><strong>Fatty acids</strong> — linoleic acid, palmitic acid, stearic acid, or a plant oil high in linoleic acid (sunflower, rosehip, evening primrose).</li>
+      <li><strong>Position in the ingredient list:</strong> Ingredients are listed in descending order of concentration. A ceramide listed 18th, after several water-binding agents, humectants, and emollients, may be present at a concentration too low to have clinical significance.</li>
+    </ul>
+    <p>The products with the strongest clinical evidence for barrier repair — including CeraVe (developed in collaboration with dermatologists specifically around this lipid triple), Skin Barrier Repair by La Roche-Posay, and Eucerin's Eczema Relief line — all include all three lipid classes in meaningful concentrations with documented delivery systems.</p>
+
+    <div class="article-product-picks">
+      <h3>Top-Rated Ceramide Formulations</h3>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Best Overall Ceramide Cream</div>
+        <div class="pick-name">CeraVe Moisturising Cream</div>
+        <div class="pick-desc">Ceramides 1, 3, and 6-II (covering EOS, NP, and AP subtypes) plus cholesterol, with MVE delivery for 24-hour release. Developed specifically around the lamellar bilayer restoration concept. The most studied OTC ceramide formulation.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Best for Mature Skin</div>
+        <div class="pick-name">Eucerin Original Healing Cream</div>
+        <div class="pick-desc">Formulated with a higher relative cholesterol concentration suited to the aged skin lipid profile. Urea adds additional humectancy for the drier stratum corneum typical in post-50 skin. No fragrance.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Best Lightweight Option</div>
+        <div class="pick-name">La Roche-Posay Toleriane Double Repair Moisturiser</div>
+        <div class="pick-desc">Ceramide-NP, cholesterol, and prebiotic thermal water in a non-greasy lotion format. Includes niacinamide 2% for additional barrier support and anti-inflammatory benefit without the heaviness of a full cream.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#architecture">The Lipid Matrix</a></li>
+          <li><a href="#ceramides">What Ceramides Do</a></li>
+          <li><a href="#cholesterol">What Cholesterol Does</a></li>
+          <li><a href="#fatty-acids">What Fatty Acids Do</a></li>
+          <li><a href="#formulations">Reading Formulations</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>The Three Essential Lipids</strong>
+      <ul style="margin-top: 12px; padding-left: 0; list-style: none;">
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Ceramides (~50%)</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">Structural scaffold; reduces TEWL; most important in younger and eczema-prone skin</p>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Cholesterol (~25%)</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">Regulates lipid fluidity; becomes more important with age; critical for phase behavior</p>
+        </li>
+        <li style="padding: 10px 0;">
+          <strong style="font-size: 0.9rem;">Free Fatty Acids (~15%)</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">Supports ceramide synthesis; maintains acid mantle; linoleic acid is critical</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A 7-day structured protocol for rebuilding a compromised barrier — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: Everything You Need to Know</h3>
+        <p>The anatomy of the stratum corneum, TEWL explained, and the ingredients that rebuild it.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/ingredients" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1599847987657-881f11b92a75?w=400&h=220&fit=crop&q=80&auto=format" alt="Skincare ingredients" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Ingredients</span>
+        <h3>The Ingredient Guide: What Your Barrier Actually Needs</h3>
+        <p>Ceramides, niacinamide, panthenol, and more — what the research actually shows.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/eczema" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?w=400&h=220&fit=crop&q=80&auto=format" alt="Eczema skin condition" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Skin Condition</span>
+        <h3>Eczema and the Skin Barrier: A Complete Guide</h3>
+        <p>How barrier dysfunction drives the itch-scratch cycle, and the evidence-backed treatment approach.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Email form
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+
+  // Intercept placeholder links
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>

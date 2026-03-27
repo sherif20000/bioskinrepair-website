@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensitive Skin vs. Damaged Barrier: Know the Difference — BioSkinRepair</title>
+  <meta name="description" content="True sensitive skin is a genetic skin type. A damaged barrier is a temporary, fixable condition. Confusing the two leads to routines that help neither. Here is how to tell them apart." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .stat-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .stat-box-number { font-family: "Playfair Display", serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-box-label { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
+    @media (max-width: 600px) { .stat-boxes { grid-template-columns: 1fr; } }
+    .article-callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 28px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+    .article-product-picks { margin: 32px 0; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+    .article-product-picks h3 { margin-bottom: 20px; font-size: 1rem; color: var(--text-primary); }
+    .article-product-pick { display: block; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 12px; transition: var(--transition); }
+    .article-product-pick:hover { border-color: var(--accent-mid); background: var(--bg-alt); }
+    .pick-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .pick-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .pick-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+    .pick-cta { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; line-height: 1.4; }
+    .toc-list ul li a:hover { color: var(--accent); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-articles h2 { font-size: 1.5rem; color: var(--text-primary); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .related-grid .article-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
+    .article-card-body h3 { font-size: 0.95rem; color: var(--text-primary); line-height: 1.35; }
+    .article-card-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/eczema" class="active">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/skin-conditions">Skin Conditions</a> <span>→</span> <span>Sensitive Skin</span>
+      </div>
+      <div class="article-category-tag">Skin Type Guide</div>
+      <h1>Sensitive Skin vs. Damaged Barrier: Know the Difference</h1>
+      <p class="article-hero-sub">One is a permanent skin type with a genetic basis. The other is a temporary, reversible condition caused by external damage. The skincare implications are entirely different — and getting them confused makes both worse.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>10 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=1200&h=420&fit=crop&q=80&auto=format" alt="Close-up of sensitive facial skin texture" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="stat-box-number">50–70%</div>
+        <div class="stat-box-label">of people self-report "sensitive skin"</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">~15%</div>
+        <div class="stat-box-label">estimated to have clinically verified sensitivity</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">4–8 wks</div>
+        <div class="stat-box-label">to fully repair a damaged barrier with correct care</div>
+      </div>
+    </div>
+
+    <h2 id="definition">The Core Distinction</h2>
+    <p>The terms "sensitive skin" and "damaged barrier" are used interchangeably in most skincare contexts — by brands, influencers, and consumers alike. They describe different conditions with different causes, different permanence, and critically different appropriate interventions.</p>
+    <p><strong>True sensitive skin</strong> is a skin type, not a condition. It has a genetic and neurobiological basis. People with genuinely sensitive skin have a higher density of cutaneous nerve endings and more reactive TRPV1 channels — the same pain receptors that respond to capsaicin and heat. Their skin reacts to stimuli that would not bother most people: temperature changes, certain textures, mild fragrance concentrations. Importantly, people with true sensitive skin can have a perfectly intact skin barrier. Their reactivity is neurogenic — driven by the nervous system — not structural.</p>
+    <p><strong>A damaged skin barrier</strong> is a temporary, acquired condition. It results from external insults: over-exfoliation, harsh surfactants, environmental stripping, inadequate moisturisation, physical trauma. The barrier's ceramide content is depleted, TEWL is elevated, and the skin is structurally permeable in a way that allows irritants, allergens, and pathogens to penetrate more easily. With the right intervention, a damaged barrier can be fully restored. Without intervention, or with continued damage, it remains compromised and behaves exactly like sensitive skin — stinging, reacting to products, flushing — even though the mechanism is entirely different.</p>
+    <p>The overlap between these two states is substantial, which is the source of most confusion. A person with genetically sensitive skin can also develop barrier damage. A person with a damaged barrier will experience what feels exactly like sensitive skin until the barrier recovers. And a person with neither condition may develop temporary reactivity during periods of physiological stress (illness, hormonal shifts, sleep deprivation) that resolves on its own.</p>
+
+    <h2 id="diagnosis">How to Tell the Difference</h2>
+    <p>There is no clinical test that most consumers can perform at home, but a structured history of your skin's behavior provides strong diagnostic signals.</p>
+    <p><strong>Ask: Has your skin always been reactive, or did it become reactive?</strong> True sensitive skin is typically present from early adulthood or childhood and is consistent across stable life periods. If your skin was not particularly reactive two years ago and has become reactive since, that is a strong indicator of acquired barrier damage rather than an intrinsic skin type.</p>
+    <p><strong>Ask: What are your triggers?</strong> Neurogenic sensitivity tends to react to temperature, physical contact, strong smells, and emotional stress. Barrier-damaged skin reacts specifically to topical products — particularly anything with alcohol, fragrance, acids, or surfactants — and to environmental drying (low humidity, wind, heated indoor air). The two can overlap, but product reactivity as the dominant trigger points toward barrier dysfunction.</p>
+    <p><strong>Ask: Does your skin sting when you apply a minimal product?</strong> A moisturiser containing only water, glycerin, ceramides, and petrolatum — with no active ingredients, no fragrance, no alcohol — should not sting on intact skin. If it does, your barrier is compromised. This is one of the most reliable functional indicators of barrier damage versus neurogenic sensitivity.</p>
+    <p><strong>Ask: Does it change with your routine?</strong> Barrier-damaged skin will improve significantly if you stop all actives and use only gentle, barrier-supporting products for 4–8 weeks. True sensitive skin does not dramatically improve with routine changes because the sensitivity is neurological, not structural. If a period of barrier repair resolves most of your reactivity, you were dealing primarily with barrier damage, not a permanent skin type.</p>
+
+    <div class="article-callout">
+      <strong>The label problem:</strong> "Sensitive skin" has become a marketing category rather than a clinical descriptor. Products labeled "for sensitive skin" may still contain fragrance, alcohol denat, or witch hazel — all of which are genuinely problematic for both sensitive and barrier-damaged skin. Reading ingredient lists matters more than reading the front label.
+    </div>
+
+    <h2 id="true-sensitive">Managing True Sensitive Skin</h2>
+    <p>If your skin has been reactive for as long as you can remember, with or without barrier damage, the goal is to minimize neurogenic stimulation while maintaining the barrier that does exist.</p>
+    <p>The most important habit change is temperature: use lukewarm water, avoid steam, and do not apply cold products directly to the face. Extreme temperatures activate TRPV1 channels directly regardless of barrier status. Second is friction: always pat rather than rub, use soft cloths, and remove makeup with a gentle micellar water rather than physical cleansing pads.</p>
+    <p>Product selection should prioritize what is absent rather than what is present. Fragrance-free (not just "unscented" — these are different), alcohol-free, and formulated with preserved systems that do not include methylisothiazolinone or MI/MCI preservatives, which are among the most common contact sensitizers. A short ingredient list is generally preferable to a long one: fewer ingredients means fewer potential triggers.</p>
+    <p>Topical approaches that specifically address neurogenic sensitivity include niacinamide (which reduces the release of inflammatory mediators from mast cells), green tea extract (EGCG has documented TRPV1 modulation), and colloidal oat, which has been shown to reduce histamine-driven skin reactions in clinical trials.</p>
+
+    <h2 id="barrier-damage">Managing Acquired Barrier Damage</h2>
+    <p>If your reactivity is acquired — especially if it followed a change in skincare routine, a course of aggressive treatment, or a period of stress or illness — the approach is structured barrier repair with a clear timeline.</p>
+    <p>Strip the routine to a minimal three-product core: a gentle non-foaming cleanser at pH 5–6, a ceramide-dominant moisturiser with all three barrier lipids (ceramides, cholesterol, free fatty acids), and mineral SPF during the day. No actives, no acids, no retinoids. This is not a permanent routine — it is a recovery phase with a defined end point.</p>
+    <p>The ceramide moisturiser is the most important element. The formulation should contain at minimum two of the clinically studied ceramide subtypes (CER 1/EOS, CER 3/NP, or CER 6-II/AP), combined with cholesterol and either linoleic or oleic acid. MVE (multivesicular emulsion) delivery technology, used in CeraVe products, extends release over 24 hours and shows superior TEWL reduction in comparative studies.</p>
+    <p>Apply the moisturiser within three minutes of cleansing — the "soak and seal" technique — to lock in hydration before the surface film evaporates. A thin layer of a simple occlusive (petrolatum, squalane) over the moisturiser accelerates TEWL reduction in the acute recovery phase.</p>
+    <p>Expect measurable improvement in stinging and redness within 1–2 weeks. Surface texture will normalize by weeks 3–4. Full barrier function and product tolerance typically restores in 6–8 weeks. At that point, actives can be carefully reintroduced one at a time, at minimum effective concentrations.</p>
+
+    <div class="article-product-picks">
+      <h3>Recommended Products for Both Skin States</h3>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Universal Barrier Moisturiser</div>
+        <div class="pick-name">CeraVe Moisturising Cream</div>
+        <div class="pick-desc">Suitable for both true sensitive skin and barrier-damaged skin. Ceramides 1, 3, and 6-II with MVE technology for extended delivery. Hyaluronic acid for humectancy. No fragrance, no alcohol, no known sensitizers.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Anti-Neurogenic Active</div>
+        <div class="pick-name">Paula's Choice Calm Redness Relief Serum</div>
+        <div class="pick-desc">Niacinamide 3% for mast cell stabilization, green tea extract for TRPV1 modulation, and bisabolol for its documented anti-inflammatory and calming properties. Useful across both sensitive skin types.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+      <a href="/shop" class="article-product-pick">
+        <div class="pick-label">Gentle Cleanser</div>
+        <div class="pick-name">Vanicream Gentle Facial Cleanser</div>
+        <div class="pick-desc">Formulated without dyes, fragrance, masking fragrance, lanolin, parabens, or formaldehyde releasers. A rare example of a cleanser with near-zero contact allergen potential, appropriate for both neurogenic sensitivity and barrier damage.</div>
+        <div class="pick-cta">View in Shop →</div>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#definition">The Core Distinction</a></li>
+          <li><a href="#diagnosis">How to Tell the Difference</a></li>
+          <li><a href="#true-sensitive">Managing True Sensitive Skin</a></li>
+          <li><a href="#barrier-damage">Managing Barrier Damage</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Quick Diagnostic</strong>
+      <ul style="margin-top: 12px; padding-left: 0; list-style: none;">
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; line-height: 1.5;"><strong>Always been reactive?</strong><br>Likely neurogenic sensitivity</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; line-height: 1.5;"><strong>Became reactive recently?</strong><br>Likely acquired barrier damage</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; line-height: 1.5;"><strong>Improves with routine strip?</strong><br>Confirms barrier damage</li>
+        <li style="padding: 8px 0; font-size: 0.88rem; line-height: 1.5;"><strong>Unchanged after 8 weeks repair?</strong><br>Points to intrinsic sensitivity</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A 7-day structured protocol for rebuilding a compromised barrier — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: Everything You Need to Know</h3>
+        <p>The anatomy of the stratum corneum, TEWL explained, and the ingredients that rebuild it.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/over-exfoliation" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=220&fit=crop&q=80&auto=format" alt="Exfoliation products" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Recovery Protocol</span>
+        <h3>The Over-Exfoliation Recovery Protocol</h3>
+        <p>What over-exfoliation does to your barrier and how to recover in 4–8 weeks.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/eczema" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?w=400&h=220&fit=crop&q=80&auto=format" alt="Eczema skin condition" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Skin Condition</span>
+        <h3>Eczema and the Skin Barrier: A Complete Guide</h3>
+        <p>How barrier dysfunction drives the itch-scratch cycle, and the evidence-backed treatment approach.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Email form
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+
+  // Intercept placeholder links
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>

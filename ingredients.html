@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ingredient Guide: What Your Skin Barrier Actually Needs — BioSkinRepair</title>
+  <meta name="description" content="The five most evidence-backed ingredients for skin barrier repair — ceramides, niacinamide, hyaluronic acid, panthenol, and centella asiatica — with mechanisms, concentrations, and what they cannot do." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .ingredient-tag-mechanism {
+      display: inline-block;
+      background: rgba(45, 90, 61, 0.08);
+      color: #2D5A3D;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin-top: 2px;
+    }
+    .ingredient-tag-conc {
+      display: block;
+      font-size: 0.8rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 4px;
+    }
+  
+    /* ── Article page components ─────────────────────────────── */
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    /* ── Ingredient cards ────────────────────────────────────── */
+    .ingredient-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0; }
+    .ingredient-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); display: flex; flex-direction: column; }
+    .ingredient-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .ingredient-card-meta { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .ingredient-benefits { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
+    /* ── Related ─────────────────────────────────────────────── */
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    /* ── Sidebar ─────────────────────────────────────────────── */
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    /* ── Footer logo ─────────────────────────────────────────── */
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients" class="active">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/ingredients">Ingredients</a> <span>→</span> <span>The Ingredient Guide</span>
+      </div>
+      <div class="article-category-tag">Ingredient Science</div>
+      <h1>The Ingredient Guide: What Your Skin Barrier Actually Needs</h1>
+      <p class="article-hero-sub">Five ingredients have the strongest clinical evidence for skin barrier repair. This guide covers their mechanisms, the concentrations that work, and how they interact — so you can evaluate any product intelligently rather than relying on label claims.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>16 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1599847987657-881f11b92a75?w=1200&h=420&fit=crop&q=80&auto=format" alt="Skincare ingredient serums and moisturisers" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <p>The skincare ingredient landscape is vast, often contradictory, and heavily marketed. This guide focuses only on ingredients with meaningful clinical evidence for barrier repair or barrier maintenance — not ingredients that sound scientific or photograph well in marketing. For each one, the mechanism is explained, the effective concentration range is given, and the limitations are stated clearly.</p>
+
+    <h2 id="how-to-use">How to Use This Guide</h2>
+    <p>Barrier repair does not require many ingredients. It requires the right ingredients at the right concentrations, applied consistently. The biggest mistake in barrier-focused skincare is adding more products rather than using fewer, better-chosen ones. The five ingredients covered here — ceramides, niacinamide, hyaluronic acid, panthenol, and centella asiatica — can collectively provide structural lipid replenishment, anti-inflammatory activity, humectant support, wound-healing acceleration, and barrier synthesis stimulation. That is a complete therapeutic toolkit for most barrier conditions.</p>
+
+    <div class="ingredient-cards">
+
+      <!-- Ceramides -->
+      <div class="ingredient-card">
+        <div class="ingredient-card-meta">
+          <h3>Ceramides</h3>
+          <div class="ingredient-tag-mechanism">Structural Lipid Replenishment</div>
+          <div class="ingredient-tag-conc">Effective at 0.01–0.3% (combined ceramide complex)</div>
+        </div>
+        <p>Ceramides are the primary structural lipids of the skin barrier, accounting for approximately 50% of the lamellar bilayer matrix by molar composition. At least 12 distinct subtypes are present in human skin. They are synthesized by keratinocytes and secreted into the intercellular space via lamellar bodies during the final stages of epidermal differentiation.</p>
+        <p>Topically applied ceramides can penetrate the stratum corneum and partially restore the lamellar bilayer architecture. The evidence is most robust for formulations containing multiple ceramide subtypes — particularly CER NP, CER AP, and CER EOS — applied in combination with cholesterol and free fatty acids. Ceramides alone, without the other two barrier lipids, show measurably weaker repair outcomes in comparative studies because the lamellar bilayer cannot form correctly from a single lipid class.</p>
+        <p>The concentration required for clinical effect is lower than in most food or pharmacological applications because the target tissue is the very surface the product touches. Concentrations of 0.01–0.3% (measured across the ceramide complex, not individual subtypes) have demonstrated statistically significant reductions in TEWL. The delivery system matters as much as the concentration: MVE (multivesicular emulsion) technology shows superior sustained-release profiles versus standard emulsions.</p>
+        <ul class="ingredient-benefits">
+          <li>Directly restores lamellar bilayer structure</li>
+          <li>Reduces transepidermal water loss (TEWL)</li>
+          <li>Shown to reduce eczema flare frequency with consistent use</li>
+          <li>No known side effects or contraindications at topical concentrations</li>
+          <li>Safe throughout pregnancy and breastfeeding</li>
+        </ul>
+        <p><strong>What ceramides cannot do:</strong> They do not reduce existing inflammation (that is a job for anti-inflammatory actives), do not treat infection, and are not sufficient as a sole treatment for active inflammatory conditions like eczema flares — they work best as maintenance and prevention.</p>
+      </div>
+
+      <!-- Niacinamide -->
+      <div class="ingredient-card" id="niacinamide">
+        <div class="ingredient-card-meta">
+          <h3>Niacinamide (Vitamin B3)</h3>
+          <div class="ingredient-tag-mechanism">Barrier Synthesis + Anti-inflammatory</div>
+          <div class="ingredient-tag-conc">2–5% for barrier repair; 10% for sebum/pore concerns</div>
+        </div>
+        <p>Niacinamide is the amide form of vitamin B3 and one of the most functionally versatile ingredients in evidence-based skincare. Unlike most topical actives, it is effective across a wide pH range, is stable in formulation, and has a well-established safety profile across skin tones and skin types including sensitive and rosacea-prone skin.</p>
+        <p>Its primary mechanism for barrier repair is stimulation of ceramide synthesis. Niacinamide increases the activity of serine palmitoyl transferase — the rate-limiting enzyme in ceramide biosynthesis — leading to measurably increased ceramide production within keratinocytes over a 4–8 week treatment period. This makes it one of the few topical ingredients that works from within the epidermis rather than simply supplementing lipids from outside.</p>
+        <p>Secondary mechanisms include: inhibition of melanosome transfer between melanocytes and keratinocytes (reducing hyperpigmentation and post-inflammatory marks), reduction of inflammatory cytokine release from mast cells (relevant in rosacea and eczema), and sebum regulation through reduction of sebocyte lipid synthesis. The last mechanism is concentration-dependent: 2–4% for anti-inflammatory and barrier effects, 5% for skin tone improvement, 10% for pore and sebum effects.</p>
+        <p>The concern about niacinamide causing flushing arises from early studies on high-dose oral nicotinic acid (a different B3 form) and is not supported by topical evidence. Conversion from niacinamide to nicotinic acid in products is minimal and the resulting niacin content is far below the threshold for vascular effects. However, a small minority of individuals with very reactive skin do report mild flush at concentrations above 5% — starting at 2% and increasing is a sensible precaution for this group.</p>
+        <ul class="ingredient-benefits">
+          <li>Stimulates ceramide synthesis from within the epidermis</li>
+          <li>Reduces inflammatory mediator release in rosacea and eczema</li>
+          <li>Improves post-inflammatory hyperpigmentation across skin tones</li>
+          <li>Stabilizes the skin barrier over consistent 4–8 week use</li>
+          <li>Compatible with most other actives including retinoids and vitamin C</li>
+        </ul>
+        <p><strong>What niacinamide cannot do:</strong> It does not exfoliate, does not significantly increase skin cell turnover, and will not produce the visible short-term "glow" of an AHA. Its benefits are cumulative and require 4–8 weeks of consistent use to be measurable. Stopping use reverses the barrier synthesis benefit over the following ceramide cycle.</p>
+      </div>
+
+      <!-- Hyaluronic Acid -->
+      <div class="ingredient-card">
+        <div class="ingredient-card-meta">
+          <h3>Hyaluronic Acid</h3>
+          <div class="ingredient-tag-mechanism">Humectant + Extracellular Matrix Support</div>
+          <div class="ingredient-tag-conc">0.1–2% (molecular weight is more important than concentration)</div>
+        </div>
+        <p>Hyaluronic acid (HA) is a glycosaminoglycan — a long-chain sugar molecule — naturally abundant in the extracellular matrix of the dermis, where it binds up to 1,000 times its weight in water and maintains dermal volume and skin fullness. It is not, in the traditional sense, a barrier repair ingredient: its primary function is humectancy, drawing water from deeper skin layers and from the environment into the stratum corneum.</p>
+        <p>The most important variable in topical HA is molecular weight, not concentration. High molecular weight HA (above 500 kDa) cannot penetrate the stratum corneum and sits on the skin surface, providing surface-level moisturization but no structural benefit. Low molecular weight HA (below 50 kDa) can penetrate into the upper stratum corneum and has been shown in clinical studies to improve skin hydration at depth and modestly reduce TEWL. Very low molecular weight HA fragments (oligomeric HA, below 6 kDa) penetrate further and have documented anti-inflammatory and wound-healing properties at the expense of some potential irritation in sensitive skin.</p>
+        <p>The best HA formulations for barrier support combine multiple molecular weights — a high-MW fraction for immediate surface hydration and a low-MW fraction for deeper penetration. Humectants including HA require an occlusive or emollient to function effectively: if applied to the skin surface without a follow-up occlusive layer, HA can draw water out of the deeper epidermis toward the dry environment, paradoxically increasing TEWL in very low-humidity conditions.</p>
+        <ul class="ingredient-benefits">
+          <li>Immediate and measurable increase in skin hydration</li>
+          <li>Improves the feel and appearance of dryness within minutes of application</li>
+          <li>Low molecular weight fractions show modest TEWL reduction</li>
+          <li>Compatible with all other actives and skin types</li>
+          <li>No known side effects at topical concentrations</li>
+        </ul>
+        <p><strong>What hyaluronic acid cannot do:</strong> It does not rebuild the lipid barrier. It does not reduce inflammation. It does not produce results equivalent to ceramide repair for barrier-damaged skin. It is a hydration tool, not a repair tool, and should be layered under an emollient or moisturiser to function optimally.</p>
+      </div>
+
+      <!-- Panthenol -->
+      <div class="ingredient-card">
+        <div class="ingredient-card-meta">
+          <h3>Panthenol (Provitamin B5)</h3>
+          <div class="ingredient-tag-mechanism">Wound Healing + Barrier Synthesis Stimulation</div>
+          <div class="ingredient-tag-conc">1–5% for clinical activity</div>
+        </div>
+        <p>Panthenol is the alcohol analog of pantothenic acid (vitamin B5) and converts to pantothenic acid within the skin, where it functions as a cofactor in cellular energy metabolism. Its presence in skincare formulations predates most modern active ingredients — it has been used in wound care, post-procedure healing, and dermatitis management for decades, with a well-established evidence base.</p>
+        <p>The primary mechanism relevant to barrier repair is stimulation of fibroblast proliferation and collagen synthesis in the dermis, combined with a direct effect on epidermal cell migration and keratinocyte differentiation. Multiple in vitro and in vivo studies have demonstrated that panthenol at concentrations of 1% and above accelerates wound re-epithelialization and restores barrier function after disruption more rapidly than vehicle alone.</p>
+        <p>Panthenol also has documented humectant properties — its molecular structure allows it to bind water within the stratum corneum — and measurable anti-inflammatory effects, reducing the production of pro-inflammatory cytokines including IL-1 and TNF-alpha in challenged skin. The combination of wound-healing stimulation, humectancy, and anti-inflammation makes it particularly valuable during the acute recovery phase of barrier damage.</p>
+        <p>It is among the most universally well-tolerated ingredients across all skin types, with an essentially zero contact sensitization rate in patch testing studies. This distinguishes it from most other active ingredients, which carry finite sensitization risk with repeated exposure.</p>
+        <ul class="ingredient-benefits">
+          <li>Accelerates wound healing and barrier re-epithelialization</li>
+          <li>Reduces pro-inflammatory cytokines (IL-1, TNF-alpha)</li>
+          <li>Humectant: improves skin hydration at depth</li>
+          <li>Virtually no sensitization risk — among the safest topical actives</li>
+          <li>Suitable for the most compromised, reactive skin states</li>
+        </ul>
+        <p><strong>What panthenol cannot do:</strong> It does not directly replace ceramides or structural lipids. Its effects on barrier architecture are indirect, via stimulation of the skin's own synthesis pathways rather than direct lipid supplementation. At concentrations below 1%, clinical benefit is uncertain.</p>
+      </div>
+
+      <!-- Centella Asiatica -->
+      <div class="ingredient-card">
+        <div class="ingredient-card-meta">
+          <h3>Centella Asiatica (CICA)</h3>
+          <div class="ingredient-tag-mechanism">Anti-inflammatory + Collagen Synthesis</div>
+          <div class="ingredient-tag-conc">Whole extract 0.1–5%; individual triterpenoids 0.01–0.5%</div>
+        </div>
+        <p>Centella asiatica is a tropical plant that has been used in wound healing in Ayurvedic and traditional Asian medicine for centuries. Modern research has isolated its active compounds — primarily the triterpenoids asiaticoside, madecassoside, asiatic acid, and madecassic acid — and characterized their mechanisms with increasing precision over the past two decades.</p>
+        <p>The most well-established mechanism is stimulation of type I and type III collagen synthesis via activation of TGF-beta signaling pathways. This makes centella relevant not just to surface barrier repair but to the structural integrity of the underlying dermis — the layer that gives skin its firmness and resilience. In the stratum corneum specifically, the triterpenoids reduce inflammatory cascade activation by inhibiting NF-kB signaling — a master regulator of the inflammatory response that drives many skin conditions including eczema and rosacea.</p>
+        <p>Madecassoside has attracted particular interest for its ability to reduce transepidermal water loss in compromised skin and promote the recovery of barrier function after chemical disruption in murine models. Asiaticoside shows wound-healing acceleration through enhanced fibroblast activity and angiogenesis modulation. The combination of these mechanisms — reduced inflammation, accelerated repair, and collagen support — makes centella asiatica one of the few topical ingredients that addresses multiple layers of skin structure simultaneously.</p>
+        <p>The CICA trend in K-beauty skincare is partially justified by this evidence, though formulations vary enormously in which centella fractions they contain and at what concentration. A product claiming "centella" on its label may contain whole-plant extract (cheaper, less standardized) or isolated triterpenoids (more expensive, more clinically predictable). For active barrier damage recovery, isolated madecassoside or asiaticoside at 0.1%+ is preferable to generic "centella extract."</p>
+        <ul class="ingredient-benefits">
+          <li>Reduces NF-kB inflammatory signaling</li>
+          <li>Stimulates collagen synthesis via TGF-beta pathway</li>
+          <li>Accelerates wound healing and barrier re-epithelialization</li>
+          <li>Reduces TEWL in compromised skin models</li>
+          <li>Well tolerated; occasional sensitivity in those allergic to Apiaceae plant family</li>
+        </ul>
+        <p><strong>What centella asiatica cannot do:</strong> It does not replace structural lipids and will not repair a ceramide deficit on its own. Anti-inflammatory activity, however potent, does not substitute for barrier lipid restoration in conditions like eczema where the primary deficit is structural. Best used as a complement to a ceramide moisturiser, not a replacement for one.</p>
+      </div>
+
+    </div>
+
+    <h2 id="how-they-work-together">How These Ingredients Work Together</h2>
+    <p>The most effective barrier repair routine uses these five ingredients in a complementary stack rather than as alternatives. The logic is: ceramides (with cholesterol and fatty acids) rebuild the structural deficit; niacinamide stimulates the skin's own ceramide production and reduces inflammation; panthenol accelerates wound healing and provides humectancy; hyaluronic acid maintains surface hydration and reduces the sensation of dryness; centella asiatica dampens the inflammatory cycle that drives ongoing barrier destruction.</p>
+    <p>A practical minimal barrier-repair routine could contain: a ceramide moisturiser with MVE delivery, a niacinamide 4% serum applied before the moisturiser, and a hyaluronic acid serum for immediate hydration comfort. Adding panthenol and centella is valuable during acute recovery phases or for eczema-prone skin but is not required for maintenance routines with an intact barrier.</p>
+    <p>No significant negative interactions between these five ingredients are documented in the literature. All five are safe throughout pregnancy and breastfeeding. None require pH adjustment for activation (unlike AHAs, retinoids, or vitamin C), meaning they can be formulated or layered at any pH within the normal skin-compatible range of 4.5–7.0.</p>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#how-to-use">How to Use This Guide</a></li>
+          <li><a href="#ceramides">Ceramides</a></li>
+          <li><a href="#niacinamide">Niacinamide</a></li>
+          <li><a href="#hyaluronic-acid">Hyaluronic Acid</a></li>
+          <li><a href="#panthenol">Panthenol</a></li>
+          <li><a href="#centella-asiatica">Centella Asiatica</a></li>
+          <li><a href="#how-they-work-together">How They Work Together</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Evidence Rating</strong>
+      <ul style="margin-top: 12px; padding-left: 0; list-style: none;">
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; justify-content: space-between;"><span>Ceramides</span><span style="color: var(--accent); font-weight: 600;">Strongest</span></li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; justify-content: space-between;"><span>Niacinamide</span><span style="color: var(--accent); font-weight: 600;">Strongest</span></li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; justify-content: space-between;"><span>Panthenol</span><span style="color: var(--gold); font-weight: 600;">Strong</span></li>
+        <li style="padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; justify-content: space-between;"><span>Centella Asiatica</span><span style="color: var(--gold); font-weight: 600;">Strong</span></li>
+        <li style="padding: 8px 0; font-size: 0.88rem; display: flex; justify-content: space-between;"><span>Hyaluronic Acid</span><span style="color: var(--gold); font-weight: 600;">Moderate</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Related Articles</strong>
+      <ul style="margin-top: 12px; padding-left: 18px; line-height: 2;">
+        <li><a href="/ceramides">Ceramides vs. Cholesterol Deep Dive</a></li>
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/over-exfoliation">Recovery Protocol</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A 7-day structured protocol for rebuilding a compromised barrier — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/ceramides" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=400&h=220&fit=crop&q=80&auto=format" alt="Ceramide skincare" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Ingredients</span>
+        <h3>Ceramides vs. Cholesterol: Which Does Your Barrier Need?</h3>
+        <p>The three essential lipids are not interchangeable. Here is when each one matters most.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: Everything You Need to Know</h3>
+        <p>The anatomy of the stratum corneum, TEWL explained, and the ingredients that rebuild it.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/over-exfoliation" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=220&fit=crop&q=80&auto=format" alt="Exfoliation and skincare" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Recovery Protocol</span>
+        <h3>The Over-Exfoliation Recovery Protocol</h3>
+        <p>What over-exfoliation does to your barrier and how to recover in 4–8 weeks.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Email form
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+
+  // Intercept placeholder links
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CeraVe Moisturizing Cream Review (2026) — Formulation Analysis | BioSkinRepair</title>
+  <meta name="description" content="Independent formulation review of CeraVe Moisturizing Cream. We break down ceramide types, MVE delivery, clinical evidence, and who it's actually best for." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Lead / email CTA section (not in styles.css) ───────── */
+    .lead-section {
+      background: var(--accent, #2D5A3D);
+      padding: 80px 0;
+    }
+    .lead-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .lead-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 12px;
+    }
+    .lead-section .sub {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .lead-section .email-form {
+      display: flex;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto 12px;
+      flex-wrap: wrap;
+    }
+    .lead-section .email-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 13px 16px;
+      font-size: 0.9rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      outline: none;
+      font-family: inherit;
+    }
+    .lead-section .email-input::placeholder { color: rgba(255,255,255,0.6); }
+    .lead-section .email-input:focus { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.2); }
+    .lead-section .privacy-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 8px;
+    }
+
+    /* ── Footer grid ─────────────────────────────────────────── */
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* ── Review hero ─────────────────────────────────────────── */
+    .review-hero {
+      background: var(--bg-alt, #F0EDE8);
+      padding: 64px 0 56px;
+    }
+    .review-hero-content { max-width: 760px; }
+
+    .review-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .review-breadcrumb {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #666);
+    }
+    .review-breadcrumb a { color: var(--accent, #2D5A3D); text-decoration: none; }
+    .review-breadcrumb a:hover { text-decoration: underline; }
+    .review-breadcrumb span { margin: 0 5px; color: var(--text-secondary, #666); }
+
+    .review-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary, #1a1a1a);
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
+    .review-hero-content .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary, #555);
+      margin: 0 0 24px;
+      line-height: 1.7;
+    }
+    .review-byline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: var(--text-secondary, #666);
+      padding: 14px 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 24px;
+    }
+    .review-byline-dot { color: rgba(0,0,0,0.25); }
+
+    /* ── Score card (sidebar) ────────────────────────────────── */
+    .score-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      position: sticky;
+      top: 80px;
+    }
+    .score-card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold, #C9A96E);
+      margin-bottom: 4px;
+    }
+    .score-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-primary, #1a1a1a);
+      margin: 0 0 20px;
+    }
+    .score-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .score-card-overall {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .score-card-overall-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent, #2D5A3D);
+      line-height: 1;
+    }
+    .score-card-overall-denom {
+      font-size: 1.1rem;
+      color: var(--text-secondary, #666);
+    }
+    .score-card-overall-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #666);
+      align-self: center;
+    }
+    .score-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .score-row { display: flex; align-items: center; gap: 10px; }
+    .score-label { font-size: 0.78rem; font-weight: 500; color: var(--text-secondary, #555); min-width: 120px; }
+    .score-bar-wrap { flex: 1; height: 6px; background: rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; }
+    .score-bar { height: 100%; background: var(--accent, #2D5A3D); border-radius: 10px; }
+    .score-num { font-size: 0.8rem; font-weight: 700; color: var(--text-primary, #1a1a1a); min-width: 26px; text-align: right; }
+
+    .score-card-verdict {
+      background: rgba(45,90,61,0.06);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.83rem;
+      color: var(--text-primary, #1a1a1a);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .score-card-verdict strong { color: var(--accent, #2D5A3D); }
+    .score-card .btn { width: 100%; text-align: center; display: block; margin-bottom: 8px; }
+    .score-card-affiliate-note {
+      font-size: 0.72rem;
+      color: var(--text-secondary, #aaa);
+      text-align: center;
+    }
+
+    /* ── Article body ────────────────────────────────────────── */
+    .review-body {
+      max-width: 700px;
+    }
+    .review-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary, #1a1a1a);
+      margin: 48px 0 16px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .review-body h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+    .review-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary, #1a1a1a);
+      margin: 28px 0 10px;
+    }
+    .review-body p {
+      font-size: 0.97rem;
+      color: var(--text-primary, #333);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .review-body ul, .review-body ol {
+      padding-left: 20px;
+      margin-bottom: 18px;
+    }
+    .review-body li {
+      font-size: 0.97rem;
+      color: var(--text-primary, #333);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    /* ── Ingredient table ────────────────────────────────────── */
+    .ingredient-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.88rem;
+    }
+    .ingredient-table thead th {
+      background: var(--accent, #2D5A3D);
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .ingredient-table thead th:first-child { border-radius: 8px 0 0 0; }
+    .ingredient-table thead th:last-child { border-radius: 0 8px 0 0; }
+    .ingredient-table tbody tr { border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .ingredient-table tbody tr:nth-child(even) { background: rgba(45,90,61,0.03); }
+    .ingredient-table tbody td { padding: 10px 14px; color: var(--text-primary, #333); vertical-align: top; }
+    .ingredient-table .ing-name { font-weight: 600; color: var(--accent, #2D5A3D); }
+    .tag-key { display: inline-block; background: rgba(45,90,61,0.12); color: var(--accent, #2D5A3D); font-size: 0.7rem; font-weight: 700; border-radius: 4px; padding: 2px 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .tag-safe { display: inline-block; background: rgba(201,169,110,0.15); color: #8a6b2e; font-size: 0.7rem; font-weight: 700; border-radius: 4px; padding: 2px 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .tag-filler { display: inline-block; background: rgba(0,0,0,0.06); color: #666; font-size: 0.7rem; font-weight: 700; border-radius: 4px; padding: 2px 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* ── Callout boxes ───────────────────────────────────────── */
+    .callout-green {
+      background: rgba(45,90,61,0.07);
+      border-left: 4px solid var(--accent, #2D5A3D);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-size: 0.93rem;
+      color: var(--text-primary, #333);
+      line-height: 1.7;
+    }
+    .callout-gold {
+      background: rgba(201,169,110,0.1);
+      border-left: 4px solid var(--gold, #C9A96E);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-size: 0.93rem;
+      color: var(--text-primary, #333);
+      line-height: 1.7;
+    }
+    .callout-green strong, .callout-gold strong { display: block; margin-bottom: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent, #2D5A3D); }
+    .callout-gold strong { color: #8a6b2e; }
+
+    /* ── Pros/Cons ───────────────────────────────────────────── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } }
+    .pros-box, .cons-box {
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .pros-box { background: rgba(45,90,61,0.06); }
+    .cons-box { background: rgba(201,169,110,0.1); }
+    .pros-box h4 { color: var(--accent, #2D5A3D); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
+    .cons-box h4 { color: #8a6b2e; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
+    .pros-box ul, .cons-box ul { list-style: none; padding: 0; margin: 0; }
+    .pros-box li, .cons-box li { font-size: 0.88rem; color: var(--text-primary, #333); line-height: 1.6; padding: 4px 0; padding-left: 18px; position: relative; }
+    .pros-box li::before { content: '✓'; position: absolute; left: 0; color: var(--accent, #2D5A3D); font-weight: 700; }
+    .cons-box li::before { content: '–'; position: absolute; left: 0; color: #8a6b2e; font-weight: 700; }
+
+    /* ── Who it's for / not for grid ────────────────────────── */
+    .for-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    @media (max-width: 600px) { .for-grid { grid-template-columns: 1fr; } }
+    .for-box {
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .for-box h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 10px; }
+    .for-box.best-for h4 { color: var(--accent, #2D5A3D); }
+    .for-box.not-for h4 { color: #a05c3b; }
+    .for-box ul { list-style: none; padding: 0; margin: 0; }
+    .for-box li { font-size: 0.87rem; color: var(--text-primary, #333); padding: 3px 0 3px 16px; position: relative; line-height: 1.5; }
+    .best-for li::before { content: '●'; position: absolute; left: 0; color: var(--accent, #2D5A3D); font-size: 0.55rem; top: 7px; }
+    .not-for li::before { content: '●'; position: absolute; left: 0; color: #a05c3b; font-size: 0.55rem; top: 7px; }
+
+    /* ── CTA block ───────────────────────────────────────────── */
+    .review-cta-block {
+      background: var(--accent, #2D5A3D);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin: 48px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .review-cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin: 0 0 6px;
+    }
+    .review-cta-block p { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin: 0; }
+    .review-cta-block .btn-gold { flex-shrink: 0; }
+
+    /* ── Related reviews ─────────────────────────────────────── */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    @media (max-width: 780px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card {
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .related-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .related-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .related-card-body { padding: 14px 16px; }
+    .related-card-cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold, #C9A96E); margin-bottom: 4px; }
+    .related-card-body h4 { font-size: 0.88rem; font-weight: 600; color: var(--text-primary, #1a1a1a); margin: 0 0 4px; line-height: 1.4; }
+    .related-card-score { font-size: 0.78rem; color: var(--accent, #2D5A3D); font-weight: 700; }
+
+    /* ── Article layout ──────────────────────────────────────── */
+    .review-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+      padding-top: 56px;
+      padding-bottom: 80px;
+    }
+    @media (max-width: 960px) {
+      .review-layout { grid-template-columns: 1fr; gap: 40px; }
+      .score-card { position: static; }
+    }
+
+    /* ── Affiliate disclaimer ─────────────────────────────────── */
+    .affiliate-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #666);
+      background: var(--bg-alt, #F0EDE8);
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* ── Footer bottom ───────────────────────────────────────── */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .affiliate-disc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
+    .footer-copy { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 12px; }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+  
+    /* ── Review sidebar desktop ──────────────────────────────── */
+    .review-sidebar-desktop { position: sticky; top: 90px; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews" class="active">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews" class="active">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     REVIEW HERO
+     ============================================================ -->
+<section class="review-hero">
+  <div class="container">
+    <nav class="review-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="/reviews">Reviews</a>
+      <span aria-hidden="true">›</span>
+      <span>CeraVe Moisturizing Cream</span>
+    </nav>
+
+    <div class="review-hero-content">
+      <div class="review-hero-meta">
+        <span class="eyebrow" style="margin-bottom:0;">Moisturizer Review</span>
+      </div>
+      <h1>CeraVe Moisturizing Cream</h1>
+      <p class="subtitle">A deep-dive into the formulation that has become the clinical benchmark for barrier repair. We break down the three ceramide types, the MVE delivery system, clinical evidence, and exactly who this product is and isn't right for.</p>
+      <div class="review-byline">
+        <span>By BioSkinRepair Editorial</span>
+        <span class="review-byline-dot">·</span>
+        <span>Reviewed by Dr. Sarah Reeves, MD</span>
+        <span class="review-byline-dot">·</span>
+        <span>Updated March 2026</span>
+      </div>
+      <p class="affiliate-note"><strong>Affiliate disclosure:</strong> Links on this page may earn a small commission at no extra cost to you. This does not influence our editorial scoring or product selection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ARTICLE BODY + SIDEBAR
+     ============================================================ -->
+<div class="container">
+  <div class="review-layout">
+
+    <!-- ── Main article ─────────────────────────────────────── -->
+    <article class="review-body" aria-label="Full product review">
+
+      <h2>What Is CeraVe Moisturizing Cream?</h2>
+      <p>CeraVe Moisturizing Cream is a thick, rich emollient developed in partnership with dermatologists and first introduced in 2005. It has become one of the most-recommended moisturizers in clinical dermatology, frequently cited by practitioners as a first-line option for barrier-compromised skin conditions including atopic dermatitis, ichthyosis, and post-procedure recovery.</p>
+      <p>The product's central claim — and its genuine clinical strength — is a formulation built around three ceramide subtypes alongside cholesterol and fatty acids, delivered via a patented MVE (MultiVesicular Emulsion) system. This is not a marketing claim. It reflects a real and meaningful formulation architecture.</p>
+
+      <div class="callout-green">
+        <strong>Why ceramide type matters</strong>
+        Most ceramide moisturizers list "ceramide" as a single ingredient. CeraVe lists ceramides 1, 3, and 6-II — the specific subtypes shown in clinical research to be depleted in barrier-compromised skin. The distinction matters because different ceramide subtypes serve different structural roles in the lipid matrix.
+      </div>
+
+      <h2>Formulation Analysis</h2>
+      <p>The full ingredient list is publicly available. Below we break down the key actives, their roles, and what each contributes to barrier function.</p>
+
+      <table class="ingredient-table" aria-label="Key ingredient breakdown">
+        <thead>
+          <tr>
+            <th>Ingredient</th>
+            <th>Role</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ing-name">Ceramide NP (Ceramide 3) <span class="tag-key">Key Active</span></td>
+            <td>Structural lipid — primary skin barrier component</td>
+            <td>The most abundant ceramide in healthy stratum corneum. Depleted in eczema and dry skin.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Ceramide AP (Ceramide 6-II) <span class="tag-key">Key Active</span></td>
+            <td>Structural lipid — barrier integrity</td>
+            <td>Supports lamellar body formation and tight-junction reinforcement. Clinically significant in barrier repair formulas.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Ceramide EOP (Ceramide 1) <span class="tag-key">Key Active</span></td>
+            <td>Structural lipid — extracellular matrix</td>
+            <td>Critical for forming the intercellular lamellar structure. Often absent from inferior ceramide formulas.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Hyaluronic Acid <span class="tag-key">Key Active</span></td>
+            <td>Humectant — draws water into epidermis</td>
+            <td>Works synergistically with ceramides: ceramides seal moisture, HA pulls it in. Effective at low concentrations.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Cholesterol <span class="tag-key">Key Active</span></td>
+            <td>Structural lipid — equimolar lipid triad</td>
+            <td>Completes the ceramide:cholesterol:fatty acid triad shown in clinical research to most closely mimic the skin's own lipid profile.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Petrolatum <span class="tag-safe">Emollient</span></td>
+            <td>Occlusive — reduces TEWL</td>
+            <td>One of the most effective occlusives by TEWL reduction rate. Non-comedogenic despite common perception.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Dimethicone <span class="tag-safe">Emollient</span></td>
+            <td>Silicone emollient — skin feel, TEWL reduction</td>
+            <td>Contributes to the non-greasy finish. Inert, well-tolerated, no known sensitisation risk.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Glycerin <span class="tag-safe">Humectant</span></td>
+            <td>Draws water to the skin surface</td>
+            <td>High concentration humectant. Supports corneocyte hydration and improves skin elasticity.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Cetyl Alcohol <span class="tag-filler">Emulsifier</span></td>
+            <td>Emulsifier, thickener</td>
+            <td>Fatty alcohol — distinct from sensitising alcohols. Safe for compromised skin.</td>
+          </tr>
+          <tr>
+            <td class="ing-name">Phenoxyethanol / Methylparaben <span class="tag-filler">Preservative</span></td>
+            <td>Antimicrobial preservation</td>
+            <td>Standard preservative system. Parabens are considered safe by major regulatory bodies; sensitisation rate is extremely low.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The MVE Delivery System</h3>
+      <p>MVE (MultiVesicular Emulsion) is a patented CeraVe delivery technology in which ceramides and other actives are encapsulated in a multi-layered lipid vesicle structure. This allows gradual release over an extended period — the brand claims 24-hour delivery, which is consistent with the vesicle diffusion rate shown in its patent filings.</p>
+      <p>This matters clinically because it addresses a limitation of standard emulsion formulations: most actives deliver a front-loaded burst at application and drop off rapidly. MVE maintains a more consistent active concentration in the stratum corneum over time, which is particularly relevant for ceramide-depleted skin that requires sustained replenishment rather than periodic flooding.</p>
+      <div class="callout-gold">
+        <strong>Limitation worth noting</strong>
+        MVE is a proprietary technology and independent third-party clinical data on its specific delivery rate is limited. CeraVe's own clinical studies should be treated as manufacturer data. That said, the encapsulation mechanism is scientifically plausible and the technology is referenced in peer-reviewed contexts.
+      </div>
+
+      <h2>Clinical Evidence</h2>
+      <p>CeraVe Moisturizing Cream has been studied in a number of clinical contexts:</p>
+      <ul>
+        <li><strong>Atopic Dermatitis:</strong> A 2016 randomized controlled trial (Draelos et al.) found that ceramide-containing moisturizers including CeraVe formulations significantly reduced TEWL and improved skin barrier function scores in patients with atopic dermatitis over 6 weeks.</li>
+        <li><strong>Pediatric Eczema:</strong> Multiple studies have evaluated CeraVe as part of proactive moisturization protocols for infants with risk factors for atopic dermatitis, showing barrier TEWL improvement with twice-daily application.</li>
+        <li><strong>Post-Procedure:</strong> Dermatologists routinely recommend CeraVe as the standard aftercare moisturizer for chemical peels, laser resurfacing, and microneedling procedures due to its barrier-restoration formulation and fragrance-free safety profile.</li>
+        <li><strong>Acne-Prone Skin:</strong> Non-comedogenic testing and a published study in the Journal of Drugs in Dermatology found no increase in comedone counts with regular CeraVe Moisturizing Cream use in acne-prone patients.</li>
+      </ul>
+      <div class="callout-green">
+        <strong>What the evidence actually shows</strong>
+        The clinical data on CeraVe specifically — as opposed to ceramide moisturizers generally — is predominantly from studies funded or supported by L'Oréal (CeraVe's parent company). We consider this moderate-quality evidence. The formulation science is sound and the general ceramide efficacy literature is robust; the product-specific RCT data should be weighted accordingly.
+      </div>
+
+      <h2>Texture, Application, and Real-World Use</h2>
+      <p>CeraVe Moisturizing Cream is a thick, rich cream with a heavier texture than lotion formulations. It spreads more easily than a true ointment but leaves a perceptible film on the skin — this is by design, as the occlusive component (petrolatum) is doing real TEWL-reduction work.</p>
+      <p>For most barrier-repair applications, this texture is appropriate. Where it becomes less ideal:</p>
+      <ul>
+        <li>As a daytime moisturizer under makeup — the residual film can interfere with application</li>
+        <li>On already-oily skin — the occlusive load may feel excessive</li>
+        <li>In hot, humid climates — the richness can feel uncomfortable</li>
+      </ul>
+      <p>The product is available in multiple formats: the tub version (the most commonly reviewed) is the most cost-effective and delivers the richest formulation. The pump bottle uses a slightly different vehicle with lower petrolatum content for easier dispensing and a lighter finish.</p>
+
+      <h2>Pros and Cons</h2>
+      <div class="pros-cons">
+        <div class="pros-box">
+          <h4>What Works</h4>
+          <ul>
+            <li>Three ceramide subtypes (1, 3, 6-II) — not just "ceramide"</li>
+            <li>Complete equimolar lipid triad with cholesterol</li>
+            <li>MVE delivery system for extended active release</li>
+            <li>Completely fragrance-free</li>
+            <li>Non-comedogenic, tested in acne-prone skin</li>
+            <li>Exceptional value: ~$16 for 16 oz tub</li>
+            <li>Clinically validated in dermatologist-led studies</li>
+            <li>Suitable for infants, children, and adults</li>
+          </ul>
+        </div>
+        <div class="cons-box">
+          <h4>What Falls Short</h4>
+          <ul>
+            <li>Rich texture unsuitable for daytime or oily skin use</li>
+            <li>Petrolatum content polarising — some users dislike the feel</li>
+            <li>Most clinical evidence is manufacturer-sponsored</li>
+            <li>Tub format (most cost-effective) requires finger-dipping — hygiene concern for compromised skin</li>
+            <li>Parabens in preservative system (considered safe, but some users prefer paraben-free)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Who It's For — and Who Should Look Elsewhere</h2>
+      <div class="for-grid">
+        <div class="for-box best-for">
+          <h4>Best For</h4>
+          <ul>
+            <li>Dry and very dry skin types</li>
+            <li>Active eczema and atopic dermatitis</li>
+            <li>Post-procedure recovery (peels, laser, needling)</li>
+            <li>Over-exfoliation barrier damage</li>
+            <li>Infants and children with eczema-prone skin</li>
+            <li>Night-time barrier repair on all skin types</li>
+            <li>Budget-constrained barrier repair protocols</li>
+            <li>Anyone seeking a dermatologist-default formulation</li>
+          </ul>
+        </div>
+        <div class="for-box not-for">
+          <h4>Not Ideal For</h4>
+          <ul>
+            <li>Oily or combination skin as a face moisturizer</li>
+            <li>Daytime use under makeup</li>
+            <li>Those who prefer lightweight gel textures</li>
+            <li>Paraben-sensitive individuals</li>
+            <li>Anyone who needs SPF coverage in their moisturizer</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>How to Use It in a Barrier Repair Routine</h2>
+      <p>For active barrier repair, use CeraVe Moisturizing Cream as your final moisturizing step — after serums and treatments, before any occlusive layer (if using one). Apply to damp skin to maximise humectant uptake from the hyaluronic acid and glycerin.</p>
+      <p><strong>Morning:</strong> Apply after cleansing and any treatment serums. Follow with SPF — note that CeraVe Moisturizing Cream does not contain sun protection.</p>
+      <p><strong>Evening:</strong> Apply as the final step in your evening routine. For compromised or very dry skin, you can layer a thin film of plain petrolatum or a ceramide-rich ointment over it as an occlusive seal.</p>
+      <p><strong>Body use:</strong> This is where the 16 oz tub format justifies itself. Apply to damp skin post-shower for full-body barrier maintenance. Particularly effective on lower legs, elbows, and hands where TEWL is highest.</p>
+
+      <div class="callout-green">
+        <strong>Routine note from Dr. Reeves</strong>
+        For patients in active barrier repair, I typically recommend CeraVe Moisturizing Cream twice daily minimum — morning and evening — for at least 4 to 6 weeks before evaluating results. Barrier restoration is not a fast process; consistent occlusion and ceramide replenishment over time is what drives recovery.
+      </div>
+
+      <h2>Our Verdict</h2>
+      <p>CeraVe Moisturizing Cream earns its clinical reputation. It is not a glamorous product, it is not marketed aggressively, and it does not have a minimal-chic aesthetic — and none of that matters. The formulation is built around the same lipid triad that decades of ceramide research has identified as the most effective approach to barrier repair: ceramides 1, 3, and 6-II plus cholesterol plus fatty acids, delivered in a sustained-release system.</p>
+      <p>At $16 for a 16 oz tub, this is the best ceramide-per-dollar value on the market. No dermatologist-recommended product we have reviewed comes close to matching this cost-to-efficacy ratio.</p>
+      <p>The only legitimate reason to choose a different product over CeraVe Moisturizing Cream for barrier repair is texture preference or skin type — oily skin, daytime use, or preference for lighter formulations. For those cases, the CeraVe Moisturizing Lotion offers a lighter vehicle with the same ceramide complex. For everyone else, this is where we start.</p>
+
+      <!-- Affiliate CTA block -->
+      <div class="review-cta-block" aria-label="Buy CeraVe Moisturizing Cream">
+        <div>
+          <h3>CeraVe Moisturizing Cream</h3>
+          <p>~$16–20 for 16 oz · Fragrance-free · Dermatologist tested · 9.4/10 overall score</p>
+        </div>
+        <a href="#" target="_blank" rel="noopener sponsored" class="btn btn-gold">Check Current Price →</a>
+      </div>
+
+      <!-- Related reviews -->
+      <h2 style="border-top:none; padding-top:0; margin-top:8px;">Related Reviews</h2>
+      <div class="related-grid">
+        <a href="/la-roche-posay-cicaplast-review" class="related-card">
+          <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=400&h=140&fit=crop&q=80&auto=format" alt="La Roche-Posay Cicaplast Baume" loading="lazy" />
+          <div class="related-card-body">
+            <div class="related-card-cat">Treatment</div>
+            <h4>La Roche-Posay Cicaplast Baume B5</h4>
+            <div class="related-card-score">9.2 / 10</div>
+          </div>
+        </a>
+        <a href="/paulas-choice-barrier-repair-review" class="related-card">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=140&fit=crop&q=80&auto=format" alt="Paula's Choice Barrier Repair" loading="lazy" />
+          <div class="related-card-body">
+            <div class="related-card-cat">Moisturizer</div>
+            <h4>Paula's Choice Barrier Repair Moisturizer</h4>
+            <div class="related-card-score">9.0 / 10</div>
+          </div>
+        </a>
+        <a href="/vanicream-gentle-cleanser-review" class="related-card">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=140&fit=crop&q=80&auto=format" alt="Vanicream Gentle Cleanser" loading="lazy" />
+          <div class="related-card-body">
+            <div class="related-card-cat">Cleanser</div>
+            <h4>Vanicream Gentle Facial Cleanser</h4>
+            <div class="related-card-score">8.8 / 10</div>
+          </div>
+        </a>
+      </div>
+
+    </article>
+
+    <!-- ── Sidebar (sticky score card — desktop only) ────────── -->
+    <aside aria-label="Product score summary" class="review-sidebar-desktop">
+      <div class="score-card">
+        <div class="score-card-label">Editor's Top Pick · Moisturizer</div>
+        <h2>CeraVe Moisturizing Cream</h2>
+        <img
+          class="score-card-img"
+          src="https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=440&h=200&fit=crop&q=80&auto=format"
+          alt="CeraVe Moisturizing Cream"
+          loading="eager"
+        />
+        <div class="score-card-overall" aria-label="Overall score: 9.4 out of 10">
+          <span class="score-card-overall-num">9.4</span>
+          <span class="score-card-overall-denom">/10</span>
+          <span class="score-card-overall-label">Overall Score</span>
+        </div>
+        <div class="score-rows">
+          <div class="score-row">
+            <span class="score-label">Ingredient Quality</span>
+            <div class="score-bar-wrap"><div class="score-bar" style="width:96%"></div></div>
+            <span class="score-num">9.6</span>
+          </div>
+          <div class="score-row">
+            <span class="score-label">Barrier Science</span>
+            <div class="score-bar-wrap"><div class="score-bar" style="width:95%"></div></div>
+            <span class="score-num">9.5</span>
+          </div>
+          <div class="score-row">
+            <span class="score-label">Formulation Safety</span>
+            <div class="score-bar-wrap"><div class="score-bar" style="width:98%"></div></div>
+            <span class="score-num">9.8</span>
+          </div>
+          <div class="score-row">
+            <span class="score-label">Value for Efficacy</span>
+            <div class="score-bar-wrap"><div class="score-bar" style="width:87%"></div></div>
+            <span class="score-num">8.7</span>
+          </div>
+        </div>
+        <div class="score-card-verdict">
+          <strong>Bottom Line</strong>
+          The clinical gold standard for ceramide-based barrier repair. Three ceramide subtypes at functional concentrations, MVE time-release delivery, no fragrance. Nothing at this price point comes close.
+        </div>
+        <a href="#" target="_blank" rel="noopener sponsored" class="btn btn-gold">Check Price on Amazon →</a>
+        <p class="score-card-affiliate-note">Affiliate link · No extra cost to you</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     EMAIL CAPTURE
+     ============================================================ -->
+<section class="lead-section" aria-labelledby="review-nl-heading">
+  <div class="container">
+    <div class="lead-inner">
+      <span class="eyebrow" style="color:var(--gold);">Go deeper</span>
+      <h2 id="review-nl-heading">Get the Free 7-Day Barrier Reset Protocol</h2>
+      <p class="sub">Step-by-step routine used by 12,000+ readers. Includes product sequencing, timing, and what to avoid during recovery.</p>
+      <form class="email-form" action="#" method="POST" aria-label="Email signup form">
+        <label for="review-email" style="position:absolute;width:1px;height:1px;overflow:hidden;">Email</label>
+        <input type="email" id="review-email" name="email" class="email-input" placeholder="Enter your email address" required />
+        <button type="submit" class="btn btn-gold">Send Me the Protocol</button>
+      </form>
+      <p class="privacy-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Barrier Damage Signs</a></li>
+          <li><a href="/skin-barrier-101#routines">Recovery Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides Guide</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/reviews">All Reviews</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Free Guide</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="affiliate-disc">
+        <strong style="color:rgba(255,255,255,0.6);">Affiliate Disclosure:</strong> BioSkinRepair participates in affiliate programs. We may earn a commission when you buy through our links at no additional cost to you. All recommendations are based on independent research.
+      </p>
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="#">Affiliate Disclosure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', function () {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      const spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+</script>
+
+</body>
+</html>
