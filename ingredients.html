@@ -10,58 +10,159 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .ingredient-tag-mechanism {
-      display: inline-block;
-      background: rgba(45, 90, 61, 0.08);
-      color: #2D5A3D;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      border-radius: 6px;
-      padding: 3px 10px;
-      margin-top: 2px;
-    }
-    .ingredient-tag-conc {
-      display: block;
-      font-size: 0.8rem;
-      color: #888;
-      font-style: italic;
-      margin-top: 4px;
-    }
-  
     /* ── Article page components ─────────────────────────────── */
     .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
     .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
     .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
     .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
-    /* ── Ingredient cards ────────────────────────────────────── */
-    .ingredient-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0; }
-    .ingredient-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); display: flex; flex-direction: column; }
-    .ingredient-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .ingredient-card-meta { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
-    .ingredient-benefits { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
-    /* ── Related ─────────────────────────────────────────────── */
+
+    /* ── Improved article body typography ────────────────────── */
+    .article-content p { font-size: 1.02rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 22px; }
+    .article-content h2 { font-size: 1.65rem; margin: 48px 0 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .article-content h2:first-of-type { border-top: none; margin-top: 32px; }
+
+    /* ── Ingredient cards — redesigned as full-width sections ── */
+    .ingredient-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 40px 0 48px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .ingredient-card {
+      display: block;
+      background: #fff;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      overflow: visible;
+      transition: none;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    .ingredient-card:last-child { border-bottom: none; }
+    .ingredient-card:hover { border-color: var(--border); box-shadow: none !important; transform: none !important; }
+
+    /* Card header — coloured accent strip */
+    .ingredient-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 10px 20px;
+      padding: 22px 28px 18px;
+      background: var(--accent-light);
+      border-bottom: 1px solid rgba(45,90,61,0.12);
+      flex: unset;
+    }
+    .ingredient-card-meta h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      width: 100%;
+    }
+
+    .ingredient-tag-mechanism {
+      display: inline-flex;
+      align-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 3px 9px;
+    }
+    .ingredient-tag-conc {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-style: normal;
+      background: rgba(45,90,61,0.08);
+      border-radius: 4px;
+      padding: 3px 9px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Card body — paragraphs and lists need padding */
+    .ingredient-card > p {
+      padding: 0 28px;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin: 0 0 16px;
+    }
+    .ingredient-card > p:first-of-type { margin-top: 24px; }
+    .ingredient-card > p:last-child { padding-bottom: 24px; margin-bottom: 0; }
+    .ingredient-card > p strong { color: var(--text-primary); font-weight: 700; }
+
+    /* Benefits list */
+    .ingredient-benefits {
+      margin: 8px 28px 20px 48px !important;
+      padding: 0 !important;
+      font-size: 0.93rem !important;
+      line-height: 1.75 !important;
+      color: var(--text-secondary) !important;
+    }
+    .ingredient-benefits li { margin-bottom: 5px !important; }
+
+    /* ── Related reading cards ───────────────────────────────── */
     .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
     .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .related-grid .article-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
     .article-card-img { width: 100%; height: 180px; overflow: hidden; }
-    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .related-grid .article-card:hover .article-card-img img { transform: scale(1.04); }
+    .article-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
     .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
-    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
-    /* ── Sidebar ─────────────────────────────────────────────── */
+    .article-card-body h3 { font-size: 1rem; line-height: 1.4; color: var(--text-primary); margin: 0; }
+    .article-card-body p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; padding-top: 8px; }
+
+    /* ── Sidebar improvements ────────────────────────────────── */
     .toc-list { font-size: 0.88rem; }
-    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-    .toc-list ul li a { color: var(--text-secondary); text-decoration: none; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .toc-list ul li a {
+      display: block;
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: var(--transition);
+    }
+    .toc-list ul li a:hover {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+    }
     .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
-    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
-    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
-    /* ── Footer logo ─────────────────────────────────────────── */
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); outline: none; transition: border-color 0.2s; }
+    .sidebar-email-form input:focus { border-color: var(--accent); }
+    .sidebar-email-form button { padding: 11px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: opacity 0.2s; }
+    .sidebar-email-form button:hover { opacity: 0.88; }
+
+    /* ── Footer ──────────────────────────────────────────────── */
     .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
-  
+
     .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
     .toast.show { opacity: 1; }
+
+    /* ── Mobile ──────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .ingredient-card-meta { padding: 18px 20px 14px; }
+      .ingredient-card > p { padding: 0 20px; }
+      .ingredient-card > p:last-child { padding-bottom: 20px; }
+      .ingredient-benefits { margin: 8px 20px 16px 36px !important; }
+    }
   </style>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Ik6iT3b9nGnlXYHBmdbzw" async></script>
 </head>

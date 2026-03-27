@@ -52,6 +52,18 @@
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
   
     .article-img { width: 100%; border-radius: var(--radius-md); display: block; margin: 24px 0; }
+
+    /* ── Improved article body typography ────────────────────── */
+    .article-content p { font-size: 1.02rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 22px; }
+    .article-content h2 { font-size: 1.65rem; margin: 48px 0 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .article-content h3 { font-size: 1.2rem; margin: 32px 0 14px; }
+    .article-content ul, .article-content ol { line-height: 1.85; margin-bottom: 22px; }
+    .article-content li { margin-bottom: 8px; font-size: 1.02rem; }
+    .article-content strong { color: var(--text-primary); }
+    /* ── TOC hover indicator ─────────────────────────────────── */
+    .toc-list ul { gap: 2px !important; }
+    .toc-list ul li a { display: block; padding: 6px 8px; border-radius: var(--radius-sm); border-left: 2px solid transparent; transition: var(--transition); }
+    .toc-list ul li a:hover { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); }
   </style>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Ik6iT3b9nGnlXYHBmdbzw" async></script>
 </head>
