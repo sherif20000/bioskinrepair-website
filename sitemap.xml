@@ -61,6 +61,18 @@
 
   <!-- Ingredient deep-dives -->
   <url>
+    <loc>https://bioskinrepair.com/hyaluronic-acid</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/occlusive</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bioskinrepair.com/ceramides</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -107,6 +119,18 @@
 
   <!-- Skin condition guides -->
   <url>
+    <loc>https://bioskinrepair.com/perioral-dermatitis</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/fungal-acne</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bioskinrepair.com/eczema</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -129,6 +153,28 @@
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Routines -->
+  <url>
+    <loc>https://bioskinrepair.com/mineral-vs-chemical-sunscreen-sensitive</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/minimalist-skincare-routine</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Buying guides -->
+  <url>
+    <loc>https://bioskinrepair.com/best-ceramide-moisturizer</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Product comparisons -->
