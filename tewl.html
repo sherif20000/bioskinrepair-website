@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is TEWL (Transepidermal Water Loss)? The Core Skin Barrier Metric — BioSkinRepair</title>
+  <meta name="description" content="TEWL — transepidermal water loss — is the most clinically meaningful measure of skin barrier function. Here is what it is, how it's measured, and what it tells you about your skin." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Article page components ─────────────────────────────── */
+    .article-category-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .article-meta-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 20px; }
+    .article-meta-bar span { display: flex; align-items: center; gap: 4px; }
+    .article-hero-img-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .stat-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .stat-box-number { font-family: "Playfair Display", serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-box-label { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
+    .article-callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 28px 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+    .article-product-picks { margin: 32px 0; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+    .article-product-picks h3 { margin-bottom: 18px; }
+    .article-product-pick { display: block; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 12px; transition: var(--transition); }
+    .article-product-pick:hover { border-color: var(--accent); }
+    .pick-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .pick-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .pick-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+    .pick-cta { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+    .toc-list { font-size: 0.88rem; }
+    .toc-list ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .toc-list ul li a { display: block; padding: 6px 8px; border-radius: var(--radius-sm); border-left: 2px solid transparent; color: var(--text-secondary); text-decoration: none; transition: var(--transition); }
+    .toc-list ul li a:hover { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); }
+    .sidebar-email-form { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .sidebar-email-form input { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-family: inherit; background: var(--bg); color: var(--text-primary); }
+    .sidebar-email-form button { padding: 10px 12px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+    .related-articles { padding: 64px 24px; border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-grid .article-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: var(--transition); }
+    .article-card-img { width: 100%; height: 180px; overflow: hidden; }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; width: fit-content; }
+    .article-read-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: auto; }
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .toast.show { opacity: 1; }
+    .article-content p { font-size: 1.02rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 22px; }
+    .article-content h2 { font-size: 1.65rem; margin: 48px 0 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .article-content h2:first-of-type { border-top: none; margin-top: 0; }
+    .article-content h3 { font-size: 1.2rem; margin: 32px 0 14px; }
+    .article-content ul, .article-content ol { line-height: 1.85; margin-bottom: 22px; }
+    .article-content li { margin-bottom: 8px; font-size: 1.02rem; }
+    .article-content strong { color: var(--text-primary); }
+    .article-content a { color: var(--accent); }
+    .article-content a:hover { text-decoration: underline; }
+  </style>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Ik6iT3b9nGnlXYHBmdbzw" async></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients" class="active">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <a href="/ingredients">Ingredients</a> <span>→</span> <span>TEWL</span>
+      </div>
+      <div class="article-category-tag">Glossary</div>
+      <h1>What Is TEWL? (Transepidermal Water Loss)</h1>
+      <p class="article-hero-sub">TEWL is the rate at which water evaporates through the skin to the surrounding atmosphere. It is the most precise, clinically validated measure of skin barrier function — and understanding it explains why your skin feels tight, flaky, or reactive.</p>
+      <div class="article-meta-bar">
+        <span>By BioSkinRepair Editorial Team</span>
+        <span>•</span>
+        <span>Reviewed by a licensed dermatologist</span>
+        <span>•</span>
+        <span>7 min read</span>
+        <span>•</span>
+        <span>Updated March 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-hero-img-wrap">
+  <img src="https://images.unsplash.com/photo-1583241475880-083f84372725?w=1200&h=420&fit=crop&q=80&auto=format" alt="Close-up of skin texture showing moisture" class="article-hero-img" loading="eager" />
+</div>
+
+<div class="article-layout container">
+  <article class="article-content">
+
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="stat-box-number">≤10 g/m²/h</div>
+        <div class="stat-box-label">normal TEWL in healthy skin</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">2–5×</div>
+        <div class="stat-box-label">increase in TEWL with compromised barrier</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-number">24 hrs</div>
+        <div class="stat-box-label">until topical occlusives measurably reduce TEWL</div>
+      </div>
+    </div>
+
+    <h2 id="definition">What TEWL Actually Measures</h2>
+    <p>TEWL (pronounced "tool") stands for transepidermal water loss. It measures the rate of passive water evaporation through the skin to the atmosphere, expressed in grams per square meter per hour (g/m²/h). It is not the same as sweat. TEWL is passive — water diffuses outward through the skin regardless of temperature or activity level, and the rate at which this occurs is determined almost entirely by the integrity of the stratum corneum lipid barrier.</p>
+    <p>In healthy skin, TEWL is typically 2–10 g/m²/h, varying by body site (forearm: ~4–6 g/m²/h; face: ~6–10 g/m²/h; palms and soles: higher due to eccrine gland density). When the stratum corneum lipid matrix is depleted — through disease, UV damage, harsh surfactant exposure, or over-exfoliation — TEWL increases because water is no longer retained as effectively by the compromised lamellar bilayers.</p>
+
+    <h2 id="why-it-matters">Why TEWL Matters for Skin Barrier Function</h2>
+    <p>TEWL is the most direct quantifiable proxy for barrier function because it measures the output of the barrier — how much water it is failing to retain — rather than inferring barrier condition from indirect signals like skin appearance or comfort. Dermatologists and researchers use tewameters (closed-chamber or open-chamber measurement devices) to quantify TEWL for clinical studies, tracking barrier repair over time.</p>
+    <p>For clinical purposes:</p>
+    <ul>
+      <li><strong>TEWL below 10 g/m²/h:</strong> Normal barrier function</li>
+      <li><strong>TEWL 10–20 g/m²/h:</strong> Mildly compromised; increased sensitivity to irritants and transdermal penetration</li>
+      <li><strong>TEWL above 20 g/m²/h:</strong> Significantly compromised; consistent with atopic dermatitis, psoriasis flares, or acute over-exfoliation</li>
+      <li><strong>TEWL above 75 g/m²/h:</strong> Severe barrier loss (burns, wounds)</li>
+    </ul>
+    <p>The feedback loop: elevated TEWL dehydrates the corneocytes, which affects the enzymes responsible for desquamation (natural cell shedding). This leads to irregular shedding, which produces visible flaking, and further disrupts the lipid matrix — a self-perpetuating cycle of barrier damage. This feedback loop is why skin barrier recovery requires specific intervention rather than just time — <a href="/how-long-skin-barrier-repair">read the full timeline →</a></p>
+
+    <h2 id="what-increases-tewl">What Increases TEWL</h2>
+    <ul>
+      <li><strong>Compromised stratum corneum lipid matrix:</strong> Ceramide depletion, cholesterol deficiency, or disrupted fatty acid composition reduces barrier integrity directly</li>
+      <li><strong>Inflammatory skin conditions:</strong> Atopic dermatitis, psoriasis, and rosacea all show elevated TEWL due to cytokine-mediated disruption of lipid synthesis</li>
+      <li><strong>Surfactant exposure:</strong> Sodium lauryl sulfate (SLS) increases TEWL 300–400% after a single application. Even milder surfactants increase it temporarily</li>
+      <li><strong>Over-exfoliation:</strong> Chemical and physical exfoliation depletes the upper stratum corneum layers, temporarily increasing TEWL until new cells mature</li>
+      <li><strong>UV radiation:</strong> Repeated UV exposure damages Langerhans cells and alters lipid synthesis, raising baseline TEWL</li>
+      <li><strong>Cold weather and low humidity:</strong> Environmental conditions do not cause TEWL per se, but they increase the concentration gradient driving evaporation, making existing TEWL more symptomatic</li>
+      <li><strong>Age:</strong> TEWL regulation declines with age due to reduced ceramide synthesis and epidermal turnover, particularly after 50</li>
+      <li><strong>Retinoids:</strong> During the adjustment phase, retinoids increase TEWL by accelerating cell turnover before the barrier adapts</li>
+    </ul>
+
+    <h2 id="what-reduces-tewl">What Reduces TEWL</h2>
+    <ul>
+      <li><strong>Occlusive ingredients:</strong> Petrolatum reduces TEWL by 98% (strongest occlusive). Mineral oil, dimethicone, and shea butter are also effective. Ceramide-containing products address both the structural deficit and provide some occlusion.</li>
+      <li><strong>Ceramide replenishment:</strong> Topical ceramides, particularly when paired with cholesterol and fatty acids in equimolar ratios, restore lamellar bilayer function and reduce TEWL structurally — not just occlusively. This is the difference between treating the symptom (occlusion) and treating the cause (lipid replenishment).</li>
+      <li><strong>Niacinamide:</strong> At 5%, upregulates ceramide synthesis and reduces TEWL over 4–8 weeks. See the <a href="/niacinamide-skin-barrier">niacinamide and skin barrier guide →</a></li>
+      <li><strong>Application timing:</strong> Applying moisturizer within 3 minutes of cleansing reduces TEWL more effectively than delayed application, because the stratum corneum retains more water to be sealed in.</li>
+      <li><strong>SPF:</strong> Daily UV protection prevents the UV-driven TEWL increase; an underappreciated aspect of UV protection for barrier-compromised skin.</li>
+    </ul>
+
+    <h2 id="measuring-tewl">Can You Measure TEWL at Home?</h2>
+    <p>No consumer-grade TEWL measurement device currently exists at accuracy levels comparable to research tewameters. However, the functional equivalent is the stinging/burning test: apply a dilute saline solution (or just use a simple toner with no active ingredients) to cleansed skin. If it stings, TEWL is elevated. The stinging indicates that saline is penetrating through the compromised barrier and reaching nociceptors that would normally be excluded.</p>
+    <p>The absence of stinging, combined with reduced tightness after cleansing and reduced sensitivity to environmental exposure, is a reliable proxy for TEWL normalization. These are the same signs covered in the <a href="/signs-skin-barrier-is-healing">skin barrier healing guide →</a></p>
+
+    <div class="article-callout">
+      <strong>TEWL is not the same as dry skin.</strong> A dehydrated but structurally intact barrier can have normal TEWL. Conversely, oily skin with a compromised lipid matrix can have elevated TEWL. Skin type and barrier function are separate variables.
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <div class="toc-list">
+        <strong>In This Guide</strong>
+        <ul>
+          <li><a href="#definition">What TEWL Measures</a></li>
+          <li><a href="#why-it-matters">Why It Matters</a></li>
+          <li><a href="#what-increases-tewl">What Increases TEWL</a></li>
+          <li><a href="#what-reduces-tewl">What Reduces TEWL</a></li>
+          <li><a href="#measuring-tewl">Measuring TEWL at Home</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>TEWL Quick Reference</strong>
+      <ul style="margin-top: 12px; padding-left: 0; list-style: none;">
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Normal</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">≤10 g/m²/h</p>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Mild compromise</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">10–20 g/m²/h</p>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Significant damage</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">&gt;20 g/m²/h</p>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Fastest reducer</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">Petrolatum (98% reduction)</p>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+          <strong style="font-size: 0.9rem;">Structural repair</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">Ceramide + cholesterol + fatty acid complex</p>
+        </li>
+        <li style="padding: 10px 0;">
+          <strong style="font-size: 0.9rem;">Time to normalize</strong>
+          <p style="font-size: 0.82rem; margin-top: 4px; color: var(--text-secondary);">3–8 weeks with correct routine</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <strong>Get the Barrier Guide</strong>
+      <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">A 7-day structured protocol for rebuilding a compromised barrier — free for subscribers.</p>
+      <form class="sidebar-email-form" id="sidebar-form">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit">Send Me the Guide</button>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Related articles -->
+<section class="related-articles container">
+  <h2>Related Reading</h2>
+  <div class="related-grid">
+    <a href="/skin-barrier-101" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin barrier anatomy" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Foundation</span>
+        <h3>Skin Barrier 101: The Complete Guide</h3>
+        <p>The anatomy of the stratum corneum — how TEWL fits into the full picture of barrier function.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/how-long-skin-barrier-repair" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=220&fit=crop&q=80&auto=format" alt="Skin recovery timeline" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Barrier Recovery</span>
+        <h3>How Long Does Skin Barrier Repair Take?</h3>
+        <p>The week-by-week recovery timeline — and the TEWL milestones that mark genuine progress.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+    <a href="/ceramides" class="article-card">
+      <div class="article-card-img">
+        <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?w=400&h=220&fit=crop&q=80&auto=format" alt="Ceramide cream texture" loading="lazy" />
+      </div>
+      <div class="article-card-body">
+        <span class="article-tag">Ingredient Science</span>
+        <h3>Ceramides: The Key Barrier Lipid</h3>
+        <p>How ceramides reduce TEWL by restoring the lamellar lipid matrix — not just occluding the surface.</p>
+        <span class="article-read-link">Read →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">BioSkinRepair</a>
+        <p>Evidence-based skin barrier education and product guidance. We help you understand your skin so you can make informed decisions — not just follow trends.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Signs of Damage</a></li>
+          <li><a href="/skin-barrier-101#routines">Repair Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BioSkinRepair. All rights reserved. Content is for educational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+  const sidebarForm = document.getElementById('sidebar-form');
+  if (sidebarForm) {
+    sidebarForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('You\'re on the list — check your inbox shortly.');
+      sidebarForm.reset();
+    });
+  }
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('This page is coming soon.');
+    });
+  });
+</script>
+
+</body>
+</html>
