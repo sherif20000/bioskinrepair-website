@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWCGZD0RDE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VWCGZD0RDE');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editorial Policy — BioSkinRepair</title>
+  <meta name="description" content="How BioSkinRepair sources, writes, fact-checks, and updates content. Our editorial standards, expert review process, correction policy, and affiliate disclosure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* ── Page hero ───────────────────────────────────────── */
+    .page-hero {
+      padding: 80px 0 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Policy sections ─────────────────────────────────── */
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .policy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+    }
+    .policy-card-icon {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+      opacity: 0.55;
+    }
+    .policy-card h3 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .policy-card p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    @media (max-width: 900px) { .policy-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .policy-grid { grid-template-columns: 1fr; } }
+
+    /* ── Sourcing table ───────────────────────────────────── */
+    .source-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 0.88rem;
+    }
+    .source-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--surface);
+      color: var(--text-primary);
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .source-table td {
+      padding: 10px 16px;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      line-height: 1.6;
+      vertical-align: top;
+    }
+    .source-table tr:nth-child(even) td {
+      background: var(--surface);
+    }
+
+    /* ── Correction process steps ─────────────────────────── */
+    .correction-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .correction-step {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .correction-step h3 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .correction-step p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    @media (max-width: 900px) { .correction-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .correction-steps { grid-template-columns: 1fr; } }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
+    .affiliate-disc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+    }
+    .footer-copy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy p { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin: 0; }
+    .footer-copy a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy a:hover { color: rgba(255,255,255,0.8); }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+  </style>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Ik6iT3b9nGnlXYHBmdbzw" async></script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BioSkinRepair" />
+  <meta property="og:title" content="Editorial Policy" />
+  <meta property="og:description" content="How BioSkinRepair sources, writes, fact-checks, and updates content. Our editorial standards, expert review process, correction policy, and affiliate disclosure." />
+  <meta property="og:url" content="https://bioskinrepair.com/editorial-policy" />
+  <meta property="og:image" content="https://bioskinrepair.com/og-default.jpg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Editorial Policy" />
+  <meta name="twitter:description" content="How BioSkinRepair sources, writes, fact-checks, and updates content. Our editorial standards, expert review process, correction policy, and affiliate disclosure." />
+  <meta name="twitter:image" content="https://bioskinrepair.com/og-default.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Editorial Policy — BioSkinRepair",
+  "description": "How BioSkinRepair sources, writes, fact-checks, and updates content. Our editorial standards, expert review process, correction policy, and affiliate disclosure.",
+  "url": "https://bioskinrepair.com/editorial-policy",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BioSkinRepair",
+    "url": "https://bioskinrepair.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bioskinrepair.com/og-default.jpg"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://bioskinrepair.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Editorial Policy",
+      "item": "https://bioskinrepair.com/editorial-policy"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="nav">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="/" class="nav-logo">BioSkinRepair</a>
+      <ul class="nav-links">
+        <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+        <li><a href="/ingredients">Ingredients</a></li>
+        <li><a href="/routines">Routines</a></li>
+        <li><a href="/skin-conditions">Skin Conditions</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/shop">Shop</a></li>
+      </ul>
+      <!-- REVENUE: Email capture -->
+      <a href="/newsletter" class="nav-links btn-nav-cta">Free Barrier Guide</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/skin-barrier-101">Skin Barrier 101</a>
+    <a href="/ingredients">Ingredients</a>
+    <a href="/routines">Routines</a>
+    <a href="/skin-conditions">Skin Conditions</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/shop">Shop</a>
+    <a href="/newsletter" class="btn-mobile-cta">Free Barrier Guide</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero" aria-labelledby="editorial-hero-heading">
+  <div class="container">
+    <span class="eyebrow">Transparency &amp; standards</span>
+    <h1 id="editorial-hero-heading">Our Editorial Policy</h1>
+    <p>How we research, write, review, and update every piece of content — and what we do when we get something wrong.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDITORIAL COMMITMENT
+     ============================================================ -->
+<section class="section" aria-labelledby="commitment-heading">
+  <div class="container" style="max-width:800px;">
+    <span class="eyebrow">Our commitment</span>
+    <h2 id="commitment-heading" style="margin-bottom:24px;">Why This Policy Exists</h2>
+    <p style="margin-bottom:16px; font-size:1.05rem; color:var(--text-primary);">BioSkinRepair covers skin barrier health — a topic that sits at the intersection of cosmetic dermatology, consumer product claims, and clinical science. Readers rely on us to help them make decisions about their skin and their money. That responsibility shapes every editorial choice we make.</p>
+    <p style="margin-bottom:16px;">This page documents our standards in full: how content is sourced, who reviews it, how we handle corrections, and how our affiliate relationships work. We publish it because we believe editorial transparency is not optional for a site operating in a health and wellness category.</p>
+    <p>If you believe we have published inaccurate or misleading information, please contact us at <a href="/contact" style="color:var(--accent);">contact@bioskinrepair.com</a>. We take every correction request seriously.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDITORIAL PRINCIPLES
+     ============================================================ -->
+<section class="section" style="background:var(--accent-light); padding-top:64px; padding-bottom:64px;" aria-labelledby="principles-heading">
+  <div class="container">
+    <div class="section-header" style="text-align:left; max-width:none;">
+      <span class="eyebrow">How we work</span>
+      <h2 id="principles-heading">Six Editorial Principles</h2>
+      <p style="max-width:560px; margin-top:8px;">These principles are non-negotiable. They apply to every article, review, and guide published on this site.</p>
+    </div>
+
+    <div class="policy-grid" style="grid-template-columns: repeat(3, 1fr);">
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">01</div>
+        <h3>Evidence-Based Claims Only</h3>
+        <p>Every health and efficacy claim must be traceable to peer-reviewed research, published clinical guidelines, or regulatory body guidance. Writer opinion and brand-provided data are not acceptable as standalone sources for clinical claims.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">02</div>
+        <h3>Expert Review Before Publication</h3>
+        <p>Every article is reviewed by at least one licensed professional — a board-certified dermatologist, clinical esthetician, or cosmetic chemist — before going live. The reviewer's name and credentials appear on the article.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">03</div>
+        <h3>No Paid Editorial Placement</h3>
+        <p>We do not accept payment, free product, or any form of compensation in exchange for editorial coverage, product inclusion, or favorable ranking. Brands have no influence over our content, scoring, or recommendations.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">04</div>
+        <h3>Clear Affiliate Disclosure</h3>
+        <p>When we link to products we may earn a commission from, we say so clearly — at the top of the relevant section, not in fine print. Affiliate relationships do not influence which products we recommend or how we score them.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">05</div>
+        <h3>Regular Content Audits</h3>
+        <p>Every article is audited every 6 months. If a product formulation changes, new clinical evidence emerges, or our guidance shifts, the article is updated and the "Last Updated" date is revised accordingly.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">06</div>
+        <h3>Corrections Policy</h3>
+        <p>If we publish an error — factual, clinical, or otherwise — we correct it promptly, add a visible correction notice, and do not delete or silently alter the original text. The correction is dated and explained.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOURCING STANDARDS
+     ============================================================ -->
+<section class="section" aria-labelledby="sourcing-heading">
+  <div class="container" style="max-width:860px;">
+    <span class="eyebrow">Research methodology</span>
+    <h2 id="sourcing-heading" style="margin-bottom:12px;">How We Source Information</h2>
+    <p style="margin-bottom:8px;">We use a tiered source hierarchy. Higher-tier sources override lower-tier sources when claims conflict.</p>
+
+    <table class="source-table" role="table" aria-label="Source hierarchy">
+      <thead>
+        <tr>
+          <th scope="col">Tier</th>
+          <th scope="col">Source Type</th>
+          <th scope="col">Used For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tier 1</strong></td>
+          <td>Peer-reviewed clinical studies, randomised controlled trials, systematic reviews, meta-analyses (PubMed, Cochrane Library)</td>
+          <td>All clinical efficacy and safety claims</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2</strong></td>
+          <td>Guidelines published by AAD, BAD, EADV, NICE, and equivalent dermatological bodies</td>
+          <td>Diagnostic criteria, treatment protocols, and clinical best practices</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 3</strong></td>
+          <td>Expert interviews, board-certified dermatologist or cosmetic chemist commentary</td>
+          <td>Practical application, mechanism explanations, and clinical context</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 4</strong></td>
+          <td>Manufacturer ingredient data, product INCI lists, brand technical documents</td>
+          <td>Formulation analysis, concentration data — never for efficacy claims in isolation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     CORRECTION PROCESS
+     ============================================================ -->
+<section class="section" style="background:var(--bg); padding-top:64px; padding-bottom:64px;" aria-labelledby="correction-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">When we get it wrong</span>
+      <h2 id="correction-heading">How We Handle Corrections</h2>
+      <p>Every error report is investigated. Here is the four-step process we follow.</p>
+    </div>
+
+    <div class="correction-steps" style="margin-top:48px;">
+
+      <div class="correction-step">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Report Received</h3>
+        <p>We acknowledge all correction requests within 48 hours. Requests can be submitted via our <a href="/contact" style="color:var(--accent);">contact form</a> or by emailing contact@bioskinrepair.com.</p>
+      </div>
+
+      <div class="correction-step">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Editorial Review</h3>
+        <p>Our editor reviews the claim against primary sources. For clinical claims, we also consult our medical reviewer. We treat anonymous reports with the same rigor as named ones.</p>
+      </div>
+
+      <div class="correction-step">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Correction Published</h3>
+        <p>If the error is confirmed, we update the article text and add a dated correction notice at the top of the affected section. We do not silently edit or delete the original claim.</p>
+      </div>
+
+      <div class="correction-step">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Reporter Notified</h3>
+        <p>Where the reporter provided contact details, we notify them once the correction is live. We thank contributors who help us maintain accuracy — corrections improve the resource for everyone.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AFFILIATE DISCLOSURE (FULL)
+     ============================================================ -->
+<section class="section" aria-labelledby="affiliate-heading">
+  <div class="container" style="max-width:800px;">
+    <span class="eyebrow">Financial transparency</span>
+    <h2 id="affiliate-heading" style="margin-bottom:24px;">Affiliate &amp; Commercial Relationships</h2>
+    <p style="margin-bottom:16px; font-size:1.05rem; color:var(--text-primary);">BioSkinRepair participates in affiliate programs including the Amazon Associates Program and selected brand affiliate networks. When you click a product link marked with an affiliate tag and make a purchase, we may earn a small commission at no additional cost to you.</p>
+    <p style="margin-bottom:16px;"><strong style="color:var(--text-primary);">What this means in practice:</strong> Affiliate relationships influence how we link to products. They do not influence which products we recommend, how we score them, or what we write about them. A product scoring 7.0/10 does not get bumped because it pays a higher commission. A product we believe is inferior is not recommended regardless of affiliate revenue potential.</p>
+    <p style="margin-bottom:16px;">We disclose affiliate relationships inline — at the point of the product link or within the opening section of any review or buying guide that contains affiliate links. We do not bury disclosures in footers or terms pages.</p>
+    <p><strong style="color:var(--text-primary);">What we do not do:</strong> We do not accept sponsored posts, paid product placements, brand-funded reviews, gifted product in exchange for coverage, or any arrangement where commercial payment influences editorial content. Our review scoring methodology is fixed and applied consistently regardless of brand relationship.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     UPDATE &amp; REVIEW SCHEDULE
+     ============================================================ -->
+<section class="section" style="background:var(--accent-light); padding-top:64px; padding-bottom:64px;" aria-labelledby="updates-heading">
+  <div class="container" style="max-width:800px;">
+    <span class="eyebrow">Keeping content current</span>
+    <h2 id="updates-heading" style="margin-bottom:24px;">Content Review Schedule</h2>
+    <p style="margin-bottom:24px;">Skincare science and product formulations change. We operate a structured review cycle to keep all content accurate and current.</p>
+
+    <div class="policy-grid" style="grid-template-columns: repeat(3, 1fr);">
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">6M</div>
+        <h3>Every 6 Months</h3>
+        <p>All articles are reviewed against current clinical evidence. Any change to a product's INCI list, concentration, or formulation triggers an immediate review of the relevant content — not a scheduled one.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">As</div>
+        <h3>As Evidence Emerges</h3>
+        <p>Major new publications, meta-analyses, or guideline updates that change our understanding of an ingredient or condition trigger an out-of-cycle content review within 30 days of publication.</p>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-card-icon" aria-hidden="true">Log</div>
+        <h3>Update Log</h3>
+        <p>Every updated article carries a visible "Last Updated" date. Significant revisions — where a recommendation has changed — include a brief explanation of what changed and why at the bottom of the article.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / QUESTIONS
+     ============================================================ -->
+<section class="section" aria-labelledby="contact-editorial-heading">
+  <div class="container" style="max-width:800px; text-align:center;">
+    <span class="eyebrow">Questions or concerns</span>
+    <h2 id="contact-editorial-heading" style="margin-bottom:16px;">Contact the Editorial Team</h2>
+    <p style="max-width:540px; margin:0 auto 28px; line-height:1.7;">For correction requests, sourcing questions, or editorial concerns, reach us directly. We respond to all editorial enquiries within 48 hours.</p>
+    <a href="/contact" class="btn btn-primary">Send a Message</a>
+    <p style="margin-top:20px; font-size:0.85rem; color:var(--text-secondary);">This editorial policy was last reviewed and updated in <strong>March 2026</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">BioSkinRepair</a>
+        <p>The science of skin recovery. Independent, evidence-based content for people managing damaged skin barriers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/skin-barrier-101">Skin Barrier 101</a></li>
+          <li><a href="/skin-barrier-101#signs">Barrier Damage Signs</a></li>
+          <li><a href="/skin-barrier-101#routines">Recovery Routines</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ingredients</h4>
+        <ul>
+          <li><a href="/ceramides">Ceramides Guide</a></li>
+          <li><a href="/ingredients#niacinamide">Niacinamide</a></li>
+          <li><a href="/ingredients">All Ingredients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="/eczema">Eczema</a></li>
+          <li><a href="/rosacea">Rosacea</a></li>
+          <li><a href="/over-exfoliation">Over-Exfoliation</a></li>
+          <li><a href="/sensitive-skin">Sensitive Skin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/editorial-policy" class="active">Editorial Policy</a></li>
+          <li><a href="/newsletter">Free Guide</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="affiliate-disc">
+        <strong style="color:rgba(255,255,255,0.6);">Affiliate Disclosure:</strong> BioSkinRepair participates in affiliate programs. We may earn a commission when you buy through our links at no additional cost to you. All recommendations are based on independent research.
+      </p>
+      <div class="footer-copy">
+        <p>&copy; 2026 BioSkinRepair. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="#">Affiliate Disclosure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', function () {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      const spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+</script>
+
+</body>
+</html>
