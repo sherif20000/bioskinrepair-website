@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BioSkinRepair — 200-Article Content Roadmap</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #00d4aa;
+    --accent2: #58a6ff;
+    --p1: #3fb950;
+    --p2: #d29922;
+    --p3: #8b949e;
+    --kd-low: #3fb950;
+    --kd-med: #d29922;
+    --kd-high: #f85149;
+    --published: #238636;
+    --planned: #1f6feb;
+    --radius: 8px;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+  /* Header */
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-title { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+  .header-sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px; }
+
+  /* Stats bar */
+  .stats-bar { display: flex; gap: 16px; flex-wrap: wrap; padding: 20px 32px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .stat-pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 6px 16px; font-size: 0.82rem; color: var(--text-secondary); }
+  .stat-pill span { color: var(--text); font-weight: 600; margin-right: 4px; }
+
+  /* Controls */
+  .controls { padding: 16px 32px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
+  .search-input { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; color: var(--text); font-size: 0.875rem; width: 240px; outline: none; }
+  .search-input:focus { border-color: var(--accent); }
+  .filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+  .divider { width: 1px; height: 24px; background: var(--border); }
+  .controls-label { font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
+
+  /* Main */
+  .main { padding: 24px 32px; }
+  .cluster-section { margin-bottom: 40px; }
+  .cluster-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+  .cluster-icon { font-size: 1.3rem; }
+  .cluster-title { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+  .cluster-count { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; color: var(--text-secondary); }
+  .cluster-desc { font-size: 0.82rem; color: var(--text-secondary); margin-left: auto; max-width: 400px; text-align: right; }
+
+  /* Table */
+  .article-table { width: 100%; border-collapse: collapse; }
+  .article-table th { text-align: left; padding: 8px 12px; font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); background: var(--surface2); }
+  .article-table th:first-child { border-radius: var(--radius) 0 0 0; }
+  .article-table th:last-child { border-radius: 0 var(--radius) 0 0; }
+  .article-row { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+  .article-row:hover { background: var(--surface2); }
+  .article-row td { padding: 10px 12px; font-size: 0.875rem; vertical-align: middle; }
+  .article-row.hidden { display: none; }
+
+  /* Badges */
+  .badge { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+  .badge-published { background: rgba(35,134,54,0.2); color: var(--p1); border: 1px solid rgba(63,185,80,0.3); }
+  .badge-planned { background: rgba(31,111,235,0.15); color: var(--accent2); border: 1px solid rgba(88,166,255,0.3); }
+  .badge-kd-low { background: rgba(63,185,80,0.15); color: var(--kd-low); border: 1px solid rgba(63,185,80,0.3); }
+  .badge-kd-med { background: rgba(210,153,34,0.15); color: var(--kd-med); border: 1px solid rgba(210,153,34,0.3); }
+  .badge-kd-high { background: rgba(248,81,73,0.15); color: var(--kd-high); border: 1px solid rgba(248,81,73,0.3); }
+  .badge-p1 { background: rgba(63,185,80,0.15); color: var(--p1); border: 1px solid rgba(63,185,80,0.3); }
+  .badge-p2 { background: rgba(210,153,34,0.15); color: var(--kd-med); border: 1px solid rgba(210,153,34,0.3); }
+  .badge-p3 { background: rgba(139,148,158,0.15); color: var(--p3); border: 1px solid rgba(139,148,158,0.3); }
+
+  .article-num { color: var(--text-secondary); font-size: 0.78rem; width: 36px; }
+  .article-title { color: var(--text); font-weight: 500; }
+  .article-title small { display: block; font-size: 0.75rem; color: var(--text-secondary); font-weight: 400; margin-top: 2px; }
+  .article-keyword { color: var(--text-secondary); font-size: 0.8rem; font-style: italic; }
+
+  /* No results */
+  .no-results { padding: 40px; text-align: center; color: var(--text-secondary); display: none; }
+
+  /* Legend */
+  .legend { display: flex; gap: 24px; flex-wrap: wrap; padding: 16px 32px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-secondary); background: var(--surface); }
+  .legend-group { display: flex; gap: 8px; align-items: center; }
+  .legend-label { font-weight: 600; color: var(--text); }
+
+  @media (max-width: 768px) {
+    .header, .stats-bar, .controls, .main { padding-left: 16px; padding-right: 16px; }
+    .article-table th:nth-child(3), .article-table td:nth-child(3),
+    .article-table th:nth-child(5), .article-table td:nth-child(5) { display: none; }
+    .cluster-desc { display: none; }
+    .search-input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-title">BioSkinRepair — 200-Article Content Roadmap</div>
+    <div class="header-sub">Organized by cluster · Keyword difficulty · Publishing priority · DA 13 baseline</div>
+  </div>
+  <div style="font-size:0.82rem; color:var(--text-secondary);">Last updated: April 2026</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-pill"><span id="stat-total">200</span> Total Articles</div>
+  <div class="stat-pill"><span id="stat-published">33</span> Published</div>
+  <div class="stat-pill"><span id="stat-planned">167</span> To Build</div>
+  <div class="stat-pill"><span>16.5%</span> Complete</div>
+  <div class="stat-pill"><span id="stat-p1">0</span> P1 (months 4–6)</div>
+  <div class="stat-pill"><span id="stat-p2">0</span> P2 (months 7–12)</div>
+  <div class="stat-pill"><span id="stat-p3">0</span> P3 (months 13–24)</div>
+  <div class="stat-pill"><span>10</span> Clusters</div>
+</div>
+
+<div class="controls">
+  <input type="text" class="search-input" id="search" placeholder="Search articles..." oninput="applyFilters()" />
+  <div class="divider"></div>
+  <span class="controls-label">Status:</span>
+  <div class="filter-group" id="filter-status">
+    <button class="filter-btn active" data-filter="status" data-value="all" onclick="setFilter('status','all',this)">All</button>
+    <button class="filter-btn" data-filter="status" data-value="published" onclick="setFilter('status','published',this)">Published</button>
+    <button class="filter-btn" data-filter="status" data-value="planned" onclick="setFilter('status','planned',this)">Planned</button>
+  </div>
+  <div class="divider"></div>
+  <span class="controls-label">KD:</span>
+  <div class="filter-group">
+    <button class="filter-btn active" data-filter="kd" data-value="all" onclick="setFilter('kd','all',this)">All</button>
+    <button class="filter-btn" data-filter="kd" data-value="low" onclick="setFilter('kd','low',this)">Low</button>
+    <button class="filter-btn" data-filter="kd" data-value="med" onclick="setFilter('kd','med',this)">Medium</button>
+    <button class="filter-btn" data-filter="kd" data-value="high" onclick="setFilter('kd','high',this)">High</button>
+  </div>
+  <div class="divider"></div>
+  <span class="controls-label">Priority:</span>
+  <div class="filter-group">
+    <button class="filter-btn active" data-filter="priority" data-value="all" onclick="setFilter('priority','all',this)">All</button>
+    <button class="filter-btn" data-filter="priority" data-value="p1" onclick="setFilter('priority','p1',this)">P1</button>
+    <button class="filter-btn" data-filter="priority" data-value="p2" onclick="setFilter('priority','p2',this)">P2</button>
+    <button class="filter-btn" data-filter="priority" data-value="p3" onclick="setFilter('priority','p3',this)">P3</button>
+  </div>
+</div>
+
+<div class="main" id="main-content">
+
+<!-- ===== CLUSTER 1: SKIN BARRIER FUNDAMENTALS ===== -->
+<div class="cluster-section" data-cluster="1">
+  <div class="cluster-header">
+    <span class="cluster-icon">🔬</span>
+    <span class="cluster-title">Cluster 1 — Skin Barrier Fundamentals</span>
+    <span class="cluster-count" id="c1-count">41 articles</span>
+    <span class="cluster-desc">Hub + definitional content. Highest authority signal to Google. Target searchers at the "understand" stage.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="high" data-priority="published"><td class="article-num">1</td><td class="article-title">Skin Barrier 101: Everything You Need to Know<small>/skin-barrier-101</small></td><td class="article-keyword">skin barrier</td><td><span class="badge badge-kd-high">High</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">2</td><td class="article-title">What Is TEWL (Transepidermal Water Loss)?<small>/tewl</small></td><td class="article-keyword">transepidermal water loss</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">3</td><td class="article-title">How Long Does Skin Barrier Repair Take?<small>/how-long-skin-barrier-repair</small></td><td class="article-keyword">how long to repair skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">4</td><td class="article-title">7 Signs Your Skin Barrier Is Healing<small>/signs-skin-barrier-is-healing</small></td><td class="article-keyword">signs skin barrier is healing</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">5</td><td class="article-title">Humectant, Emollient, Occlusives: What Each Does<small>/humectant</small></td><td class="article-keyword">humectant emollient occlusive</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">6</td><td class="article-title">What Is an Emollient in Skincare?<small>/emollient</small></td><td class="article-keyword">emollient skincare</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">7</td><td class="article-title">What Is an Occlusive in Skincare?<small>/occlusive</small></td><td class="article-keyword">occlusive skincare</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">8</td><td class="article-title">What Is the Acid Mantle and Why Does It Matter?</td><td class="article-keyword">acid mantle skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">9</td><td class="article-title">How to Test Your Skin Barrier at Home</td><td class="article-keyword">how to test skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">10</td><td class="article-title">What Causes a Damaged Skin Barrier?</td><td class="article-keyword">what causes damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">11</td><td class="article-title">How to Strengthen Your Skin Barrier</td><td class="article-keyword">how to strengthen skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">12</td><td class="article-title">How to Tell If Your Skin Barrier Is Damaged</td><td class="article-keyword">damaged skin barrier symptoms</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">13</td><td class="article-title">Skin Barrier vs Skin Microbiome: What's the Difference?</td><td class="article-keyword">skin barrier microbiome</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">14</td><td class="article-title">Can You Repair Your Skin Barrier Permanently?</td><td class="article-keyword">can you permanently repair skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">15</td><td class="article-title">How Aging Affects the Skin Barrier</td><td class="article-keyword">aging skin barrier changes</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 2: INGREDIENTS ===== -->
+<div class="cluster-section" data-cluster="2">
+  <div class="cluster-header">
+    <span class="cluster-icon">🧪</span>
+    <span class="cluster-title">Cluster 2 — Ingredient Deep Dives</span>
+    <span class="cluster-count" id="c2-count">39 articles</span>
+    <span class="cluster-desc">Highest long-tail volume. Each ingredient = 3–5 rankable variations. Build these consistently every month.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">16</td><td class="article-title">Ceramides: The Science of Your Skin Barrier<small>/ceramides</small></td><td class="article-keyword">ceramides skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">17</td><td class="article-title">Niacinamide and the Skin Barrier<small>/niacinamide-skin-barrier</small></td><td class="article-keyword">niacinamide skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">18</td><td class="article-title">Glycerin: The Underrated Humectant<small>/glycerin</small></td><td class="article-keyword">glycerin skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">19</td><td class="article-title">Panthenol (Vitamin B5): Barrier Repair Booster<small>/panthenol</small></td><td class="article-keyword">panthenol skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">20</td><td class="article-title">Retinol and the Skin Barrier<small>/retinol-skin-barrier</small></td><td class="article-keyword">retinol skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">21</td><td class="article-title">Hyaluronic Acid for Skin Barrier<small>/hyaluronic-acid</small></td><td class="article-keyword">hyaluronic acid skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">22</td><td class="article-title">Squalane for Skin Barrier: The Complete Guide</td><td class="article-keyword">squalane skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">23</td><td class="article-title">Centella Asiatica (Cica) for Barrier Repair</td><td class="article-keyword">centella asiatica skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">24</td><td class="article-title">Urea for Dry Skin: Humectant + Keratolytic</td><td class="article-keyword">urea for dry skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">25</td><td class="article-title">Colloidal Oatmeal for Eczema and Barrier Repair</td><td class="article-keyword">colloidal oatmeal skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">26</td><td class="article-title">Azelaic Acid for Sensitive Skin: Complete Guide</td><td class="article-keyword">azelaic acid sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">27</td><td class="article-title">Niacinamide Concentration Guide: 2% vs 5% vs 10%</td><td class="article-keyword">niacinamide 2% vs 5% vs 10%</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">28</td><td class="article-title">How to Use Hyaluronic Acid Correctly</td><td class="article-keyword">how to use hyaluronic acid correctly</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">29</td><td class="article-title">Niacinamide for Eczema: What the Research Shows</td><td class="article-keyword">niacinamide for eczema</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">30</td><td class="article-title">Vitamin E (Tocopherol) for Skin Barrier</td><td class="article-keyword">vitamin E skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">31</td><td class="article-title">Allantoin Skin Benefits: The Overlooked Soother</td><td class="article-keyword">allantoin skin benefits</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">32</td><td class="article-title">Linoleic Acid for Skin Barrier Repair</td><td class="article-keyword">linoleic acid skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">33</td><td class="article-title">Sodium PCA: The Skin's Own Humectant</td><td class="article-keyword">sodium PCA skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">34</td><td class="article-title">Ceramide NP vs AP vs EOP: What the Subtypes Mean</td><td class="article-keyword">ceramide NP vs AP difference</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">35</td><td class="article-title">Shea Butter for Skin Barrier: Evidence Review</td><td class="article-keyword">shea butter skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">36</td><td class="article-title">Peptides for Skin Barrier: Do They Actually Work?</td><td class="article-keyword">peptides skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">37</td><td class="article-title">Ferulic Acid for Skin: Antioxidant + Vitamin C Enhancer</td><td class="article-keyword">ferulic acid skin benefits</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">38</td><td class="article-title">Vitamin C Serum for Damaged Skin Barrier</td><td class="article-keyword">vitamin C damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">39</td><td class="article-title">Hyaluronic Acid Molecular Weight Explained</td><td class="article-keyword">hyaluronic acid molecular weight</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">40</td><td class="article-title">Tranexamic Acid for Skin: Uses and Safety</td><td class="article-keyword">tranexamic acid skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">41</td><td class="article-title">Alpha Arbutin for Uneven Skin Tone</td><td class="article-keyword">alpha arbutin skin benefits</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">42</td><td class="article-title">Kojic Acid: Uses, Benefits, and Skin Safety</td><td class="article-keyword">kojic acid skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">43</td><td class="article-title">Resveratrol for Skin: Antioxidant Barrier Support</td><td class="article-keyword">resveratrol skin benefits</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p3"><td class="article-num">44</td><td class="article-title">Niacinamide for Acne-Prone Skin: How It Works</td><td class="article-keyword">niacinamide for acne</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">45</td><td class="article-title">Ceramide Serum vs Ceramide Cream: Which Format?</td><td class="article-keyword">ceramide serum vs cream</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">46</td><td class="article-title">Fatty Acids for Skin Barrier: Omega-3, 6, and Linoleic</td><td class="article-keyword">fatty acids skin barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">47</td><td class="article-title">Natural Moisturizing Factor (NMF) Explained</td><td class="article-keyword">natural moisturizing factor skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">48</td><td class="article-title">Collagen and Skin Barrier: What's the Connection?</td><td class="article-keyword">collagen skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">49</td><td class="article-title">Bakuchiol vs Retinol: Honest Comparison</td><td class="article-keyword">bakuchiol vs retinol</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">50</td><td class="article-title">Facial Oil for Skin Barrier Repair: Does It Work?</td><td class="article-keyword">facial oil skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">51</td><td class="article-title">Hyaluronic Acid vs Glycerin vs Urea: Which Humectant?</td><td class="article-keyword">hyaluronic acid vs glycerin vs urea</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">52</td><td class="article-title">Hyaluronic Acid vs Sodium Hyaluronate: Same Thing?</td><td class="article-keyword">hyaluronic acid vs sodium hyaluronate</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">53</td><td class="article-title">Filaggrin Mutation and Eczema: What It Means for Your Barrier</td><td class="article-keyword">filaggrin mutation eczema</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">54</td><td class="article-title">How UV Radiation Damages the Skin Barrier</td><td class="article-keyword">UV skin barrier damage</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 3: SKIN CONDITIONS ===== -->
+<div class="cluster-section" data-cluster="3">
+  <div class="cluster-header">
+    <span class="cluster-icon">🩺</span>
+    <span class="cluster-title">Cluster 3 — Skin Conditions</span>
+    <span class="cluster-count">28 articles</span>
+    <span class="cluster-desc">High intent, loyal readers. Condition searchers consume more pages per session than any other segment.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">55</td><td class="article-title">Eczema and the Skin Barrier<small>/eczema</small></td><td class="article-keyword">eczema skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">56</td><td class="article-title">Rosacea and the Skin Barrier<small>/rosacea</small></td><td class="article-keyword">rosacea skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">57</td><td class="article-title">Sensitive Skin: Building a Routine That Works<small>/sensitive-skin</small></td><td class="article-keyword">sensitive skin routine</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">58</td><td class="article-title">Perioral Dermatitis: Causes and Treatment<small>/perioral-dermatitis</small></td><td class="article-keyword">perioral dermatitis treatment</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">59</td><td class="article-title">Over-Exfoliation: Signs and Repair Protocol<small>/over-exfoliation</small></td><td class="article-keyword">over exfoliation repair</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">60</td><td class="article-title">Fungal Acne and Skin Barrier<small>/fungal-acne</small></td><td class="article-keyword">fungal acne skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">61</td><td class="article-title">Skin Barrier Repair for Acne-Prone Skin<small>/skin-barrier-repair-acne-prone</small></td><td class="article-keyword">skin barrier repair acne prone</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">62</td><td class="article-title">Dehydrated Skin vs Dry Skin: How to Tell the Difference</td><td class="article-keyword">dehydrated skin vs dry skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">63</td><td class="article-title">Dry Skin vs Damaged Skin Barrier: Not the Same Thing</td><td class="article-keyword">dry skin damaged skin barrier difference</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">64</td><td class="article-title">Seborrheic Dermatitis and Skin Barrier</td><td class="article-keyword">seborrheic dermatitis skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">65</td><td class="article-title">Eczema Flare Triggers: The Complete Guide</td><td class="article-keyword">eczema flare triggers</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">66</td><td class="article-title">Rosacea vs Acne: How to Tell the Difference</td><td class="article-keyword">rosacea vs acne difference</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">67</td><td class="article-title">Oily Skin and Skin Barrier Dysfunction</td><td class="article-keyword">oily skin skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">68</td><td class="article-title">Contact Dermatitis Recovery Protocol</td><td class="article-keyword">contact dermatitis recovery skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">69</td><td class="article-title">Atopic Dermatitis vs Eczema: Are They the Same?</td><td class="article-keyword">atopic dermatitis vs eczema</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">70</td><td class="article-title">Rosacea Subtypes: ETR, PPR, Phymatous, Ocular</td><td class="article-keyword">rosacea subtypes guide</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">71</td><td class="article-title">Rosacea Diet Triggers: What the Evidence Shows</td><td class="article-keyword">rosacea diet triggers</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">72</td><td class="article-title">Post-Procedure Skin Barrier Repair (After Laser/Peels)</td><td class="article-keyword">skin barrier repair after laser</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">73</td><td class="article-title">Skin Barrier During Pregnancy: What Changes</td><td class="article-keyword">skin barrier pregnancy</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">74</td><td class="article-title">Psoriasis and Skin Barrier: Differences from Eczema</td><td class="article-keyword">psoriasis skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">75</td><td class="article-title">Steroid-Induced Skin Damage: Recovery Guide</td><td class="article-keyword">topical steroid skin damage recovery</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">76</td><td class="article-title">Keratosis Pilaris and Skin Barrier</td><td class="article-keyword">keratosis pilaris treatment</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">77</td><td class="article-title">Eczema Diet: Foods That Affect Skin Barrier</td><td class="article-keyword">eczema diet skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">78</td><td class="article-title">Combination Skin and Barrier Repair</td><td class="article-keyword">combination skin barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">79</td><td class="article-title">Can Hard Water Damage Your Skin Barrier?</td><td class="article-keyword">hard water skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">80</td><td class="article-title">Maskne: Barrier Repair After Mask-Induced Breakouts</td><td class="article-keyword">maskne barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">81</td><td class="article-title">Air Pollution and Skin Barrier Damage</td><td class="article-keyword">air pollution skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">82</td><td class="article-title">Milia: Causes, Prevention, and Safe Treatment</td><td class="article-keyword">milia causes treatment</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 4: ACTIVES & TREATMENTS ===== -->
+<div class="cluster-section" data-cluster="4">
+  <div class="cluster-header">
+    <span class="cluster-icon">⚗️</span>
+    <span class="cluster-title">Cluster 4 — Actives &amp; Treatments</span>
+    <span class="cluster-count">23 articles</span>
+    <span class="cluster-desc">Mid-funnel. Searchers are considering specific actives — high conversion to product pages.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">83</td><td class="article-title">AHA vs BHA for Sensitive Skin<small>/aha-vs-bha-sensitive-skin</small></td><td class="article-keyword">AHA vs BHA sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">84</td><td class="article-title">Niacinamide vs Vitamin C: Can You Mix Them?<small>/niacinamide-vs-vitamin-c</small></td><td class="article-keyword">niacinamide vs vitamin C</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">85</td><td class="article-title">How to Introduce Retinol Without Irritation</td><td class="article-keyword">how to start retinol without irritation</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">86</td><td class="article-title">Retinol Purge: What It Is and How Long It Lasts</td><td class="article-keyword">retinol purge how long</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">87</td><td class="article-title">How to Layer Actives Without Irritating Your Skin</td><td class="article-keyword">how to layer actives skincare</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">88</td><td class="article-title">Skincare Layering Order: The Definitive Guide</td><td class="article-keyword">skincare layering order</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">89</td><td class="article-title">Chemical Exfoliation for Beginners</td><td class="article-keyword">chemical exfoliation beginners guide</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p1"><td class="article-num">90</td><td class="article-title">Retinol vs Retinoid vs Tretinoin: What's the Difference?</td><td class="article-keyword">retinol vs retinoid vs tretinoin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">91</td><td class="article-title">Retinol Concentration Guide: 0.025% to 1%</td><td class="article-keyword">retinol percentage guide</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">92</td><td class="article-title">Can You Use Retinol and AHA Together?</td><td class="article-keyword">retinol and AHA together</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">93</td><td class="article-title">Can You Use Niacinamide and Retinol Together?</td><td class="article-keyword">niacinamide and retinol together</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">94</td><td class="article-title">Glycolic Acid for Skin Barrier: When It Helps vs Harms</td><td class="article-keyword">glycolic acid skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">95</td><td class="article-title">Lactic Acid vs Glycolic Acid: Which Is Gentler?</td><td class="article-keyword">lactic acid vs glycolic acid</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">96</td><td class="article-title">Mandelic Acid for Sensitive Skin</td><td class="article-keyword">mandelic acid sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">97</td><td class="article-title">PHA (Polyhydroxy Acids) for Barrier-Compromised Skin</td><td class="article-keyword">PHA acid sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">98</td><td class="article-title">Exfoliation Frequency Guide by Skin Type</td><td class="article-keyword">how often to exfoliate skin type</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">99</td><td class="article-title">Toner for Damaged Skin Barrier: What to Use</td><td class="article-keyword">toner damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">100</td><td class="article-title">Tretinoin Adaptation Phase: What to Expect</td><td class="article-keyword">tretinoin adaptation phase</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p3"><td class="article-num">101</td><td class="article-title">Salicylic Acid for Sensitive Skin: Is It Safe?</td><td class="article-keyword">salicylic acid sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">102</td><td class="article-title">Vitamin C Forms Compared: L-Ascorbic vs Derivatives</td><td class="article-keyword">vitamin C forms comparison skincare</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">103</td><td class="article-title">Barrier Repair After Retinol Irritation</td><td class="article-keyword">retinol irritation repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">104</td><td class="article-title">How Long to Recover from Retinol Burn</td><td class="article-keyword">how long retinol burn recovery</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">105</td><td class="article-title">Double Cleansing for Sensitive Skin: Is It Worth It?</td><td class="article-keyword">double cleansing sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 5: ROUTINES ===== -->
+<div class="cluster-section" data-cluster="5">
+  <div class="cluster-header">
+    <span class="cluster-icon">📋</span>
+    <span class="cluster-title">Cluster 5 — Routines &amp; Protocols</span>
+    <span class="cluster-count">20 articles</span>
+    <span class="cluster-desc">High search volume. "Skincare routine for X" is one of the most-searched templates on Google. Easy internal linking hub.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">106</td><td class="article-title">The Minimalist Skincare Routine<small>/minimalist-skincare-routine</small></td><td class="article-keyword">minimalist skincare routine</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">107</td><td class="article-title">AM Skincare Routine for Damaged Skin Barrier</td><td class="article-keyword">morning skincare routine damaged barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">108</td><td class="article-title">PM Skincare Routine for Barrier Repair</td><td class="article-keyword">night skincare routine barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">109</td><td class="article-title">Skincare Routine for Eczema-Prone Skin</td><td class="article-keyword">skincare routine eczema prone skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">110</td><td class="article-title">Skincare Routine for Rosacea</td><td class="article-keyword">skincare routine rosacea</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">111</td><td class="article-title">Skincare Routine for Acne-Prone Dry Skin</td><td class="article-keyword">skincare routine acne prone dry skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">112</td><td class="article-title">How to Patch Test New Skincare Products</td><td class="article-keyword">how to patch test skincare</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">113</td><td class="article-title">Winter Skincare Routine for Dry/Sensitive Skin</td><td class="article-keyword">winter skincare routine dry skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">114</td><td class="article-title">Slugging: Does It Work for Skin Barrier Repair?</td><td class="article-keyword">slugging skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">115</td><td class="article-title">Skincare Routine for Mature Skin with Barrier Damage</td><td class="article-keyword">skincare routine mature skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">116</td><td class="article-title">Men's Skincare Routine for Barrier Repair</td><td class="article-keyword">men's skincare routine barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">117</td><td class="article-title">Skincare Routine for Beginners: Where to Actually Start</td><td class="article-keyword">skincare routine for beginners</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">118</td><td class="article-title">Skincare Routine During Menopause</td><td class="article-keyword">skincare routine menopause</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">119</td><td class="article-title">Summer Skincare Routine for Sensitive/Oily Skin</td><td class="article-keyword">summer skincare routine sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">120</td><td class="article-title">Travel Skincare Routine for Sensitive Skin</td><td class="article-keyword">travel skincare sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">121</td><td class="article-title">How to Simplify an Over-Complicated Skincare Routine</td><td class="article-keyword">too many skincare products</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">122</td><td class="article-title">Skincare Routine for Sensitive Skin</td><td class="article-keyword">skincare routine sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">123</td><td class="article-title">Skin Barrier Repair Without Spending a Fortune</td><td class="article-keyword">skin barrier repair affordable products</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">124</td><td class="article-title">How Often Should You Moisturize Damaged Skin?</td><td class="article-keyword">how often moisturize damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">125</td><td class="article-title">Skin Barrier Repair Routine: The 2-Week Reset</td><td class="article-keyword">skin barrier repair routine 2 week</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 6: COMPARISONS ===== -->
+<div class="cluster-section" data-cluster="6">
+  <div class="cluster-header">
+    <span class="cluster-icon">⚖️</span>
+    <span class="cluster-title">Cluster 6 — Product &amp; Ingredient Comparisons</span>
+    <span class="cluster-count">19 articles</span>
+    <span class="cluster-desc">High CTR from search. "X vs Y" format captures decision-stage searchers with strong purchase intent.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">126</td><td class="article-title">CeraVe vs Cetaphil: Which Wins for Barrier Repair?<small>/cerave-vs-cetaphil</small></td><td class="article-keyword">cerave vs cetaphil</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">127</td><td class="article-title">Mineral vs Chemical Sunscreen for Sensitive Skin<small>/mineral-vs-chemical-sunscreen-sensitive</small></td><td class="article-keyword">mineral vs chemical sunscreen sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">128</td><td class="article-title">CeraVe vs La Roche-Posay: Side-by-Side Comparison</td><td class="article-keyword">cerave vs la roche posay</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">129</td><td class="article-title">Cetaphil vs Vanicream: Which Is Cleaner?</td><td class="article-keyword">cetaphil vs vanicream</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">130</td><td class="article-title">Aquaphor vs Vaseline for Skin Barrier Repair</td><td class="article-keyword">aquaphor vs vaseline skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">131</td><td class="article-title">Physical vs Chemical Exfoliant: Which Is Safer?</td><td class="article-keyword">physical vs chemical exfoliant</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">132</td><td class="article-title">Fragrance-Free vs Unscented Skincare: Key Difference</td><td class="article-keyword">fragrance free vs unscented skincare</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">133</td><td class="article-title">Glycerin vs Hyaluronic Acid: Which Humectant Is Better?</td><td class="article-keyword">glycerin vs hyaluronic acid</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">134</td><td class="article-title">Cream vs Lotion vs Gel for Barrier Repair</td><td class="article-keyword">cream vs lotion vs gel moisturizer</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">135</td><td class="article-title">Zinc Oxide vs Titanium Dioxide Sunscreen</td><td class="article-keyword">zinc oxide vs titanium dioxide</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">136</td><td class="article-title">SPF 30 vs SPF 50: Does the Higher Number Matter?</td><td class="article-keyword">SPF 30 vs SPF 50 difference</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">137</td><td class="article-num">137</td><td class="article-title">CeraVe Moisturizing Cream vs Daily Moisturizing Lotion</td><td class="article-keyword">cerave cream vs lotion</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">138</td><td class="article-title">Eucerin vs CeraVe: Which Is Better for Eczema?</td><td class="article-keyword">eucerin vs cerave eczema</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">139</td><td class="article-title">Avène vs La Roche-Posay for Sensitive Skin</td><td class="article-keyword">avene vs la roche posay</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">140</td><td class="article-title">The Ordinary vs Paula's Choice: Which Brand?</td><td class="article-keyword">the ordinary vs paulas choice</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">141</td><td class="article-title">Bakuchiol vs Retinol: Honest Evidence Review</td><td class="article-keyword">bakuchiol vs retinol evidence</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">142</td><td class="article-title">Essence vs Serum: What's the Actual Difference?</td><td class="article-keyword">essence vs serum skincare</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">143</td><td class="article-title">Micellar Water vs Cleanser: Is Micellar Water Enough?</td><td class="article-keyword">micellar water vs cleanser</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">144</td><td class="article-title">Hyaluronic Acid vs Sodium Hyaluronate: Same or Different?</td><td class="article-keyword">hyaluronic acid vs sodium hyaluronate</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 7: BUYING GUIDES ===== -->
+<div class="cluster-section" data-cluster="7">
+  <div class="cluster-header">
+    <span class="cluster-icon">🛒</span>
+    <span class="cluster-title">Cluster 7 — Buying Guides</span>
+    <span class="cluster-count">22 articles</span>
+    <span class="cluster-desc">Highest commercial intent. Direct pipeline to /shop. "Best X for Y" captures bottom-of-funnel searchers ready to buy.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="med" data-priority="published"><td class="article-num">145</td><td class="article-title">Best Ceramide Moisturizer: Tested and Ranked<small>/best-ceramide-moisturizer</small></td><td class="article-keyword">best ceramide moisturizer</td><td><span class="badge badge-kd-med">Medium</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">146</td><td class="article-title">Best Cleanser for a Damaged Skin Barrier<small>/best-cleanser-damaged-skin-barrier</small></td><td class="article-keyword">best cleanser damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="high" data-priority="p1"><td class="article-num">147</td><td class="article-title">Best Moisturizer for Eczema: Dermatologist Picks</td><td class="article-keyword">best moisturizer for eczema</td><td><span class="badge badge-kd-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="high" data-priority="p1"><td class="article-num">148</td><td class="article-title">Best Moisturizer for Sensitive Skin</td><td class="article-keyword">best moisturizer for sensitive skin</td><td><span class="badge badge-kd-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="high" data-priority="p1"><td class="article-num">149</td><td class="article-title">Best Sunscreen for Sensitive Skin</td><td class="article-keyword">best sunscreen sensitive skin</td><td><span class="badge badge-kd-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p1"><td class="article-num">150</td><td class="article-title">Best Moisturizer for Rosacea</td><td class="article-keyword">best moisturizer for rosacea</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p1"><td class="article-num">151</td><td class="article-title">Best Serum for Damaged Skin Barrier</td><td class="article-keyword">best serum damaged skin barrier</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">152</td><td class="article-title">Best Retinol for Sensitive Skin</td><td class="article-keyword">best retinol for sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">153</td><td class="article-title">Best Cleanser for Eczema</td><td class="article-keyword">best cleanser for eczema</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">154</td><td class="article-title">Best Cleanser for Rosacea</td><td class="article-keyword">best cleanser for rosacea</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">155</td><td class="article-title">Best Drugstore Moisturizer for Barrier Repair</td><td class="article-keyword">drugstore moisturizer barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">156</td><td class="article-title">Best Facial Oil for Skin Barrier</td><td class="article-keyword">best facial oil skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">157</td><td class="article-title">Best Niacinamide Serum: Ranked and Reviewed</td><td class="article-keyword">best niacinamide serum</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p2"><td class="article-num">158</td><td class="article-title">Best Vitamin C Serum for Sensitive Skin</td><td class="article-keyword">best vitamin C serum sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">159</td><td class="article-title">Best Korean Skincare for Barrier Repair</td><td class="article-keyword">korean skincare barrier repair</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">160</td><td class="article-title">Best Toner for Damaged Skin Barrier</td><td class="article-keyword">best toner damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="high" data-priority="p3"><td class="article-num">161</td><td class="article-title">Best Moisturizer for Dry Skin</td><td class="article-keyword">best moisturizer dry skin</td><td><span class="badge badge-kd-high">High</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p3"><td class="article-num">162</td><td class="article-title">Best Sunscreen for Rosacea</td><td class="article-keyword">best sunscreen rosacea</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="high" data-priority="p3"><td class="article-num">163</td><td class="article-title">Best Hyaluronic Acid Serum</td><td class="article-keyword">best hyaluronic acid serum</td><td><span class="badge badge-kd-high">High</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">164</td><td class="article-title">Best Cleanser for Acne-Prone Sensitive Skin</td><td class="article-keyword">best cleanser acne prone sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p3"><td class="article-num">165</td><td class="article-title">Best AHA BHA Toner for Sensitive Skin</td><td class="article-keyword">best AHA BHA toner sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="med" data-priority="p3"><td class="article-num">166</td><td class="article-title">Best Eye Cream for Sensitive Skin</td><td class="article-keyword">best eye cream sensitive skin</td><td><span class="badge badge-kd-med">Medium</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 8: PRODUCT REVIEWS ===== -->
+<div class="cluster-section" data-cluster="8">
+  <div class="cluster-header">
+    <span class="cluster-icon">⭐</span>
+    <span class="cluster-title">Cluster 8 — Product Reviews</span>
+    <span class="cluster-count">26 articles</span>
+    <span class="cluster-desc">Branded keyword traffic. Easy to rank as domain ages. Each review links to /shop — direct revenue path.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">167</td><td class="article-title">CeraVe Moisturizing Cream Review<small>/cerave-moisturizing-cream-review</small></td><td class="article-keyword">cerave moisturizing cream review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">168</td><td class="article-title">EltaMD UV Clear Review<small>/eltamd-uv-clear-review</small></td><td class="article-keyword">eltamd uv clear review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">169</td><td class="article-title">La Roche-Posay Cicaplast Review<small>/la-roche-posay-cicaplast-review</small></td><td class="article-keyword">la roche posay cicaplast review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">170</td><td class="article-title">Paula's Choice Barrier Repair Review<small>/paulas-choice-barrier-repair-review</small></td><td class="article-keyword">paulas choice barrier repair review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">171</td><td class="article-title">The Ordinary Natural Moisturizing Review<small>/the-ordinary-natural-moisturizing-review</small></td><td class="article-keyword">the ordinary NMF moisturizer review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="published" data-kd="low" data-priority="published"><td class="article-num">172</td><td class="article-title">Vanicream Gentle Cleanser Review<small>/vanicream-gentle-cleanser-review</small></td><td class="article-keyword">vanicream gentle cleanser review</td><td><span class="badge badge-kd-low">Low</span></td><td>—</td><td><span class="badge badge-published">Published</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">173</td><td class="article-title">Cetaphil Moisturizing Cream Review</td><td class="article-keyword">cetaphil moisturizing cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">174</td><td class="article-title">La Roche-Posay Toleriane Double Repair Review</td><td class="article-keyword">la roche posay toleriane double repair review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">175</td><td class="article-title">First Aid Beauty Ultra Repair Cream Review</td><td class="article-keyword">first aid beauty ultra repair cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">176</td><td class="article-title">Avène Cicalfate+ Review</td><td class="article-keyword">avene cicalfate review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">177</td><td class="article-title">Neutrogena Hydro Boost Review for Dry Skin</td><td class="article-keyword">neutrogena hydro boost review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">178</td><td class="article-title">Bioderma Sensibio H2O Review</td><td class="article-keyword">bioderma sensibio h2o review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">179</td><td class="article-title">Eucerin Advanced Repair Lotion Review</td><td class="article-keyword">eucerin advanced repair review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">180</td><td class="article-title">Aquaphor Healing Ointment Review</td><td class="article-keyword">aquaphor healing ointment review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">181</td><td class="article-title">COSRX Snail 96 Mucin Power Essence Review</td><td class="article-keyword">cosrx snail 96 review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">182</td><td class="article-title">SkinFix Barrier+ Triple Lipid-Peptide Cream Review</td><td class="article-keyword">skinfix barrier cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">183</td><td class="article-title">Weleda Skin Food Review: Cult Classic Tested</td><td class="article-keyword">weleda skin food review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">184</td><td class="article-title">Drunk Elephant Lala Retro Whipped Cream Review</td><td class="article-keyword">drunk elephant lala retro review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">185</td><td class="article-title">Kiehl's Ultra Facial Cream Review</td><td class="article-keyword">kiehl's ultra facial cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">186</td><td class="article-title">Dr. Jart+ Cicapair Tiger Grass Cream Review</td><td class="article-keyword">dr jart cicapair review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">187</td><td class="article-title">Illiyoon Ceramide Ato Concentrate Cream Review</td><td class="article-keyword">illiyoon ceramide cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">188</td><td class="article-title">The Inkey List Omega Water Cream Review</td><td class="article-keyword">inkey list omega water cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">189</td><td class="article-title">Differin Gel Review: Safe for Barrier-Damaged Skin?</td><td class="article-keyword">differin gel review sensitive skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">190</td><td class="article-title">The Ordinary Hyaluronic Acid 2% + B5 Review</td><td class="article-keyword">the ordinary hyaluronic acid review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">191</td><td class="article-title">Sebamed Clear Face Care Gel Review</td><td class="article-keyword">sebamed clear face care gel review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p3"><td class="article-num">192</td><td class="article-title">Vanicream Moisturizing Skin Cream Review</td><td class="article-keyword">vanicream moisturizing cream review</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p3">P3</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== CLUSTER 9: FAQ & QUICK ANSWERS ===== -->
+<div class="cluster-section" data-cluster="9">
+  <div class="cluster-header">
+    <span class="cluster-icon">❓</span>
+    <span class="cluster-title">Cluster 9 — FAQ &amp; Quick Answers</span>
+    <span class="cluster-count">23 articles</span>
+    <span class="cluster-desc">Featured snippet goldmine. Question-format articles at DA 13 can rank top 5 for low-competition queries within 60–90 days.</span>
+  </div>
+  <table class="article-table">
+    <thead><tr><th>#</th><th>Article Title</th><th>Target Keyword</th><th>KD</th><th>Priority</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">193</td><td class="article-title">Can a Damaged Skin Barrier Cause Acne?</td><td class="article-keyword">damaged skin barrier cause acne</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">194</td><td class="article-title">What Ingredients Repair the Skin Barrier Fastest?</td><td class="article-keyword">ingredients that repair skin barrier fastest</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">195</td><td class="article-title">Is Petroleum Jelly Good for Skin Barrier Repair?</td><td class="article-keyword">petroleum jelly skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">196</td><td class="article-title">Does Drinking Water Actually Improve Skin Barrier?</td><td class="article-keyword">drinking water improve skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">197</td><td class="article-title">Can Stress Damage Your Skin Barrier?</td><td class="article-keyword">stress damage skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p1"><td class="article-num">198</td><td class="article-title">Is Coconut Oil Good or Bad for Skin Barrier?</td><td class="article-keyword">coconut oil skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p1">P1</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">199</td><td class="article-title">Can You Over-Moisturize Your Skin?</td><td class="article-keyword">can you over moisturize skin</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+      <tr class="article-row" data-status="planned" data-kd="low" data-priority="p2"><td class="article-num">200</td><td class="article-title">Is Micellar Water Safe for Damaged Skin Barrier?</td><td class="article-keyword">micellar water damaged skin barrier</td><td><span class="badge badge-kd-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="no-results" id="no-results">No articles match your current filters.</div>
+</div><!-- end main -->
+
+<div class="legend">
+  <span class="legend-label">KD:</span>
+  <div class="legend-group"><span class="badge badge-kd-low">Low</span> KD &lt;20 — new site can rank within 30–90 days</div>
+  <div class="legend-group"><span class="badge badge-kd-med">Medium</span> KD 20–40 — 3–6 months + backlinks needed</div>
+  <div class="legend-group"><span class="badge badge-kd-high">High</span> KD &gt;40 — 6–12+ months, domain authority required</div>
+  <span style="margin-left:16px;" class="legend-label">Priority:</span>
+  <div class="legend-group"><span class="badge badge-p1">P1</span> Months 4–6</div>
+  <div class="legend-group"><span class="badge badge-p2">P2</span> Months 7–12</div>
+  <div class="legend-group"><span class="badge badge-p3">P3</span> Months 13–24</div>
+</div>
+
+<script>
+const filters = { status: 'all', kd: 'all', priority: 'all' };
+
+function setFilter(type, value, btn) {
+  filters[type] = value;
+  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const search = document.getElementById('search').value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll('.article-row').forEach(row => {
+    const status = row.dataset.status;
+    const kd = row.dataset.kd;
+    const priority = row.dataset.priority;
+    const text = row.textContent.toLowerCase();
+
+    const matchStatus = filters.status === 'all' || status === filters.status;
+    const matchKd = filters.kd === 'all' || kd === filters.kd;
+    const matchPriority = filters.priority === 'all' || priority === filters.priority ||
+      (filters.priority === 'p1' && priority === 'p1') ||
+      (filters.priority === 'p2' && priority === 'p2') ||
+      (filters.priority === 'p3' && priority === 'p3');
+    const matchSearch = !search || text.includes(search);
+
+    const show = matchStatus && matchKd && matchPriority && matchSearch;
+    row.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  // Show/hide cluster sections based on visible rows
+  document.querySelectorAll('.cluster-section').forEach(section => {
+    const hasVisible = section.querySelectorAll('.article-row:not(.hidden)').length > 0;
+    section.style.display = hasVisible ? '' : 'none';
+  });
+
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  updateStats();
+}
+
+function updateStats() {
+  const allRows = document.querySelectorAll('.article-row');
+  let p1=0, p2=0, p3=0;
+  allRows.forEach(r => {
+    if (r.dataset.priority === 'p1') p1++;
+    if (r.dataset.priority === 'p2') p2++;
+    if (r.dataset.priority === 'p3') p3++;
+  });
+  document.getElementById('stat-p1').textContent = p1;
+  document.getElementById('stat-p2').textContent = p2;
+  document.getElementById('stat-p3').textContent = p3;
+}
+
+updateStats();
+</script>
+</body>
+</html>

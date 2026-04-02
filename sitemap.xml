@@ -169,6 +169,50 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Month 3 Content Cluster — Ingredients & Routines -->
+  <url>
+    <loc>https://bioskinrepair.com/retinol-skin-barrier</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/niacinamide-vs-vitamin-c</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/best-cleanser-damaged-skin-barrier</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/skin-barrier-repair-acne-prone</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/glycerin</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/panthenol</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bioskinrepair.com/aha-vs-bha-sensitive-skin</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Buying guides -->
   <url>
     <loc>https://bioskinrepair.com/best-ceramide-moisturizer</loc>
