@@ -37,8 +37,24 @@
     /* ── Page utility header (replaces article-hero) ────────── */
     .routines-page-header {
       border-bottom: 1px solid var(--border);
-      padding: 32px 0 28px;
+      padding: 32px 0 0;
       background: var(--bg);
+      overflow: hidden;
+    }
+    .routines-page-header .container {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      align-items: end;
+      gap: 32px;
+    }
+    @media (max-width: 780px) {
+      .routines-page-header .container {
+        grid-template-columns: 1fr;
+      }
+      .routines-page-header .page-header-img { display: none; }
+    }
+    .routines-page-header .page-header-text {
+      padding-bottom: 28px;
     }
     .routines-page-header h1 {
       font-size: 1.9rem;
@@ -51,8 +67,22 @@
       font-size: 0.97rem;
       color: var(--text-secondary);
       margin: 0;
-      max-width: 580px;
+      max-width: 520px;
       line-height: 1.6;
+    }
+    .page-header-img {
+      align-self: end;
+      line-height: 0;
+    }
+    .page-header-img img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      border: 1px solid var(--border);
+      border-bottom: none;
     }
 
     /* ── Phase bar (inline, horizontal) ─────────────────────── */
@@ -451,11 +481,22 @@
 
 <div class="routines-page-header">
   <div class="container">
-    <div class="breadcrumb">
-      <a href="/">Home</a> <span>→</span> <span>Routines</span>
+    <div class="page-header-text">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>→</span> <span>Routines</span>
+      </div>
+      <h1>Skin Barrier Repair Routines</h1>
+      <p class="page-desc">Five structured protocols — pick the one that matches your situation and follow the steps.</p>
     </div>
-    <h1>Skin Barrier Repair Routines</h1>
-    <p class="page-desc">Five structured protocols — pick the one that matches your situation and follow the steps.</p>
+    <div class="page-header-img">
+      <img
+        src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=760&q=80"
+        alt="Skincare products arranged on a clean surface"
+        width="760"
+        height="220"
+        loading="eager"
+      />
+    </div>
   </div>
 </div>
 
