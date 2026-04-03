@@ -34,8 +34,119 @@
     .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
     .toast.show { opacity: 1; }
 
+    /* ── Page utility header (replaces article-hero) ────────── */
+    .routines-page-header {
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 28px;
+      background: var(--bg);
+    }
+    .routines-page-header h1 {
+      font-size: 1.9rem;
+      font-family: var(--font-serif);
+      color: var(--text-primary);
+      margin: 8px 0 10px;
+      line-height: 1.25;
+    }
+    .routines-page-header .page-desc {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    /* ── Phase bar (inline, horizontal) ─────────────────────── */
+    .phase-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding: 12px 18px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin: 0 0 28px;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+    .phase-bar strong { color: var(--text-primary); font-weight: 600; }
+    .phase-bar-sep { color: var(--accent); font-weight: 700; font-size: 0.9rem; }
+
+    /* ── Selector note ───────────────────────────────────────── */
+    .selector-note {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 32px 0 20px;
+      max-width: 780px;
+    }
+
+    /* ── Inline CTA (replaces newsletter strip) ──────────────── */
+    .inline-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius-sm);
+      background: var(--bg-alt);
+      margin: 56px 0 48px;
+    }
+    .inline-cta p { font-size: 0.92rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+    .inline-cta p strong { color: var(--text-primary); }
+    .inline-cta a.cta-link {
+      flex-shrink: 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 16px;
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius-sm);
+      transition: background 0.18s;
+    }
+    .inline-cta a.cta-link:hover { background: var(--accent-light); }
+
+    /* ── Further reading (text list, replaces card grid) ─────── */
+    .further-reading { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .further-reading h2 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 20px; }
+    .further-reading-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    @media (max-width: 560px) { .further-reading-cols { grid-template-columns: 1fr; } }
+    .further-reading-cols a {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      transition: color 0.15s;
+      line-height: 1.45;
+    }
+    .further-reading-cols a:hover { color: var(--accent); }
+    .further-reading-cols a .fr-cat {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      padding: 2px 6px;
+      background: var(--accent-light);
+      border-radius: 3px;
+    }
+
     /* ── Page-level layout ──────────────────────────────────── */
-    .routines-wrap { max-width: 900px; margin: 0 auto; padding: 48px 24px 100px; }
+    .routines-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
 
     /* ── Scenario selector (Find Your Routine) ──────────────── */
     .scenario-grid {
@@ -249,43 +360,6 @@
     .condition-route-card h3 { font-size: 0.95rem; color: var(--text-primary); margin: 0 0 6px; }
     .condition-route-card p { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
 
-    /* ── Newsletter strip ───────────────────────────────────── */
-    .newsletter-strip {
-      background: var(--accent);
-      border-radius: var(--radius-md);
-      padding: 40px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      margin: 64px 0;
-    }
-    @media (max-width: 640px) { .newsletter-strip { flex-direction: column; padding: 32px 24px; text-align: center; } }
-    .newsletter-strip-text h3 { font-size: 1.3rem; color: #fff; margin: 0 0 8px; }
-    .newsletter-strip-text p { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.6; }
-    .newsletter-strip .btn-nl { flex-shrink: 0; background: #fff; color: var(--accent); font-weight: 700; padding: 14px 28px; border-radius: var(--radius-sm); text-decoration: none; font-size: 0.92rem; transition: background 0.2s; white-space: nowrap; }
-    .newsletter-strip .btn-nl:hover { background: #f0f0f0; }
-
-    /* ── Related articles grid ──────────────────────────────── */
-    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-    @media (max-width: 700px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 440px) { .related-grid { grid-template-columns: 1fr; } }
-    .related-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: var(--surface);
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-    }
-    .related-card:hover { border-color: var(--accent-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .related-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
-    .related-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 3px 8px; border-radius: 20px; margin-bottom: 10px; width: fit-content; display: block; }
-    .related-card-body h3 { font-size: 0.92rem; color: var(--text-primary); line-height: 1.35; margin-bottom: 8px; }
-    .related-card-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; flex: 1; margin-bottom: 12px; }
-    .related-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; margin-top: auto; }
-    .related-link:hover { text-decoration: underline; }
 
     /* ── FAQ ────────────────────────────────────────────────── */
     .faq-section { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--border); }
@@ -299,24 +373,6 @@
     /* ── Affiliate note ─────────────────────────────────────── */
     .affiliate-note { font-size: 0.78rem; color: var(--text-muted); background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 16px; margin-bottom: 40px; line-height: 1.6; }
 
-    /* ── Intro ──────────────────────────────────────────────── */
-    .routines-intro { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; max-width: 780px; }
-    .phase-logic {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 32px 0 16px;
-    }
-    @media (max-width: 560px) { .phase-logic { grid-template-columns: 1fr; } }
-    .phase-box {
-      padding: 18px 20px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--surface);
-    }
-    .phase-box .ph-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-    .phase-box .ph-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
-    .phase-box .ph-desc { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55; margin: 0; }
   </style>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Ik6iT3b9nGnlXYHBmdbzw" async></script>
 
@@ -393,47 +449,30 @@
   </div>
 </header>
 
-<section class="article-hero">
+<div class="routines-page-header">
   <div class="container">
-    <div class="article-hero-inner">
-      <div class="breadcrumb">
-        <a href="/">Home</a> <span>→</span> <span>Routines</span>
-      </div>
-      <h1>Skin Barrier Repair Routines</h1>
-      <p class="article-hero-sub">Five step-by-step protocols for every stage of barrier damage — from acute recovery to long-term maintenance with actives.</p>
+    <div class="breadcrumb">
+      <a href="/">Home</a> <span>→</span> <span>Routines</span>
     </div>
+    <h1>Skin Barrier Repair Routines</h1>
+    <p class="page-desc">Five structured protocols — pick the one that matches your situation and follow the steps.</p>
   </div>
-</section>
+</div>
 
 <div class="container">
   <div class="routines-wrap">
 
-    <!-- Intro -->
-    <p class="routines-intro">A barrier repair routine is not a regular skincare routine. The objective is different: not to treat, brighten, or anti-age — but to stop the damage and let the skin rebuild its protective layer. Every product and every step should be evaluated against that single goal. The routines below follow a three-phase logic:</p>
+    <p class="selector-note">Barrier repair is not a standard skincare routine. The goal is to stop further damage and let the skin rebuild — not to treat, brighten, or anti-age. Every step below is evaluated against that single objective. Most people fail at Phase 1: they layer ceramide serums while still using daily acids, fragrant toners, and hot water. The repair can't take hold if the cause of damage is still present.</p>
 
-    <div class="phase-logic">
-      <div class="phase-box">
-        <div class="ph-num">Phase 1</div>
-        <div class="ph-title">Stop the Damage</div>
-        <p class="ph-desc">Remove everything that could be causing or perpetuating barrier breakdown — harsh cleansers, actives, over-exfoliation, fragrance.</p>
-      </div>
-      <div class="phase-box">
-        <div class="ph-num">Phase 2</div>
-        <div class="ph-title">Support Repair</div>
-        <p class="ph-desc">Give the skin the raw materials it needs to rebuild: ceramides, fatty acids, cholesterol, and occlusive protection to stop moisture loss.</p>
-      </div>
-      <div class="phase-box">
-        <div class="ph-num">Phase 3</div>
-        <div class="ph-title">Maintain &amp; Protect</div>
-        <p class="ph-desc">Once the barrier is restored, introduce targeted actives one at a time — carefully, with long observation windows between additions.</p>
-      </div>
+    <div class="phase-bar">
+      <span><strong>Phase 1:</strong> Stop the damage</span>
+      <span class="phase-bar-sep">→</span>
+      <span><strong>Phase 2:</strong> Support repair with ceramides + occlusion</span>
+      <span class="phase-bar-sep">→</span>
+      <span><strong>Phase 3:</strong> Reintroduce actives carefully, one at a time</span>
     </div>
 
-    <p class="routines-intro" style="margin-top: 24px;">Most people skip Phase 1. They add ceramide moisturizers and barrier serums while still using daily acids, fragrance-heavy toners, and hot water. The repair products can't work if the cause of damage is still present.</p>
-
-    <!-- Find Your Routine -->
-    <h2 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin: 48px 0 6px;">Find Your Starting Point</h2>
-    <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:0;">Select the situation that best describes your skin right now.</p>
+    <p style="font-size:0.88rem; color:var(--text-secondary); margin: 0 0 4px;">Select the situation that best describes your skin right now.</p>
 
     <div class="scenario-grid">
       <a href="#minimal-reset" class="scenario-card">
@@ -939,68 +978,27 @@
       </div>
     </div>
 
-    <!-- Newsletter CTA -->
-    <div class="newsletter-strip">
-      <div class="newsletter-strip-text">
-        <h3>Free 7-Day Skin Barrier Reset Guide</h3>
-        <p>A day-by-day protocol with product recommendations, ingredient checklists, and progress markers — delivered free to your inbox.</p>
-      </div>
-      <a href="/newsletter" class="btn-nl">Get the Free Guide →</a>
+    <!-- Inline CTA -->
+    <div class="inline-cta">
+      <p><strong>Free 7-Day Skin Barrier Reset Guide</strong> — a day-by-day protocol with product recommendations, ingredient checklists, and progress markers.</p>
+      <a href="/newsletter" class="cta-link">Get the Free Guide →</a>
     </div>
 
-    <!-- Related Articles -->
-    <h2 style="font-size:1.3rem; font-weight:700; color:var(--text-primary); margin: 0 0 8px;">Dig Deeper</h2>
-    <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:0;">The science behind every step in the routines above.</p>
-
-    <div class="related-grid">
-      <a href="/skin-barrier-101" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Pillar Guide</span>
-          <h3>Skin Barrier 101: The Complete Guide</h3>
-          <p>The full science — structure, function, how damage happens, and how repair works at a cellular level.</p>
-          <span class="related-link">Read Guide →</span>
-        </div>
-      </a>
-      <a href="/ceramides" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Ingredient Guide</span>
-          <h3>Ceramides for Skin Barrier Repair</h3>
-          <p>Why ceramides are the most evidence-backed ingredient for barrier repair — and how to read a label for them.</p>
-          <span class="related-link">Read Guide →</span>
-        </div>
-      </a>
-      <a href="/minimalist-skincare-routine" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Routine Guide</span>
-          <h3>Minimalist Skincare Routine for a Damaged Barrier</h3>
-          <p>Why fewer products outperform full routines during the repair phase — and exactly what to keep.</p>
-          <span class="related-link">Read Guide →</span>
-        </div>
-      </a>
-      <a href="/how-long-skin-barrier-repair" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Guide</span>
-          <h3>How Long Does Skin Barrier Repair Take?</h3>
-          <p>Week-by-week timelines, what to expect at each stage, and why most people give up too early.</p>
-          <span class="related-link">Read Guide →</span>
-        </div>
-      </a>
-      <a href="/retinol-skin-barrier" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Guide</span>
-          <h3>Retinol and Skin Barrier Damage</h3>
-          <p>How retinol disrupts the barrier, who is at highest risk, and the exact protocol for using it without causing damage.</p>
-          <span class="related-link">Read Guide →</span>
-        </div>
-      </a>
-      <a href="/best-ceramide-moisturizer" class="related-card" style="text-decoration:none;">
-        <div class="related-card-body">
-          <span class="related-cat">Best-Of Roundup</span>
-          <h3>Best Ceramide Moisturizers (2026)</h3>
-          <p>The top ceramide moisturizers across price points — ranked by ingredient profile, texture, and clinical evidence.</p>
-          <span class="related-link">Read Roundup →</span>
-        </div>
-      </a>
+    <!-- Further Reading -->
+    <div class="further-reading">
+      <h2>The Science Behind These Routines</h2>
+      <div class="further-reading-cols">
+        <a href="/skin-barrier-101"><span class="fr-cat">Pillar</span> Skin Barrier 101: The Complete Guide</a>
+        <a href="/ceramides"><span class="fr-cat">Ingredient</span> Ceramides for Skin Barrier Repair</a>
+        <a href="/minimalist-skincare-routine"><span class="fr-cat">Routine</span> Minimalist Routine for a Damaged Barrier</a>
+        <a href="/how-long-skin-barrier-repair"><span class="fr-cat">Guide</span> How Long Does Skin Barrier Repair Take?</a>
+        <a href="/retinol-skin-barrier"><span class="fr-cat">Guide</span> Retinol and Skin Barrier Damage</a>
+        <a href="/best-ceramide-moisturizer"><span class="fr-cat">Roundup</span> Best Ceramide Moisturizers (2026)</a>
+        <a href="/over-exfoliation"><span class="fr-cat">Guide</span> Over-Exfoliation: Full Recovery Protocol</a>
+        <a href="/niacinamide-skin-barrier"><span class="fr-cat">Ingredient</span> Niacinamide for Skin Barrier</a>
+        <a href="/signs-skin-barrier-is-healing"><span class="fr-cat">Guide</span> 7 Signs Your Skin Barrier Is Healing</a>
+        <a href="/tewl"><span class="fr-cat">Science</span> What Is TEWL?</a>
+      </div>
     </div>
 
     <!-- FAQ -->
